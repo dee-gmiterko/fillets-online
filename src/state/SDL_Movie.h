@@ -2,7 +2,7 @@
 #define HEADER_SDLMOVIE_H
 #ifdef HAVE_SMPEG
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 #include "smpeg/smpeg.h"
 

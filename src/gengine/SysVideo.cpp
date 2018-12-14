@@ -10,7 +10,7 @@
 
 #include "Log.h"
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 #if !defined(HAVE_X11) && !defined(WIN32)
     void
 SysVideo::setCaption(const std::string &title)

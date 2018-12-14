@@ -2,7 +2,7 @@
 #define HEADER_LEVEL_SCRIPT_H
 
 extern "C" {
-#include "/home/ienze/git/fillets-src/lua/src/lua.h"
+#include "lua.h"
 }
 
 extern int script_level_save(lua_State *L) throw();

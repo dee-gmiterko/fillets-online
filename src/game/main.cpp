@@ -90,7 +90,7 @@
  *
  */
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 #include "Log.h"
 #include "Application.h"
@@ -112,6 +112,9 @@ main(int argc, char *argv[])
         Application app;
 
         #ifdef __EMSCRIPTEN__
+
+            // FS.mount(IDBFS, { root: '.' }, '/user');
+
             try {
                 app.init(argc, argv);
             }

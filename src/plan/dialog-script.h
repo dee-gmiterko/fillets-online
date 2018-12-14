@@ -2,7 +2,7 @@
 #define HEADER_DIALOG_SCRIPT_H
 
 extern "C" {
-#include "/home/ienze/git/fillets-src/lua/src/lua.h"
+#include "lua.h"
 }
 
 extern int script_game_planAction(lua_State *L) throw();

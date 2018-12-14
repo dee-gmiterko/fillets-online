@@ -6,7 +6,7 @@ class Path;
 #include "ResourcePack.h"
 #include "ResCache.h"
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 /**
  * Image resources and image loading.

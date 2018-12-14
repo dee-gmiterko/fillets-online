@@ -30,7 +30,7 @@
 #include "SimpleMsg.h"
 #include "StringMsg.h"
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 #include <stdio.h> // for fflush, stdout
 
 //-----------------------------------------------------------------

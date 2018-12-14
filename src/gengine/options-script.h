@@ -2,7 +2,7 @@
 #define HEADER_OPTIONS_SCRIPT_H
 
 extern "C" {
-#include "/home/ienze/git/fillets-src/lua/src/lua.h"
+#include "lua.h"
 }
 
 extern int script_options_sendMsg(lua_State *L) throw();

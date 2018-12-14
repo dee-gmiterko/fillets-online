@@ -14,7 +14,7 @@
 #define M_PI	3.141592654
 #endif
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus

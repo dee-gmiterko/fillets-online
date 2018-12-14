@@ -1,7 +1,7 @@
 #ifndef HEADER_VIEWEFFECT_H
 #define HEADER_VIEWEFFECT_H
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 /**
  * Graphic effect before blit.

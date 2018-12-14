@@ -15,8 +15,8 @@
 #include "ScriptException.h"
 
 extern "C" {
-#include "/home/ienze/git/fillets-src/lua/src/lualib.h"
-#include "/home/ienze/git/fillets-src/lua/src/lauxlib.h"
+#include "lualib.h"
+#include "lauxlib.h"
 }
 
 #include "def-script.h"

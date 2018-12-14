@@ -1,7 +1,7 @@
 #ifndef HEADER_SURFACETOOL_H
 #define HEADER_SURFACETOOL_H
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 /**
  * Surface rutines.

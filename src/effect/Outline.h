@@ -1,7 +1,7 @@
 #ifndef HEADER_OUTLINE_H
 #define HEADER_OUTLINE_H
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 /**
  * Outline around picture.

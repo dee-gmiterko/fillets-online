@@ -15,7 +15,7 @@
 #include "DemoMode.h"
 
 extern "C" {
-#include "/home/ienze/git/fillets-src/lua/src/lua.h"
+#include "lua.h"
 }
 #include <stdio.h>
 

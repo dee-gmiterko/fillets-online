@@ -8,8 +8,8 @@ class Scripter;
 #include <stdexcept>
 
 extern "C" {
-#include "/home/ienze/git/fillets-src/lua/src/lua.h"
-#include "/home/ienze/git/fillets-src/lua/src/lauxlib.h"
+#include "lua.h"
+#include "lauxlib.h"
 }
 
 

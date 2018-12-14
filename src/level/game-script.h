@@ -2,7 +2,7 @@
 #define HEADER_GAME_SCRIPT_H
 
 extern "C" {
-#include "/home/ienze/git/fillets-src/lua/src/lua.h"
+#include "lua.h"
 }
 
 extern int script_game_setRoomWaves(lua_State *L) throw();

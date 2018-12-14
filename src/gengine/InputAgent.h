@@ -8,7 +8,7 @@ class InputHandler;
 #include "Name.h"
 #include "V2.h"
 
-#include "/home/ienze/git/emsdk/emscripten/1.38.16/system/include/SDL/SDL.h"
+#include "SDL.h"
 
 /**
  * Forward input events to handlers.
