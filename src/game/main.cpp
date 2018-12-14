@@ -113,8 +113,6 @@ main(int argc, char *argv[])
 
         #ifdef __EMSCRIPTEN__
 
-            // FS.mount(IDBFS, { root: '.' }, '/user');
-
             try {
                 app.init(argc, argv);
             }

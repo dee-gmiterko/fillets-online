@@ -1,0 +1,2 @@
+mkdir web/data -p
+while read level; do python3 /home/ienze/git/emsdk/emscripten/1.38.16/tools/file_packager.py web/data/$level.data --js-output=web/data/$level.js --use-preload-plugins --use-preload-cache --preload `cat data_lists/$level.txt | tr '\n' ' '`; done < data_lists/_packages.txt

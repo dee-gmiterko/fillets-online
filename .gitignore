@@ -3,6 +3,7 @@
 *.a
 *.Po
 /data/
+/web/data/
 /config.log
 /config.status
 /Makefile

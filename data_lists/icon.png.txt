@@ -1,0 +1,2 @@
+data/doc/html/img/icon.png
+data/images/icon.png
