@@ -1,0 +1,68 @@
+Fish Fillets - Next Generation
+http://fillets.sf.net
+
+
+Compile requirements
+====================
+
+Library SDL = Simple DirectMedia Layer (video, input, sound)
+- libSDL >= 1.2, www.libsdl.org
+
+Library SDL_mixer (multiple sounds)
+- libSDL_mixer >= 1.2.5, http://www.libsdl.org/projects/SDL_mixer/
+
+Library SDL_image (PNG support)
+- libSDL_image, http://www.libsdl.org/projects/SDL_image/
+
+Library SDL_ttf (TrueType UTF-8 fonts)
+- libSDL_ttf, http://www.libsdl.org/projects/SDL_ttf/
+
+Library LUA (script language, used for debug console, configuration, levels,...)
+- liblua50, www.lua.org
+- liblualib50
+
+
+How to run
+==========
+
+I. Compile
+----------
+
+- Compile the game:
+$ tar xzf fillets-ng.tar.gz
+$ cd fillets-ng
+$ ./configure
+$ make
+$ make install
+
+
+II. Install data
+----------------
+
+- Download fillets-ng-data from http://fillets.sourceforge.net/download.php
+- Extract fillets-ng-data.tar.gz to a $datadir.
+  default: /usr/local/share/games/fillets-ng/
+
+III. Run it
+-----------
+$ ./src/game/fillets systemdir=$datadir
+
+Controls
+========
+
+Up, down, left and right arrow keys control the current fish.
+Use space bar to switch between the fish.
+
+See also "How to Play" $datadir/doc/html/manual.html
+
+restart level - Backspace
+undo - -/+
+help - F1
+save game - F2
+load game - F3
+show/hide move counter - F5
+show/hide subtitles - F6
+game menu - F10
+fullscreen - F11
+faster game - Shift
+

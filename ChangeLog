@@ -1,0 +1,3274 @@
+2011-09-08 20:21  fidlej
+
+	* AUTHORS, NEWS, configure.in: Preparing fillets 1.0.1.
+
+2011-08-26 23:12  fidlej
+
+	* src/level/: Room.cpp, Rules.cpp, Rules.h: Fixed unmasking from
+	  old locations (thanks Radek and Mirek Olsak for finding the
+	  problem).
+
+2010-12-23 16:10  fidlej
+
+	* NEWS, configure.in: Preparing 1.0.0 release.
+
+2010-10-26 21:04  fidlej
+
+	* src/gengine/OptionAgent.cpp: Fixed a possible strlen(NULL) bug
+	  (thanks to SandySandy).
+
+2010-07-25 11:56  fidlej
+
+	* NEWS: Started to prepare new NEWS.
+
+2010-07-25 11:03  fidlej
+
+	* src/game/Application.cpp: Renamed leaning objects to partially
+	  supported objects.
+
+2010-07-25 00:08  fidlej
+
+	* src/level/: MarkMask.cpp, MarkMask.h, Rules.cpp, Rules.h:
+	  Implemented the exact strict logic.
+
+2010-07-24 13:10  fidlej
+
+	* src/game/: Application.cpp, GameAgent.cpp, GameAgent.h: Allowed
+	  to replay a level from the command line.
+
+2010-07-24 12:01  fidlej
+
+	* src/game/Application.cpp: Mentioned the used default.
+
+2010-07-23 22:47  fidlej
+
+	* src/: game/Application.cpp, level/Rules.cpp: Used the strict
+	  rules by default.
+
+2010-05-17 09:02  fidlej
+
+	* src/menu/WorldBranch.cpp: Allowed to use a newer worldfame.lua
+	  (thanks to Brian Raiter).
+
+2010-05-16 15:22  fidlej
+
+	* src/gengine/: Makefile.am, SDLMusicLooper.cpp, SDLMusicLooper.h,
+	  SDLSoundAgent.cpp, SDLSoundAgent.h: Allowed music looping without
+	  fading (by Brian Raiter).
+
+2010-02-25 21:38  fidlej
+
+	* NEWS, configure.in: Preparing 0.9.3.
+
+2010-02-25 21:13  fidlej
+
+	* src/effect/Font.cpp: Used the generic
+	  fribidi_charset_to_unicode().
+
+2009-12-02 18:28  asmbsd
+
+	* AUTHORS: Changed email.
+
+2009-10-16 22:56  fidlej
+
+	* NEWS: Fixed English grammar.
+
+2009-10-16 19:41  fidlej
+
+	* NEWS, configure.in: Preparing 0.9.2.
+
+2009-10-15 23:54  fidlej
+
+	* src/: option/MenuHelp.cpp, option/MenuOptions.cpp,
+	  widget/Slider.cpp: The SDL_SetAlpha with alpha 128 is broken in
+	  the Jaunty version of SDL.
+
+2009-10-15 22:14  fidlej
+
+	* src/game/Application.cpp: Allowed to flush output from init.lua.
+
+2009-10-13 20:41  fidlej
+
+	* src/level/: Cube.cpp, Cube.h, MarkMask.cpp, Rules.cpp: Made the
+	  outgoing object unmovable for other movements.
+
+2009-10-11 21:44  fidlej
+
+	* src/level/Rules.cpp: Used undo-safer code.
+
+2009-10-11 20:59  fidlej
+
+	* src/level/: Cube.h, MarkMask.cpp, MarkMask.h, Rules.cpp, Rules.h:
+	  Allowed an object to push other objects out when they should also
+	  go out (thanks Josef Peterka for spotting the bug).
+
+2009-07-03 20:41  fidlej
+
+	* NEWS, configure.in: Preparing 0.9.1.
+
+2009-07-03 11:07  fidlej
+
+	* src/: game/Application.cpp, gengine/SDLSoundAgent.cpp: Used
+	  sound_frequency=44100 by default.
+
+2009-06-14 19:09  fidlej
+
+	* configure.in: Prevented the SDL_main() when checking for smpeg.
+
+2009-06-12 13:38  fidlej
+
+	* src/: game/Application.cpp, gengine/ResImagePack.cpp,
+	  gengine/ResImagePack.h: Allowed to disable the image cache (use
+	  cache_images=false).
+
+2009-06-07 20:34  fidlej
+
+	* README-binary: Updated README.
+
+2009-06-07 20:33  fidlej
+
+	* NEWS, README, configure.in: Updated NEWS.
+
+2009-06-07 19:57  fidlej
+
+	* src/: level/Level.cpp, plan/StateManager.cpp: Stopped undoing
+	  when leaving the level state.
+
+2009-06-07 18:55  fidlej
+
+	* src/level/Level.cpp: Renamed forceSave to keepLast.
+
+2009-06-07 09:44  fidlej
+
+	* src/level/: Level.cpp: Used simpler code.
+
+2009-06-07 09:43  fidlej
+
+	* src/level/Level.cpp: Updated a comment.
+
+2009-06-07 08:22  fidlej
+
+	* src/level/LevelInput.cpp: Disabled F3 and undo when showing a
+	  demo.
+
+2009-06-07 08:15  fidlej
+
+	* src/level/Level.cpp: Killed talks when undoing.
+
+2009-06-07 08:08  fidlej
+
+	* src/level/Level.cpp: Prevent level finishing when undoing.
+
+2009-06-07 00:11  fidlej
+
+	* src/level/: Anim.cpp, Level.cpp, Level.h, LevelScript.cpp,
+	  Room.cpp, Room.h, StatusDisplay.cpp, game-script.cpp,
+	  game-script.h, level-script.cpp: Allowed to get the bg.
+
+2009-06-06 23:16  fidlej
+
+	* src/gengine/ResImagePack.cpp: Fixed grammar typo.
+
+2009-06-06 22:11  fidlej
+
+	* src/level/Anim.cpp: It is not needed to save special anims. They
+	  don't survive a round.
+
+2009-06-06 21:56  fidlej
+
+	* src/level/: Anim.cpp: Restored the full anim state.
+
+2009-06-06 21:47  fidlej
+
+	* src/level/: Anim.cpp, Anim.h, game-script.cpp: Restored the basic
+	  anim state.
+
+2009-06-06 21:02  fidlej
+
+	* src/level/: Anim.h, game-script.cpp: Restored model anim effects
+	  when undoing.
+
+2009-06-06 20:50  fidlej
+
+	* src/: effect/EffectDisintegrate.cpp, effect/EffectDisintegrate.h,
+	  effect/EffectInvisible.h, effect/EffectMirror.cpp,
+	  effect/EffectMirror.h, effect/EffectNone.cpp,
+	  effect/EffectNone.h, effect/EffectReverse.cpp,
+	  effect/EffectReverse.h, effect/EffectZx.cpp, effect/EffectZx.h,
+	  effect/ViewEffect.h, level/game-script.cpp: Named the visual
+	  effects.
+
+2009-06-06 20:17  fidlej
+
+	* src/: gengine/Random.cpp, level/Cube.cpp, level/Cube.h,
+	  level/Rules.h, level/game-script.cpp: Prevented shifted drawing
+	  of previously falling objects when undoing.
+
+2009-06-06 19:00  fidlej
+
+	* src/: gengine/InputAgent.cpp, gengine/InputHandler.h,
+	  level/Level.cpp, level/Level.h, level/LevelInput.cpp,
+	  level/LevelInput.h: Allowed to hold the undo key.
+
+2009-06-05 18:20  fidlej
+
+	* src/level/Level.cpp: Allowed to compare the current state with
+	  the saved undo.
+
+2009-06-05 09:34  fidlej
+
+	* src/level/Level.cpp: Moved the seenByScript condition into the
+	  script.
+
+2009-06-05 00:28  fidlej
+
+	* src/level/Level.cpp: Calling saveUndo() whenever possible.
+
+2009-06-04 22:01  fidlej
+
+	* src/level/: Level.cpp, Level.h, LevelInput.cpp, LevelInput.h,
+	  level-script.cpp: Prepared redo on key +.
+
+2009-05-31 15:57  fidlej
+
+	* src/level/: Controls.cpp, Level.cpp, Level.h, Room.h: Forced undo
+	  save after a dangerous move (thanks to Mirek Olsak).
+
+2009-05-30 19:06  fidlej
+
+	* configure.in: Moved SMPEG check under C++ tests.
+
+2009-05-23 22:13  fidlej
+
+	* TODO, src/menu/NodeDrawer.cpp, src/menu/Pedometer.cpp,
+	  src/menu/WorldMap.cpp: Updated TODO.
+
+2009-05-23 19:32  fidlej
+
+	* src/state/: MovieState.cpp, MovieState.h: Exited from the intro
+	  state at its end.
+
+2009-05-23 14:58  fidlej
+
+	* src/state/Makefile.am: Fixed a path in a Makefile.am.
+
+2009-05-23 14:35  fidlej
+
+	* configure.in, src/gengine/SDLSoundAgent.cpp,
+	  src/gengine/SDLSoundAgent.h, src/gengine/SoundAgent.cpp,
+	  src/gengine/SoundAgent.h, src/menu/WorldMap.cpp,
+	  src/plan/StateManager.cpp, src/state/Makefile.am,
+	  src/state/MovieState.cpp, src/state/MovieState.h,
+	  src/state/SDL_Movie.h: Used SMPEG to play the intro movie (thanks
+	  Mirek Olsak for hints).
+
+2009-05-22 18:38  fidlej
+
+	* src/level/Level.cpp: Incremented the delay for autorestart. The
+	  smrt-m-obe dialog needed a bit longer time.
+
+2009-05-22 18:24  fidlej
+
+	* src/: effect/ResColorPack.h, gengine/Makefile.am,
+	  gengine/ResCache.h, gengine/ResDialogPack.h,
+	  gengine/ResImagePack.cpp, gengine/ResImagePack.h,
+	  gengine/ResSoundPack.h, gengine/ResourcePack.h: Used caching of
+	  images.
+
+2009-05-11 21:05  fidlej
+
+	* src/SDL_gfx/: Makefile.am, SDL_rotozoom.c, SDL_rotozoom.h:
+	  Removed SDL_rotozoom until its needed.
+
+2009-04-09 14:23  asmbsd
+
+	* src/SDL_gfx/: Makefile.am, SDL_rotozoom.c, SDL_rotozoom.h: Add
+	  rotozoom functions from SDL-gfx.
+
+2009-04-09 11:34  asmbsd
+
+	* src/gengine/InputAgent.cpp: Release button on SDL_MOUSEBUTTONUP
+	  event.
+
+2009-01-14 13:46  fidlej
+
+	* src/gengine/: Path.cpp, Path.h, ResImagePack.cpp, ResImagePack.h:
+	  Moved localized path construction into Path.cpp.
+
+2009-01-14 10:51  fidlej
+
+	* src/gengine/Path.cpp: Reverted Path.cpp.
+
+2009-01-14 10:48  fidlej
+
+	* src/gengine/ResImagePack.cpp: Forgotten to commit __ format.
+
+2009-01-14 02:14  asmbsd
+
+	* src/gengine/: Path.cpp, ResImagePack.cpp: Fix img error.
+
+2009-01-13 23:00  fidlej
+
+	* src/gengine/ResImagePack.cpp: Fixed check for valid dot pos.
+
+2009-01-13 22:46  fidlej
+
+	* src/gengine/: ResImagePack.cpp, ResImagePack.h: Added search for
+	  localized images.
+
+2009-01-03 00:24  fidlej
+
+	* README-binary: Added README for binary downloads.
+
+2009-01-03 00:12  fidlej
+
+	* NEWS, configure.in: Updated NEWS.
+
+2009-01-01 13:19  fidlej
+
+	* src/gengine/VideoAgent.cpp: Added fallback to windowed mode when
+	  the required resolution is too big for fullscreen.
+
+2008-12-29 11:45  fidlej
+
+	* src/gengine/: OptionAgent.cpp, OptionParams.cpp, OptionParams.h:
+	  Accepted just valid options.
+
+2008-12-25 23:45  fidlej
+
+	* src/level/Level.cpp: Fixed checking for solvable room before undo
+	  saving.
+
+2008-12-25 22:18  fidlej
+
+	* src/level/Rules.cpp: Fixed checking for second dead fish.
+
+2008-12-25 20:06  fidlej
+
+	* src/level/: ShapeBuilder.cpp, ShapeBuilder.h: Based a shape color
+	  on the shape.
+
+2008-12-25 19:20  fidlej
+
+	* src/level/: ShapeBuilder.cpp, ShapeBuilder.h: Moved color
+	  selection into prepareColor().
+
+2008-12-25 18:54  fidlej
+
+	* src/: effect/SurfaceTool.cpp, effect/SurfaceTool.h,
+	  level/Anim.cpp, level/Anim.h, level/Makefile.am,
+	  level/ShapeBuilder.cpp, level/ShapeBuilder.h,
+	  level/game-script.cpp: Allowed to use empty image path to get a
+	  shape based image.
+
+2008-01-02 23:43  fidlej
+
+	* src/: gengine/OptionAgent.cpp, gengine/StringTool.cpp,
+	  level/Landslip.cpp: Fixed missing includes.
+
+2007-12-28 21:27  fidlej
+
+	* src/: gengine/SDLSoundAgent.cpp, gengine/SDLSoundAgent.h,
+	  level/Level.cpp: Prevented music restart on undo.
+
+2007-12-22 00:55  fidlej
+
+	* AUTHORS: Updated AUTHORS.
+
+2007-12-22 00:53  fidlej
+
+	* README: Updated README.
+
+2007-12-21 23:36  fidlej
+
+	* fillets.6: Updated man page.
+
+2007-12-21 23:26  fidlej
+
+	* NEWS, configure.in: Preparing release 0.8.
+
+2007-12-21 23:25  fidlej
+
+	* src/: level/Controls.cpp, plan/ConsoleInput.cpp: Replaced
+	  std::string.push_back() with append() (for BeOS).
+
+2007-12-15 17:25  fidlej
+
+	* NEWS: Fixed NEWS.
+
+2007-12-15 17:20  fidlej
+
+	* NEWS: Updated NEWS.
+
+2007-12-15 17:09  fidlej
+
+	* NEWS, configure.in: Prepared release-0_8_0-pre2.
+
+2007-12-15 14:31  fidlej
+
+	* src/level/: Controls.cpp, Controls.h, Level.cpp, StepCounter.h,
+	  Unit.cpp, Unit.h: Undo is saved before every move down.
+
+2007-12-09 19:41  fidlej
+
+	* src/level/: Level.cpp, Level.h: Simplified undo saving.
+
+2007-12-09 18:26  fidlej
+
+	* src/level/Level.cpp: Fixed force undo save.
+
+2007-12-09 17:59  fidlej
+
+	* src/level/Level.cpp: Fixed saving of state to the correct moves.
+
+2007-12-01 17:39  fidlej
+
+	* src/level/: Cube.cpp, game-script.cpp: Optimized undo saving for
+	  normal models.
+
+2007-12-01 16:31  fidlej
+
+	* src/level/: Controls.cpp, Controls.h, Level.cpp, Rules.h,
+	  StepCounter.h, Unit.cpp: Saved only pushing and every 10th undo.
+
+2007-10-21 13:49  fidlej
+
+	* NEWS, configure.in: Preparing 0.8.0-pre1 release.
+
+2007-09-28 23:29  fidlej
+
+	* src/level/Rules.cpp: Fixed support for nowall moving stars.
+
+2007-09-28 22:55  fidlej
+
+	* src/level/: Cube.cpp, Cube.h, LevelScript.cpp, game-script.cpp,
+	  game-script.h: Added support to save extra parameters.
+
+2007-09-28 20:55  fidlej
+
+	* src/level/: Controls.cpp, Controls.h, Level.cpp, Unit.cpp,
+	  Unit.h: Last moving fish is activated after undo.
+
+2007-09-28 20:01  fidlej
+
+	* src/level/: Level.cpp, Rules.cpp: Fixed undo when a fish is out.
+
+2007-09-28 18:08  fidlej
+
+	* src/level/: Controls.h, Cube.h, Field.cpp, Field.h, Level.cpp,
+	  Level.h, LevelInput.cpp, LevelInput.h, LevelLoading.h,
+	  LevelScript.cpp, MarkMask.cpp, MarkMask.h, Room.cpp, Room.h,
+	  Rules.cpp, Rules.h, game-script.cpp, game-script.h: Provided undo
+	  on key minus.
+
+2007-09-28 18:06  fidlej
+
+	* src/level/LevelCountDown.cpp: Fixed English.
+
+2007-09-28 18:03  fidlej
+
+	* src/effect/EffectMirror.cpp: Fixed English.
+
+2007-06-30 17:31  fidlej
+
+	* src/plan/Title.cpp: Proper UTF-8 length calculation.
+
+2007-06-30 17:04  fidlej
+
+	* src/gengine/: Dialog.cpp, StringTool.cpp, StringTool.h: Fixed
+	  dialog duration (thanks to Gregory Bonik and Egmont Koblinger).
+
+2007-06-30 16:50  fidlej
+
+	* NEWS: Used sentences without dots.
+
+2006-12-20 23:18  fidlej
+
+	* configure.in: More informative have_x11.
+
+2006-12-17 23:02  fidlej
+
+	* NEWS: Updated news by Swedish translation.
+
+2006-12-17 22:25  fidlej
+
+	* AUTHORS: Added new translators.
+
+2006-12-10 23:09  fidlej
+
+	* configure.in: First PKG_CHECK_MODULES has to be unconditioned.
+
+2006-12-10 19:30  fidlej
+
+	* src/level/: Level.cpp, Rules.cpp, game-script.cpp: Fixed typos in
+	  comments.
+
+2006-12-10 19:29  fidlej
+
+	* NEWS, configure.in: Preparing 0.7.4 release.
+
+2006-09-20 22:52  fidlej
+
+	* Makefile.cvs, configure.in, src/game/Makefile.am,
+	  src/gengine/Makefile.am: Applied patch from Mike Frysinger: -
+	  autogen-makefile: copy files, don't symlink them - check-for-X:
+	  if you use X funcs, you need to link against them -
+	  no-local-paths: the compiler should be handling local paths ...
+	  forcing   these flags can easily break cross-compilers -
+	  use-lua-pkg-config: newer lua's install a lua.pc so as a fall
+	  back, lets   use that if we can't find lua ourselves -
+	  custom-datadir: allow people to override the location of
+	  datafiles by	 specifying --datadir to the configure script
+
+2006-02-12 13:15  fidlej
+
+	* src/: SDL_gfx/SDL_gfxPrimitives.c, SDL_gfx/SDL_gfxPrimitives.h,
+	  game/Application.cpp, gengine/OptionAgent.cpp,
+	  gengine/ScriptAgent.cpp, gengine/ScriptAgent.h: Debug console now
+	  could use file_include().
+
+2006-01-05 23:31  fidlej
+
+	* src/effect/Font.cpp: ISO C++ does not allow to create array with
+	  run-time dependent length.
+
+2005-10-04 20:10  fidlej
+
+	* NEWS, configure.in: Prepared bug fix release 0.7.3
+
+2005-10-04 20:09  fidlej
+
+	* src/menu/NodeDrawer.cpp: Image n_selected.png is not needed any
+	  more.
+
+2005-10-03 21:43  fidlej
+
+	* NEWS: Updated NEWS.
+
+2005-10-02 22:50  fidlej
+
+	* NEWS, configure.in: Version 0.7.2 with RTL support.
+
+2005-10-02 21:51  fidlej
+
+	* configure.in, src/effect/Font.cpp: LibLua should be statically
+	  linked.
+
+2005-09-28 22:21  fidlej
+
+	* configure.in, src/effect/Font.cpp, src/effect/Font.h,
+	  src/effect/Makefile.am, src/game/Makefile.am,
+	  src/level/Makefile.am, src/menu/Makefile.am,
+	  src/option/Makefile.am, src/plan/Makefile.am,
+	  src/state/Makefile.am, src/widget/Makefile.am: Library FriBidi is
+	  used for RTL texts.
+
+2005-09-03 10:01  fidlej
+
+	* TODO: Beos is already working.
+
+2005-08-21 23:23  fidlej
+
+	* src/: option/SelectLang.cpp, widget/WiBox.cpp: Added language
+	  tooltips over the flags.
+
+2005-08-21 00:32  fidlej
+
+	* src/: game/Application.cpp, gengine/V2.h, menu/LevelNode.cpp,
+	  menu/LevelNode.h, menu/NodeDrawer.cpp, menu/NodeDrawer.h,
+	  menu/WorldInput.cpp, menu/WorldInput.h, menu/WorldMap.cpp,
+	  menu/WorldMap.h, plan/Title.cpp: Unsolved nodes can be selected
+	  by pressing TAB.
+
+2005-07-16 16:21  fidlej
+
+	* src/: SDL_gfx/.cvsignore, game/.cvsignore: Added .cvsignore.
+
+2005-07-16 16:15  fidlej
+
+	* NEWS: Preparing 0.7.1 release.
+
+2005-07-14 23:23  fidlej
+
+	* configure.in: Fixed configure.in for mingw32 (thanks Toth
+	  Marton).
+
+2005-07-06 20:50  fidlej
+
+	* src/: gengine/ScriptState.cpp, menu/WorldMap.cpp: Fixed usage of
+	  garbage.
+
+2005-07-02 20:49  fidlej
+
+	* AUTHORS: Added Cesar and Astrid to the Credits.
+
+2005-06-28 22:50  fidlej
+
+	* src/menu/WorldMap.cpp: Fixed Cancel button for Ending level.
+
+2005-06-28 22:00  fidlej
+
+	* src/: effect/Font.cpp, effect/Outline.cpp,
+	  option/MenuOptions.cpp: Fixed default speech=cs.
+
+2005-04-18 17:08  fidlej
+
+	* AUTHORS, fillets.6: Added Przemek Bojczuk as Polish translator.
+
+2005-04-17 14:23  fidlej
+
+	* README: Fillets-data contains czech dialogs as well.
+
+2005-04-17 13:44  fidlej
+
+	* NEWS, TODO, configure.in: Preparation for 0.7 release.
+
+2005-03-13 09:32  fidlej
+
+	* src/gengine/Environ.cpp: Added warning about bad numeric value.
+
+2005-03-13 03:28  fidlej
+
+	* src/: game/Application.cpp, gengine/Environ.cpp,
+	  gengine/Environ.h, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, gengine/ResSoundPack.cpp,
+	  gengine/VideoAgent.cpp, level/Room.cpp, level/StepDecor.cpp,
+	  plan/StateInput.cpp, plan/SubTitleAgent.cpp: User can enter 1/0,
+	  true/false, on/off, yes/no as boolean value.
+
+2005-03-12 12:20  fidlej
+
+	* src/option/: MenuOptions.cpp, SelectLang.h: Added new icons to
+	  the menu options.
+
+2005-03-12 10:27  fidlej
+
+	* AUTHORS: Added Simone to the AUTHORS.
+
+2005-01-29 11:05  fidlej
+
+	* src/gengine/: OptionParams.h, ResDialogPack.cpp: Some cleaning.
+
+2005-01-19 05:14  fidlej
+
+	* src/: gengine/ResDialogPack.cpp, plan/dialog-script.cpp,
+	  state/DemoMode.cpp: Improved doc comments.
+
+2004-12-07 19:20  fidlej
+
+	* src/: effect/Picture.cpp, effect/Picture.h,
+	  gengine/BaseListener.cpp, gengine/BaseListener.h,
+	  gengine/Environ.cpp, gengine/Environ.h, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, menu/Pedometer.cpp, menu/Pedometer.h,
+	  option/MenuOptions.cpp, plan/GameState.cpp: Texts below pedometer
+	  are refreshed too.
+
+2004-12-07 08:03  fidlej
+
+	* src/: option/MenuOptions.cpp, option/MenuOptions.h,
+	  plan/GameState.cpp, plan/GameState.h: Options menu is refreshed
+	  when lang is changed.
+
+2004-11-30 04:20  fidlej
+
+	* src/: level/LevelStatus.cpp, level/LevelStatus.h,
+	  menu/SolverDrawer.cpp: Added state solver_equals -- as good as
+	  the best.
+
+2004-11-19 00:18  fidlej
+
+	* src/level/: Controls.cpp, Controls.h, Level.cpp,
+	  LevelCountDown.cpp, Room.cpp, Room.h, StepCounter.h,
+	  StepDecor.cpp, Unit.cpp, Unit.h: Step counter color depends on
+	  power of active fish.
+
+2004-11-18 23:40  fidlej
+
+	* src/: game/GameAgent.cpp, gengine/VideoAgent.cpp,
+	  gengine/VideoAgent.h: Fullscreen should toggle straight off.
+
+2004-11-15 00:36  fidlej
+
+	* Makefile.cvs: Fixed aclocal search directory.
+
+2004-11-11 23:53  fidlej
+
+	* src/option/MenuOptions.cpp: Added comment about speech menu.
+
+2004-11-11 23:52  fidlej
+
+	* src/: gengine/Dialog.h, gengine/DialogStack.cpp,
+	  gengine/ResDialogPack.cpp, gengine/ResDialogPack.h,
+	  option/MenuOptions.cpp, option/MenuOptions.h,
+	  option/SelectLang.cpp, option/SelectLang.h: Added menu to choose
+	  'speech'.
+
+2004-11-11 23:03  mrpaja
+
+	* NEWS: NEWS update
+
+2004-11-11 22:29  fidlej
+
+	* NEWS: 0.7.0 is not realeased yet.
+
+2004-10-19 19:55  fidlej
+
+	* src/: effect/Font.cpp, menu/LevelNode.cpp: SDL_RLEACCEL is not
+	  much usefull in rendered text.
+
+2004-10-19 19:55  fidlej
+
+	* src/level/Controls.cpp: Fixed case of level with no fish.
+
+2004-10-15 23:20  mrpaja
+
+	* TODO: support for theora
+
+2004-10-15 23:12  mrpaja
+
+	* NEWS: 0.6.1 release
+
+2004-10-15 16:41  fidlej
+
+	* configure.in: Version 0.6.2
+
+2004-10-14 21:30  fidlej
+
+	* TODO: Fillets are working on MacOS X, see
+	  http://www.toast442.org/fillets
+
+2004-10-14 21:17  fidlej
+
+	* src/game/: Makefile.am, fillets.rc: Specified icon as preload.
+
+2004-10-14 17:59  fidlej
+
+	* TODO, configure.in, src/game/Makefile.am, src/game/fillets.ico,
+	  src/game/fillets.rc: Added win32 icon resource.
+
+2004-10-12 02:53  fidlej
+
+	* configure.in: Enhanced X11 checking.
+
+2004-10-11 22:44  mrpaja
+
+	* NEWS: Mac OS X support
+
+2004-10-11 20:59  fidlej
+
+	* src/gengine/VideoAgent.cpp: Removed unused code.
+
+2004-10-11 19:43  fidlej
+
+	* src/gengine/SysVideo.cpp: X11 can be available on MacOSX but not
+	  used.
+
+2004-10-11 02:03  mrpaja
+
+	* NEWS: formatting fix
+
+2004-10-10 01:05  fidlej
+
+	* configure.in, src/game/main.cpp, src/gengine/Name.cpp,
+	  src/gengine/VideoAgent.h: Preparing fillets-ng 0.6.0
+
+2004-10-09 02:53  fidlej
+
+	* Makefile.am: Removed doxygen from Makefile targets.
+
+2004-10-08 21:33  fidlej
+
+	* configure.in: Preparing 0.6.0rc3.
+
+2004-10-08 21:30  fidlej
+
+	* src/: gengine/Makefile.am, gengine/MessagerAgent.cpp,
+	  gengine/NewPtr.cpp, gengine/NewPtr.h, gengine/Object.h,
+	  level/Cube.h, level/LevelScript.cpp, level/Unit.h: std::auto_ptr
+	  is used instead of NewPtr.
+
+2004-10-03 23:03  fidlej
+
+	* src/level/Controls.cpp: Fixed fish switching.
+
+2004-10-03 21:48  fidlej
+
+	* configure.in: Fixed bug in lua checking.
+
+2004-10-03 18:26  mrpaja
+
+	* NEWS: NEWS update
+
+2004-10-03 01:08  fidlej
+
+	* configure.in: Preparing RC2.
+
+2004-10-03 00:12  fidlej
+
+	* configure.in: Less pedantic configure.in
+
+2004-10-02 23:08  mrpaja
+
+	* TODO: TODO update
+
+2004-10-02 22:42  mrpaja
+
+	* fillets.6: man page update
+
+2004-10-02 22:36  mrpaja
+
+	* TODO: TODO update
+
+2004-10-02 21:56  fidlej
+
+	* TODO: Updated TODO.
+
+2004-10-02 21:52  mrpaja
+
+	* NEWS: NEWS update
+
+2004-10-02 19:58  fidlej
+
+	* src/menu/WorldMap.cpp: Added text message to devel Intro.
+
+2004-09-29 14:20  fidlej
+
+	* src/gengine/VideoAgent.cpp: Fixed invisible cursor on FullScreen.
+
+2004-09-29 14:11  fidlej
+
+	* src/gengine/VideoAgent.cpp: Fixed invisible cursor on FullScreen.
+
+2004-09-28 04:43  fidlej
+
+	* configure.in, src/plan/Title.h: More strict ISO C++.
+
+2004-09-28 04:15  fidlej
+
+	* src/gengine/VideoAgent.cpp: Nicer code for getVideoFlags.
+
+2004-09-27 21:08  fidlej
+
+	* README, TODO: Preparing release-0_6_0rc1.
+
+2004-09-27 20:32  fidlej
+
+	* src/: effect/EffectZx.cpp, effect/EffectZx.h,
+	  gengine/OptionParams.cpp, gengine/OptionParams.h: Fixed iso c++
+	  errors.
+
+2004-09-27 20:14  fidlej
+
+	* configure.in, src/gengine/SysVideo.cpp: SDL_syswm.h is not
+	  included when not needed.
+
+2004-09-27 18:34  fidlej
+
+	* src/gengine/SysVideo.cpp: Removed debug message.
+
+2004-09-27 18:13  fidlej
+
+	* src/gengine/: OptionAgent.cpp, SysVideo.cpp: Fixed empty $HOME.
+
+2004-09-27 16:38  fidlej
+
+	* src/gengine/SysVideo.cpp: UTF-8 window title for WIN32.
+
+2004-09-27 12:27  fidlej
+
+	* src/SDL_gfx/: Makefile.am, SDL_gfxPrimitives.h: Removed
+	  SDL_gfxPrimitives_font.
+
+2004-09-27 03:17  fidlej
+
+	* src/gengine/: InputAgent.cpp, InputHandler.cpp, InputHandler.h,
+	  InputProvider.h: Fixed state of mouse buttons.
+
+2004-09-27 02:42  fidlej
+
+	* src/gengine/: InputAgent.cpp, InputAgent.h, VideoAgent.cpp: Mouse
+	  cursor is placed in the middle of new window.
+
+2004-09-27 01:59  fidlej
+
+	* src/: effect/Font.cpp, gengine/FsPath.cpp,
+	  gengine/InputHandler.cpp, gengine/InputHandler.h,
+	  gengine/MouseStroke.h, gengine/Path.cpp, level/LevelInput.cpp,
+	  level/LevelInput.h, option/HelpInput.cpp, option/HelpInput.h,
+	  plan/StateInput.cpp, plan/StateInput.h: Fixed uninitialized mouse
+	  buttons.
+
+2004-09-27 00:34  fidlej
+
+	* src/: SDL_gfx/SDL_gfxPrimitives.c, SDL_gfx/SDL_gfxPrimitives.h,
+	  SDL_gfx/SDL_gfxPrimitives_font.h, gengine/FsPath.cpp: Fixed
+	  SDL_gfx for mingw.
+
+2004-09-26 14:42  fidlej
+
+	* src/option/MenuOptions.cpp: Smaller font for menu statusbar.
+
+2004-09-26 14:37  fidlej
+
+	* src/: effect/Font.cpp, menu/SolverDrawer.cpp,
+	  option/MenuHelp.cpp, option/MenuHelp.h, widget/Makefile.am,
+	  widget/WiPara.cpp, widget/WiPara.h: Implemented multi line
+	  paragraph.
+
+2004-09-25 23:35  fidlej
+
+	* src/: level/FinderAlg.cpp, menu/WorldMap.cpp: Fixed usage of
+	  'and' operator.
+
+2004-09-25 22:34  fidlej
+
+	* src/gengine/DialogStack.h: Fixed missing include.
+
+2004-09-25 18:24  fidlej
+
+	* src/: gengine/Dialog.cpp, gengine/Dialog.h,
+	  gengine/DialogStack.cpp, gengine/InputHandler.h,
+	  gengine/PlannedDialog.cpp, gengine/PlannedDialog.h,
+	  gengine/ResDialogPack.cpp, gengine/ResDialogPack.h,
+	  gengine/ResourcePack.h, level/Controls.cpp, menu/WorldMap.cpp,
+	  option/MenuOptions.cpp, option/MenuOptions.h, state/DemoInput.h,
+	  widget/IWidget.cpp, widget/IWidget.h, widget/Labels.cpp,
+	  widget/Labels.h, widget/Makefile.am, widget/WiBox.cpp,
+	  widget/WiBox.h, widget/WiStatusBar.cpp, widget/WiStatusBar.h:
+	  Implemented menu tooltips.
+
+2004-09-25 15:20  fidlej
+
+	* src/: level/LevelStatus.cpp, menu/PedoInput.cpp,
+	  menu/PedoInput.h, menu/WorldInput.h: Help is only enabled in
+	  level.
+
+2004-09-25 14:34  fidlej
+
+	* configure.in, fillets.6: Updated man page.
+
+2004-09-25 04:09  fidlej
+
+	* src/level/Level.cpp: unwanted mouse press will not move a fish
+
+2004-09-25 03:15  fidlej
+
+	* src/: level/LevelInput.cpp, level/LevelInput.h, menu/Labels.cpp,
+	  menu/Labels.h, menu/Makefile.am, option/HelpInput.cpp,
+	  option/HelpInput.h, option/Makefile.am, option/MenuHelp.cpp,
+	  option/MenuHelp.h, plan/Makefile.am, plan/StateInput.cpp,
+	  plan/StateInput.h, state/DemoInput.cpp, state/GameInput.cpp,
+	  state/GameInput.h, widget/Labels.cpp, widget/Labels.h,
+	  widget/Makefile.am: Implemented real help screen. Use F1 and
+	  translate script/labels.lua.
+
+2004-09-25 01:00  fidlej
+
+	* src/: game/Application.cpp, game/GameAgent.cpp,
+	  menu/WorldBranch.cpp, menu/WorldBranch.h, menu/WorldMap.cpp,
+	  menu/WorldMap.h, menu/worldmap-script.cpp,
+	  menu/worldmap-script.h: Only 'worldmap' parameter is needed for
+	  extra levels.
+
+2004-09-24 22:57  fidlej
+
+	* src/level/: LevelScript.cpp, Room.cpp, Room.h, game-script.cpp,
+	  game-script.h: Implemented setFastFalling() for script.
+
+2004-09-24 20:33  fidlej
+
+	* src/menu/SolverDrawer.cpp: Reformated solution info.
+
+2004-09-24 19:26  fidlej
+
+	* src/: menu/SolverDrawer.cpp, widget/VBox.cpp, widget/VBox.h:
+	  Solver info is centered.
+
+2004-09-24 19:08  fidlej
+
+	* src/: effect/Font.cpp, effect/Font.h, gengine/ResourcePack.h,
+	  level/LevelStatus.cpp, level/LevelStatus.h, menu/Labels.cpp,
+	  menu/Labels.h, menu/Makefile.am, menu/Pedometer.cpp,
+	  menu/SolverDrawer.cpp, menu/SolverDrawer.h, menu/WorldMap.cpp,
+	  plan/SubTitleAgent.cpp, plan/SubTitleAgent.h, widget/Makefile.am,
+	  widget/WiButton.h, widget/WiLabel.cpp, widget/WiLabel.h,
+	  widget/WiPicture.h: Info about the best solver is under
+	  pedometer.
+
+2004-09-24 16:09  fidlej
+
+	* src/: gengine/Makefile.am, gengine/ScriptState.cpp,
+	  gengine/ScriptState.h, gengine/Scripter.cpp, gengine/Scripter.h,
+	  gengine/def-script.cpp, gengine/def-script.h,
+	  gengine/options-script.cpp, level/LevelStatus.cpp,
+	  level/LevelStatus.h, level/MouseControl.cpp, level/Room.cpp,
+	  level/game-script.cpp, level/level-script.cpp,
+	  menu/LevelNode.cpp, menu/LevelNode.h, menu/WorldBranch.cpp,
+	  menu/WorldBranch.h, menu/WorldMap.cpp, menu/WorldMap.h,
+	  menu/worldmap-script.cpp, option/SelectLang.cpp,
+	  option/SelectLang.h, plan/Planner.cpp, plan/Planner.h,
+	  plan/dialog-script.cpp, plan/dialog-script.h,
+	  state/demo-script.cpp: Wrapped script leader as Scripter.
+
+2004-09-14 16:48  fidlej
+
+	* src/level/: LevelScript.cpp, Rules.cpp, Rules.h, game-script.cpp,
+	  game-script.h: New script function model_getTouchDir(). 'touched'
+	  state was removed.
+
+2004-09-14 15:51  fidlej
+
+	* src/level/: Field.cpp, Rules.cpp, Rules.h: Implemented state
+	  'touched' for touched but not pushed objects.
+
+2004-09-12 13:51  fidlej
+
+	* src/menu/WorldMap.cpp: Ending is only shown after a final level.
+
+2004-09-10 22:27  fidlej
+
+	* src/: gengine/DialogStack.h, level/CountAdvisor.h,
+	  level/Level.cpp, level/Level.h, level/LevelCountDown.cpp,
+	  level/LevelCountDown.h, level/Makefile.am: Shorted countdown when
+	  the is no sound.
+
+2004-09-10 21:13  fidlej
+
+	* src/: level/Level.cpp, level/Level.h, level/LevelCountDown.cpp,
+	  level/LevelCountDown.h, level/LevelStatus.cpp,
+	  level/LevelStatus.h, level/Makefile.am, level/RoomAccess.cpp,
+	  level/RoomAccess.h, level/level-script.cpp, menu/Pedometer.cpp:
+	  Reworked level countdown.
+
+2004-09-10 16:51  fidlej
+
+	* src/: gengine/InputAgent.cpp, gengine/InputAgent.h,
+	  gengine/InputHandler.cpp, gengine/InputHandler.h,
+	  gengine/InputProvider.h, gengine/Makefile.am, level/Controls.cpp,
+	  level/Controls.h, level/Field.h, level/FinderAlg.cpp,
+	  level/FinderAlg.h, level/FinderField.cpp, level/FinderField.h,
+	  level/FinderPlace.h, level/Makefile.am, level/MarkMask.cpp,
+	  level/MarkMask.h, level/MouseControl.cpp, level/MouseControl.h,
+	  level/Room.cpp, level/Room.h, level/Rules.cpp, level/Rules.h,
+	  level/Unit.cpp, level/Unit.h: Implemented mouse controls. Press
+	  left or right mouse button.
+
+2004-09-10 16:45  fidlej
+
+	* src/menu/WorldMap.cpp: Fixed case when ending is not present.
+
+2004-09-10 00:59  fidlej
+
+	* src/: gengine/V2.h, level/Controls.cpp, level/Controls.h,
+	  level/Level.cpp, level/Level.h, level/LevelInput.cpp,
+	  level/LevelInput.h, level/Room.cpp, level/Room.h, level/Unit.cpp,
+	  level/Unit.h, level/View.cpp, level/View.h: Mouse click can
+	  select fish.
+
+2004-09-09 23:50  fidlej
+
+	* src/game/GameAgent.cpp: Implemented playtime storing.
+
+2004-09-09 23:01  fidlej
+
+	* src/menu/: LevelNode.cpp, LevelNode.h, WorldBranch.cpp,
+	  WorldBranch.h, WorldMap.cpp, WorldMap.h: Ending node is started
+	  when all levels were solved.
+
+2004-09-09 21:42  fidlej
+
+	* src/: gengine/Makefile.am, gengine/NewPtr.cpp, gengine/NewPtr.h,
+	  gengine/Object.h, level/Cube.h, level/LevelScript.cpp,
+	  level/Unit.h, menu/Pedometer.cpp, plan/StateManager.cpp: Fixed
+	  shutdown.
+
+2004-09-08 23:10  fidlej
+
+	* src/: gengine/DialogStack.cpp, gengine/DialogStack.h,
+	  plan/Planner.cpp, plan/dialog-script.cpp, plan/dialog-script.h:
+	  Fixed waiting for dialog end.
+
+2004-09-08 15:33  fidlej
+
+	* src/state/DemoMode.cpp: Subtitles are scrolling non-stop on final
+	  poster.
+
+2004-09-08 01:02  fidlej
+
+	* src/gengine/: options-script.cpp, options-script.h: Added missing
+	  files.
+
+2004-09-08 01:01  fidlej
+
+	* src/: gengine/Makefile.am, gengine/ScriptAgent.cpp,
+	  plan/Planner.cpp: Exported options_getParam() function to the
+	  script.
+
+2004-09-07 13:45  fidlej
+
+	* src/: game/Application.cpp, game/main.cpp,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/DialogStack.cpp, gengine/DialogStack.h,
+	  gengine/Makefile.am, gengine/Name.cpp, gengine/Name.h,
+	  gengine/ScriptState.cpp, level/Cube.cpp, level/Cube.h,
+	  level/Level.cpp, level/Level.h, level/LevelScript.cpp,
+	  level/LevelStatus.cpp, level/LevelStatus.h, level/Room.cpp,
+	  level/Room.h, level/Rules.cpp, menu/Pedometer.cpp,
+	  plan/GameState.cpp, plan/GameState.h, plan/Planner.cpp,
+	  plan/Planner.h, plan/StateManager.cpp, plan/SubTitleAgent.cpp,
+	  plan/SubTitleAgent.h, plan/Title.cpp, plan/dialog-script.cpp,
+	  state/DemoMode.cpp, state/DemoMode.h, state/PosterState.cpp,
+	  state/PosterState.h: Implemented scrolling subtitles on final
+	  poster. Reworked dialogAgent.
+
+2004-09-06 13:56  fidlej
+
+	* src/gengine/: def-script.cpp, def-script.h: Reduced number of
+	  warning messages.
+
+2004-09-06 13:43  fidlej
+
+	* src/gengine/: ScriptState.cpp, ScriptState.h, def-script.cpp,
+	  def-script.h: Implemented stack traceback.
+
+2004-09-06 01:44  fidlej
+
+	* src/level/Level.cpp: Exported CODENAME to the script.
+
+2004-09-04 01:15  fidlej
+
+	* src/: gengine/InputAgent.cpp, gengine/ResourcePack.h,
+	  level/Room.cpp: Fixed fullscreen without mouse focus.
+
+2004-09-02 21:13  fidlej
+
+	* src/level/: LevelScript.cpp, game-script.cpp, game-script.h:
+	  Implemented script functions model_countAnims() and
+	  model_getDir().
+
+2004-09-02 18:52  fidlej
+
+	* src/game/GameAgent.cpp: Fixed typo worlmap/worldmap.
+
+2004-09-02 18:36  fidlej
+
+	* src/effect/: PixelIterator.cpp, PixelIterator.h: Enhanced pixel
+	  iterator.
+
+2004-09-02 18:22  fidlej
+
+	* src/: effect/WavyPicture.cpp, effect/WavyPicture.h,
+	  game/GameAgent.cpp, game/main.cpp, level/Level.cpp,
+	  level/Level.h, level/LevelStatus.cpp, level/LevelStatus.h,
+	  level/Room.cpp, level/Room.h, level/game-script.cpp,
+	  menu/Pedometer.cpp, menu/WorldMap.cpp, plan/StateManager.cpp:
+	  Implemented way to play external levels. Use
+	  worlmap=level/worldmap.lua worlddesc=level/worlddesc.lua
+
+2004-08-30 18:18  fidlej
+
+	* src/effect/: PixelIterator.h, PixelTool.cpp: Fixed missing file.
+
+2004-08-30 13:34  fidlej
+
+	* src/effect/: PixelIterator.cpp, PixelTool.cpp, PixelTool.h:
+	  Removed duplicite code.
+
+2004-08-29 22:52  fidlej
+
+	* src/effect/: EffectZx.cpp, Makefile.am, PixelIterator.cpp,
+	  PixelTool.cpp: Implemented PixelIterator for speed.
+
+2004-08-29 21:29  fidlej
+
+	* configure.in: libm is not on BeOS.
+
+2004-08-29 17:50  fidlej
+
+	* src/effect/WavyPicture.cpp: Fixed wavy background.
+
+2004-08-29 02:08  fidlej
+
+	* src/: gengine/def-script.cpp, gengine/def-script.h,
+	  level/Anim.cpp, level/Anim.h, level/LevelScript.cpp,
+	  level/game-script.cpp, level/game-script.h: Removed ugly
+	  model_addDuplexAnim() function from script interface.
+
+2004-08-28 21:31  fidlej
+
+	* src/: level/Dir.h, level/game-script.cpp, level/game-script.h,
+	  state/PosterScroller.cpp, state/PosterScroller.h: Enhanced
+	  scrolling poster used for credits.
+
+2004-08-28 12:13  fidlej
+
+	* src/level/Level.cpp: Added few documentation notes.
+
+2004-08-28 02:38  fidlej
+
+	* src/level/: Controls.cpp, Controls.h, LevelScript.cpp, Room.cpp,
+	  Room.h, game-script.cpp, game-script.h: Reduced anim phases for
+	  ex-fishes.
+
+2004-08-27 22:41  fidlej
+
+	* src/level/Dir.cpp: Fixed missing assert.h
+
+2004-08-27 20:53  fidlej
+
+	* src/level/: Anim.cpp, Controls.cpp, Controls.h, Cube.cpp, Cube.h,
+	  Dir.cpp, Dir.h, Landslip.cpp, Makefile.am, MarkMask.cpp,
+	  MarkMask.h, ModelFactory.cpp, ModelFactory.h, OnStack.h,
+	  Room.cpp, Rules.cpp, Rules.h, Unit.cpp, View.cpp: Implemented
+	  output_DIR for level windoze.
+
+2004-08-25 21:24  fidlej
+
+	* src/level/: Level.cpp, LevelLoading.cpp, LevelLoading.h: Fixed
+	  loading + restart problem.
+
+2004-08-20 23:50  fidlej
+
+	* src/level/: Level.cpp, Level.h, LevelLoading.h, View.cpp: Loading
+	  is paused when menu appears.
+
+2004-08-20 23:36  fidlej
+
+	* src/effect/: EffectZx.cpp, PixelTool.cpp, PixelTool.h,
+	  WavyPicture.cpp: Optimized Zx for speed.
+
+2004-08-20 22:38  fidlej
+
+	* src/level/: Level.cpp, Level.h, LevelLoading.cpp, LevelLoading.h,
+	  LevelScript.cpp, LevelScript.h, Makefile.am, RoomAccess.cpp,
+	  RoomAccess.h: Refactorized level loading code.
+
+2004-08-20 20:56  fidlej
+
+	* configure.in: Removed C specific warning flags.
+
+2004-08-19 17:32  fidlej
+
+	* src/level/Rules.cpp: Fixed fall propagation, falling object on
+	  fish is not on wall.
+
+2004-08-19 16:52  fidlej
+
+	* src/: gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/InputAgent.cpp, gengine/KeyStroke.cpp,
+	  gengine/StringTool.cpp, gengine/StringTool.h, gengine/V2.h,
+	  level/Anim.cpp, level/Anim.h, level/Controls.cpp,
+	  level/Controls.h, level/Level.cpp, level/MarkMask.cpp,
+	  level/MarkMask.h, level/ModelFactory.cpp, level/ModelFactory.h,
+	  level/Rules.cpp, level/Rules.h, level/Shape.cpp, level/Shape.h,
+	  level/Unit.cpp, level/Unit.h: Added support for more that three
+	  fishes. Fixed fallout at corners.
+
+2004-08-17 22:57  fidlej
+
+	* src/: gengine/ResDialogPack.cpp, gengine/ResDialogPack.h,
+	  level/LevelStatus.cpp, level/LevelStatus.h: Fixed string
+	  handling.
+
+2004-08-17 22:25  fidlej
+
+	* src/: gengine/ResDialogPack.cpp, gengine/ResDialogPack.h,
+	  level/Room.cpp, level/Room.h: Nicer code.
+
+2004-08-17 22:07  fidlej
+
+	* src/level/: Controls.cpp, Controls.h, Cube.h, Room.cpp, Room.h,
+	  Rules.cpp, Rules.h: Optimized checking for dead fish.
+
+2004-08-17 21:17  fidlej
+
+	* src/level/: Landslip.cpp, Landslip.h, Level.cpp, Makefile.am,
+	  ModelList.cpp, ModelList.h, Room.cpp, Rules.cpp, Rules.h:
+	  Optimized stack falling.
+
+2004-08-17 00:44  fidlej
+
+	* src/level/game-script.cpp: Fixed model_equals for border.
+
+2004-08-16 15:01  fidlej
+
+	* src/level/: Level.h, LevelScript.cpp, level-script.cpp,
+	  level-script.h: Added script function level_isSolved().
+
+2004-08-16 11:26  fidlej
+
+	* src/: gengine/Dialog.cpp, gengine/Dialog.h,
+	  gengine/DialogAgent.cpp, gengine/StringTool.cpp,
+	  gengine/StringTool.h, gengine/TimerAgent.cpp,
+	  gengine/TimerAgent.h, plan/FishDialog.cpp, plan/FishDialog.h:
+	  Added support for formated subtitles.
+
+2004-08-16 10:33  fidlej
+
+	* src/gengine/SysVideo.cpp: Fixed utf-8 -> WM_Name conversion
+	  (thanks to Eric Estievenart).
+
+2004-08-14 12:36  fidlej
+
+	* src/level/Anim.cpp: Fixed modulo 0 when anim phase overflows.
+
+2004-08-14 00:45  fidlej
+
+	* src/: effect/Picture.cpp, effect/Picture.h, level/Level.cpp,
+	  level/Level.h, level/LevelScript.cpp, level/LevelScript.h,
+	  level/Room.cpp, level/Room.h, level/game-script.cpp,
+	  level/game-script.h, level/level-script.cpp,
+	  level/level-script.h: Bg picture can be changed. Renamed
+	  level_setRoomWaves to game_setRoomWaves.
+
+2004-08-14 00:21  fidlej
+
+	* src/gengine/DialogAgent.cpp: Fixed segfail when dialog is
+	  missing.
+
+2004-08-11 22:24  fidlej
+
+	* Makefile.am, README, main.aap, src/Makefile.am, src/main.aap:
+	  Removed obsolete main.aap for AAP.
+
+2004-08-11 11:41  fidlej
+
+	* configure.in: Preparing new release 0.5.0
+
+2004-08-11 11:08  fidlej
+
+	* src/state/PosterScroller.cpp: Speed up credits a bit.
+
+2004-08-11 10:54  fidlej
+
+	* README, TODO, fillets.6: Updated README, TODO, man.
+
+2004-08-11 10:32  fidlej
+
+	* src/gengine/: KeyStroke.cpp, KeyStroke.h, VideoAgent.h: Shift is
+	  ignored for keystrokes.
+
+2004-08-10 23:34  fidlej
+
+	* src/gengine/PlannedDialog.cpp: Fixed fish talking anim.
+
+2004-08-10 20:48  fidlej
+
+	* src/: level/LevelInput.cpp, level/LevelInput.h,
+	  plan/SubTitleAgent.cpp: Implemented temporary help on F1.
+
+2004-08-10 20:28  mrpaja
+
+	* fillets.6: man page update
+
+2004-08-10 19:35  fidlej
+
+	* src/: effect/SurfaceTool.cpp, gengine/PlannedDialog.cpp,
+	  level/Controls.cpp: Updated api docs.
+
+2004-08-10 19:32  fidlej
+
+	* src/: gengine/OptionParams.cpp, widget/Slider.cpp,
+	  widget/Slider.h: Renamed local variables not to shadow globals on
+	  FreeBSD.
+
+2004-08-10 12:16  fidlej
+
+	* src/: gengine/OptionAgent.cpp, gengine/SDLSoundAgent.cpp,
+	  level/Cube.cpp, option/MenuOptions.cpp, option/MenuOptions.h:
+	  Revised TODO.
+
+2004-08-10 12:07  fidlej
+
+	* src/: menu/WorldMap.cpp, state/Makefile.am,
+	  state/PosterScroller.cpp, state/PosterScroller.h,
+	  state/PosterState.cpp, state/PosterState.h: Implemented credits.
+
+2004-08-10 11:07  fidlej
+
+	* src/: gengine/BaseListener.cpp, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, gengine/VideoAgent.cpp, level/Level.cpp,
+	  menu/WorldMap.cpp: User and system config is reread when userdir
+	  or systemdir changes.
+
+2004-08-09 11:40  fidlej
+
+	* src/level/: Controls.cpp, Controls.h, Level.cpp, Level.h,
+	  Room.cpp, Room.h, Unit.cpp, Unit.h: Level is only solved when
+	  nothing is falling.
+
+2004-08-08 19:33  fidlej
+
+	* src/level/Room.cpp: Background is not shifted.
+
+2004-08-08 18:50  fidlej
+
+	* src/: effect/Picture.h, gengine/DialogAgent.cpp,
+	  gengine/DialogAgent.h, gengine/PlannedDialog.cpp,
+	  gengine/PlannedDialog.h, level/LevelScript.cpp, level/Room.cpp,
+	  level/Room.h, level/View.cpp, level/View.h,
+	  level/game-script.cpp, level/game-script.h: Special handling for
+	  cycling dialogs. Implemented screen shift.
+
+2004-08-08 15:26  fidlej
+
+	* src/level/: StatusDisplay.cpp, StatusDisplay.h: Added missing
+	  files.
+
+2004-08-08 14:44  fidlej
+
+	* src/: gengine/Drawable.h, level/Level.cpp, level/Level.h,
+	  level/Makefile.am, level/Room.h, level/StepDecor.h,
+	  menu/Pedometer.cpp, menu/WorldMap.cpp, option/MenuOptions.cpp,
+	  plan/GameState.cpp, plan/GameState.h, plan/KeyConsole.cpp,
+	  state/DemoMode.cpp, state/PosterState.cpp: Game saved status is
+	  displayed.
+
+2004-08-08 11:54  fidlej
+
+	* src/: game/Application.cpp, level/LevelInput.h, menu/PedoInput.h,
+	  menu/WorldInput.h, option/MenuOptions.cpp, option/MenuOptions.h,
+	  plan/ConsoleInput.h, plan/StateInput.cpp, plan/StateInput.h,
+	  state/DemoInput.h, state/GameInput.cpp, state/GameInput.h: Fixed
+	  '-' as unicode char bug. Added button to turn subtitles on/off.
+
+2004-08-08 10:23  fidlej
+
+	* src/: game/Application.cpp, gengine/OptionAgent.cpp,
+	  level/LevelInput.cpp, level/LevelInput.h, plan/StateInput.cpp,
+	  plan/StateInput.h, plan/SubTitleAgent.cpp, plan/Title.cpp,
+	  state/DemoInput.h, state/GameInput.cpp, state/GameInput.h: F6
+	  will disable subtitles.
+
+2004-08-08 00:32  mrpaja
+
+	* fillets.6: man page update
+
+2004-08-08 00:26  fidlej
+
+	* src/gengine/SysVideo.cpp: SDL_syswm.h should not be included when
+	  X11 is not found.
+
+2004-08-07 23:47  fidlej
+
+	* src/: game/Application.cpp, gengine/Dialog.cpp, gengine/Dialog.h,
+	  gengine/DialogAgent.cpp, gengine/PlannedDialog.cpp,
+	  gengine/PlannedDialog.h, gengine/ResDialogPack.cpp,
+	  gengine/ResDialogPack.h, plan/FishDialog.cpp, plan/FishDialog.h:
+	  Implemented 'speech' config var to set different lang for speech.
+
+2004-08-07 20:30  fidlej
+
+	* src/menu/WorldMap.cpp: Implemented 'intro under construction'.
+
+2004-08-07 19:32  fidlej
+
+	* src/: game/Application.cpp, game/Application.h,
+	  gengine/Makefile.am, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, gengine/OptionParams.cpp,
+	  gengine/OptionParams.h: Enhanced help formating.
+
+2004-08-07 17:18  fidlej
+
+	* src/gengine/OptionAgent.cpp: Changed help format.
+
+2004-08-07 16:54  fidlej
+
+	* src/gengine/: Environ.cpp, OptionAgent.cpp: Changed help format.
+
+2004-08-07 16:38  fidlej
+
+	* src/: game/main.cpp, gengine/BaseAgent.cpp, gengine/Environ.cpp,
+	  gengine/Environ.h, gengine/HelpException.h, gengine/Makefile.am,
+	  gengine/Name.h, gengine/OptionAgent.cpp, gengine/OptionAgent.h:
+	  Added --help and --version.
+
+2004-08-07 16:00  mrpaja
+
+	* fillets.6: man page update
+
+2004-08-07 14:24  fidlej
+
+	* src/: level/LevelScript.cpp, level/Rules.cpp, level/Rules.h,
+	  level/game-script.cpp, level/game-script.h, menu/LevelNode.cpp:
+	  Fixed level depth. Added model_isAtBorder() script function.
+
+2004-08-07 11:40  fidlej
+
+	* src/level/: Field.h, MarkMask.cpp, MarkMask.h, Rules.cpp,
+	  Rules.h: Object can go out of room only when there is no resist.
+
+2004-08-07 02:04  fidlej
+
+	* src/option/: LangFlag.cpp, LangFlag.h: LangFlag is not need any
+	  more.
+
+2004-08-07 02:03  fidlej
+
+	* src/menu/: LuaTable.cpp, LuaTable.h, Makefile.am: LuaTable is not
+	  need any more.
+
+2004-08-07 01:59  fidlej
+
+	* src/: game/Application.cpp, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, gengine/SoundAgent.cpp: Specified default
+	  values for sound.
+
+2004-08-07 01:00  fidlej
+
+	* src/level/Level.cpp: Changed info about no-save.
+
+2004-08-07 00:20  fidlej
+
+	* src/: game/GameAgent.cpp, gengine/Path.h, gengine/def-script.h,
+	  level/Level.cpp, level/LevelStatus.cpp, level/LevelStatus.h,
+	  menu/LevelNode.cpp, menu/LevelNode.h, menu/Makefile.am,
+	  menu/Pedometer.cpp, menu/WorldBranch.cpp, menu/WorldBranch.h,
+	  menu/WorldMap.cpp, menu/WorldMap.h, menu/WorldWay.cpp,
+	  menu/WorldWay.h, plan/GameState.h, state/DemoInput.cpp,
+	  state/DemoInput.h, state/Makefile.am, state/PosterState.cpp,
+	  state/PosterState.h: Reworked worldmap parsing. Added support for
+	  poster in final levels.
+
+2004-08-06 19:44  fidlej
+
+	* src/: gengine/MouseStroke.cpp, gengine/MouseStroke.h,
+	  level/Goal.cpp, level/Goal.h, level/game-script.cpp,
+	  menu/WorldInput.cpp: Fixed mouse button diagnostic. Added 'alive'
+	  goal.
+
+2004-08-06 15:48  fidlej
+
+	* src/: level/Controls.cpp, level/LevelScript.cpp,
+	  level/LevelScript.h, level/Room.cpp, level/Room.h,
+	  plan/Planner.cpp, plan/Planner.h: Fixed busy+interrupt bug.
+
+2004-08-06 14:54  fidlej
+
+	* src/option/: MenuOptions.cpp, MenuOptions.h: Implemented
+	  background tone.
+
+2004-08-06 14:23  fidlej
+
+	* src/level/: Room.cpp, Rules.cpp: Fixed fish switching when one is
+	  out of room.
+
+2004-08-06 14:01  fidlej
+
+	* src/option/MenuOptions.cpp: Removed magical constant.
+
+2004-08-06 13:26  fidlej
+
+	* src/: level/Level.cpp, level/Level.h, level/level-script.cpp,
+	  state/DemoMode.cpp, state/DemoMode.h: Fixed DemoMode +
+	  MenuOptions redraw.
+
+2004-08-06 12:38  fidlej
+
+	* src/: gengine/InputAgent.cpp, gengine/InputAgent.h,
+	  gengine/InputHandler.h, gengine/InputProvider.h,
+	  gengine/Makefile.am, gengine/MouseStroke.h, level/Controls.cpp,
+	  level/Controls.h, level/Level.cpp, level/Room.cpp, level/Room.h,
+	  level/Unit.cpp, level/Unit.h, menu/Pedometer.cpp,
+	  menu/WorldMap.cpp, plan/GameState.cpp, plan/GameState.h: Wrapped
+	  input for game states.
+
+2004-08-06 02:50  fidlej
+
+	* src/option/MenuOptions.cpp: Moved back button closer to menu.
+
+2004-08-06 02:10  fidlej
+
+	* src/level/Level.cpp: Updated countdown to reflect border shout.
+
+2004-08-06 00:43  fidlej
+
+	* src/level/: Level.cpp, MarkMask.cpp, MarkMask.h, Room.cpp,
+	  Room.h, Rules.cpp, Rules.h: Implemented shout at room border.
+
+2004-08-03 23:46  fidlej
+
+	* src/: effect/Makefile.am, effect/Outline.cpp,
+	  effect/SurfaceTool.cpp, effect/SurfaceTool.h, widget/Slider.cpp:
+	  Implemented alphaFill.
+
+2004-08-03 20:17  fidlej
+
+	* src/state/demo-script.cpp: Added missing include.
+
+2004-08-03 19:56  fidlej
+
+	* src/plan/GameState.cpp: Remove few debug messages.
+
+2004-08-03 19:53  fidlej
+
+	* src/: gengine/BaseListener.h, option/MenuOptions.cpp,
+	  option/RadioBox.cpp, option/RadioBox.h, option/SelectLang.h,
+	  plan/GameState.cpp, plan/GameState.h, widget/Makefile.am,
+	  widget/Slider.h, widget/WiButton.cpp, widget/WiButton.h,
+	  widget/WiContainer.cpp, widget/WiContainer.h: Added back button
+	  from menu.
+
+2004-08-03 17:55  fidlej
+
+	* src/: effect/Font.cpp, effect/Font.h, effect/LayeredPicture.cpp,
+	  effect/Picture.cpp, effect/Picture.h, game/Application.cpp,
+	  gengine/DialogAgent.h, gengine/Environ.cpp, gengine/Environ.h,
+	  gengine/ResDialogPack.h, gengine/ResImagePack.cpp,
+	  gengine/ResImagePack.h, gengine/ResSoundPack.cpp,
+	  gengine/ResSoundPack.h, gengine/SDLSoundAgent.cpp,
+	  gengine/ScriptAgent.cpp, gengine/ScriptAgent.h,
+	  gengine/ScriptState.cpp, gengine/ScriptState.h,
+	  gengine/SoundAgent.h, gengine/VideoAgent.cpp,
+	  gengine/VideoAgent.h, level/Anim.h, level/Field.cpp,
+	  level/Field.h, level/LevelScript.cpp, level/LevelScript.h,
+	  level/LevelStatus.cpp, level/ModelFactory.cpp,
+	  level/ModelFactory.h, level/Room.h, menu/NodeDrawer.cpp,
+	  menu/NodeDrawer.h, menu/WorldMap.cpp, menu/WorldMap.h,
+	  menu/WorldWay.cpp, menu/WorldWay.h, option/SelectLang.cpp,
+	  plan/Planner.h, plan/SubTitleAgent.cpp, plan/SubTitleAgent.h:
+	  Changed not necessary includes to forward delearations.
+
+2004-08-03 17:40  fidlej
+
+	* src/gengine/: Makefile.am, RectBinder.cpp, RectBinder.h: Removed
+	  unused RectBinder.
+
+2004-08-03 17:03  fidlej
+
+	* src/: option/Makefile.am, option/RadioBox.cpp, option/RadioBox.h,
+	  option/SelectLang.cpp, option/SelectLang.h, widget/WiBox.h,
+	  widget/WiPicture.h: Rewritten SelectLang widget.
+
+2004-08-01 15:27  fidlej
+
+	* configure.in, src/Makefile.am, src/game/KeyConsole.cpp,
+	  src/game/KeyConsole.h, src/game/Makefile.am,
+	  src/gengine/IKeyConsole.h, src/gengine/InputAgent.cpp,
+	  src/gengine/KeyStroke.cpp, src/gengine/KeyStroke.h,
+	  src/gengine/Makefile.am, src/level/LevelInput.cpp,
+	  src/level/LevelInput.h, src/level/Makefile.am,
+	  src/menu/Makefile.am, src/menu/PedoInput.cpp,
+	  src/menu/PedoInput.h, src/menu/WorldInput.cpp,
+	  src/menu/WorldInput.h, src/option/OptionsInput.cpp,
+	  src/option/OptionsInput.h, src/plan/ConsoleInput.cpp,
+	  src/plan/ConsoleInput.h, src/plan/DemoInput.cpp,
+	  src/plan/DemoInput.h, src/plan/DemoMode.cpp, src/plan/DemoMode.h,
+	  src/plan/GameState.h, src/plan/KeyConsole.cpp,
+	  src/plan/KeyConsole.h, src/plan/Makefile.am,
+	  src/plan/StateInput.cpp, src/plan/StateInput.h,
+	  src/plan/demo-script.cpp, src/plan/demo-script.h,
+	  src/state/.cvsignore, src/state/DemoInput.cpp,
+	  src/state/DemoInput.h, src/state/DemoMode.cpp,
+	  src/state/DemoMode.h, src/state/GameInput.cpp,
+	  src/state/GameInput.h, src/state/Makefile.am,
+	  src/state/demo-script.cpp, src/state/demo-script.h,
+	  src/widget/Slider.cpp: Debug console is back. Use F10 for options
+	  menu.
+
+2004-08-01 13:09  fidlej
+
+	* src/: effect/LayeredPicture.cpp, effect/LayeredPicture.h,
+	  effect/Picture.cpp, effect/Picture.h, effect/WavyPicture.cpp,
+	  effect/WavyPicture.h, game/GameAgent.cpp, game/GameAgent.h,
+	  game/KeyConsole.cpp, game/KeyConsole.h, gengine/Drawable.h,
+	  gengine/IDrawer.cpp, gengine/IDrawer.h, gengine/IKeyConsole.h,
+	  gengine/InputAgent.cpp, gengine/InputAgent.h,
+	  gengine/Makefile.am, gengine/MultiDrawer.cpp,
+	  gengine/MultiDrawer.h, gengine/SysVideo.cpp, gengine/SysVideo.h,
+	  gengine/VideoAgent.cpp, gengine/VideoAgent.h, level/Level.cpp,
+	  level/Level.h, level/Room.cpp, level/Room.h, level/View.cpp,
+	  level/View.h, menu/Pedometer.cpp, menu/Pedometer.h,
+	  menu/WorldMap.cpp, menu/WorldMap.h, option/MenuOptions.cpp,
+	  option/MenuOptions.h, plan/DemoMode.cpp, plan/DemoMode.h,
+	  plan/GameState.cpp, plan/GameState.h, plan/StateManager.cpp,
+	  plan/StateManager.h, plan/SubTitleAgent.cpp,
+	  plan/SubTitleAgent.h, plan/Title.cpp, plan/Title.h,
+	  widget/IWidget.h, widget/Makefile.am, widget/WidgetContainer.cpp,
+	  widget/WidgetContainer.h: Reworked list of drawers.
+
+2004-07-31 16:31  fidlej
+
+	* src/: game/GameAgent.cpp, gengine/VideoAgent.cpp,
+	  level/Level.cpp, level/Level.h, level/LevelStatus.h,
+	  menu/Pedometer.cpp, menu/WorldMap.cpp, plan/GameState.cpp,
+	  plan/GameState.h, plan/StateManager.cpp, plan/StateManager.h:
+	  Enhanced StateManager for better support states running on
+	  background. Drawers list still needs change.
+
+2004-07-30 22:17  fidlej
+
+	* src/gengine/SDLSoundAgent.cpp: Changed setSoundVolume function to
+	  set volume for already running sounds too.
+
+2004-07-30 22:04  fidlej
+
+	* src/: level/DescFinder.h, level/Level.cpp, level/Level.h,
+	  level/LevelInput.cpp, level/LevelInput.h, level/Makefile.am,
+	  menu/WorldMap.cpp, menu/WorldMap.h, option/MenuOptions.cpp,
+	  option/MenuOptions.h, option/OptionsInput.cpp,
+	  option/SelectLang.cpp, option/SelectLang.h, plan/GameState.cpp,
+	  plan/GameState.h, plan/StateManager.cpp, plan/StateManager.h:
+	  Added foreground menu to levels.
+
+2004-07-30 12:23  fidlej
+
+	* src/widget/: Slider.cpp, Slider.h: Fixed slider width.
+
+2004-07-30 04:20  fidlej
+
+	* src/: game/GameAgent.cpp, gengine/BaseListener.cpp,
+	  gengine/BaseListener.h, gengine/DummySoundAgent.h,
+	  gengine/SDLSoundAgent.cpp, gengine/SDLSoundAgent.h,
+	  gengine/SoundAgent.cpp, gengine/SoundAgent.h,
+	  gengine/VideoAgent.cpp, gengine/VideoAgent.h,
+	  option/MenuOptions.cpp: Volume control is working.
+
+2004-07-30 03:44  fidlej
+
+	* configure.in, src/Makefile.am, src/game/Makefile.am,
+	  src/gengine/MouseStroke.cpp, src/gengine/MouseStroke.h,
+	  src/level/Makefile.am, src/menu/LangFlag.cpp,
+	  src/menu/LangFlag.h, src/menu/Makefile.am,
+	  src/menu/MenuOptions.cpp, src/menu/MenuOptions.h,
+	  src/menu/OptionsInput.cpp, src/menu/OptionsInput.h,
+	  src/menu/PedoInput.cpp, src/menu/SelectLang.cpp,
+	  src/menu/SelectLang.h, src/menu/WorldInput.cpp,
+	  src/option/.cvsignore, src/option/LangFlag.cpp,
+	  src/option/LangFlag.h, src/option/Makefile.am,
+	  src/option/MenuOptions.cpp, src/option/MenuOptions.h,
+	  src/option/OptionsInput.cpp, src/option/OptionsInput.h,
+	  src/option/SelectLang.cpp, src/option/SelectLang.h,
+	  src/widget/.cvsignore, src/widget/HBox.cpp, src/widget/HBox.h,
+	  src/widget/IWidget.cpp, src/widget/IWidget.h,
+	  src/widget/Makefile.am, src/widget/Slider.cpp,
+	  src/widget/Slider.h, src/widget/VBox.cpp, src/widget/VBox.h,
+	  src/widget/WiBox.cpp, src/widget/WiBox.h,
+	  src/widget/WiPicture.cpp, src/widget/WiPicture.h,
+	  src/widget/WiSpace.h, src/widget/WidgetContainer.cpp,
+	  src/widget/WidgetContainer.h: Implemented sliders for volume
+	  control.
+
+2004-07-29 13:10  fidlej
+
+	* src/: gengine/InputAgent.cpp, gengine/InputAgent.h,
+	  gengine/RectBinder.cpp, gengine/RectBinder.h, menu/LangFlag.cpp,
+	  menu/LangFlag.h, menu/Makefile.am, menu/MenuOptions.cpp,
+	  menu/MenuOptions.h, menu/OptionsInput.cpp, menu/OptionsInput.h,
+	  menu/SelectLang.cpp, menu/SelectLang.h, menu/WorldMap.cpp:
+	  Implemented lang selection menu.
+
+2004-07-27 18:47  fidlej
+
+	* src/gengine/Name.cpp: Moved timer delay after video output and
+	  before user input.
+
+2004-07-27 11:50  fidlej
+
+	* src/: effect/Picture.h, game/GameAgent.cpp,
+	  gengine/InputAgent.cpp, gengine/InputAgent.h, menu/Pedometer.cpp,
+	  menu/WorldMap.cpp, menu/WorldMap.h: Implemeted button selection
+	  at worldmap.
+
+2004-07-26 23:42  fidlej
+
+	* src/effect/EffectDisintegrate.cpp: Fixed skeletons
+	  disintegration.
+
+2004-07-26 23:31  fidlej
+
+	* src/: effect/EffectDisintegrate.cpp, effect/EffectDisintegrate.h,
+	  effect/EffectInvisible.h, effect/EffectMirror.cpp,
+	  effect/EffectMirror.h, effect/EffectNone.cpp,
+	  effect/EffectNone.h, effect/EffectReverse.cpp,
+	  effect/EffectReverse.h, effect/EffectZx.cpp, effect/EffectZx.h,
+	  effect/Makefile.am, effect/ViewEffect.cpp, effect/ViewEffect.h,
+	  effect/WavyPicture.cpp, level/Anim.cpp, level/Anim.h,
+	  level/Cube.cpp, level/game-script.cpp: Implemented 'zx' view
+	  effect. More OO code for effects.
+
+2004-07-26 19:51  fidlej
+
+	* src/gengine/SDLSoundAgent.cpp: Incremented number of sound
+	  channels.
+
+2004-07-26 19:49  fidlej
+
+	* src/level/Anim.cpp: Added warning about anim phase over-flow.
+
+2004-07-25 13:47  mrpaja
+
+	* AUTHORS: added Ronny Standtke to AUTHORS
+
+2004-07-24 13:38  fidlej
+
+	* configure.in: Replaced AS_HELP_STRING with raw text. Removed too
+	  new macros.
+
+2004-07-23 19:27  fidlej
+
+	* configure.in: Autoupdated configure.in.
+
+2004-07-23 11:49  fidlej
+
+	* README: Updated README - libboost_filesystem is optional.
+
+2004-07-23 02:12  fidlej
+
+	* configure.in: Enhanced X11/Xutil.h checking.
+
+2004-07-23 01:37  fidlej
+
+	* src/level/: Level.cpp, PhaseLocker.cpp, PhaseLocker.h: Fixed
+	  locked phases on start.
+
+2004-07-23 01:29  fidlej
+
+	* src/gengine/KeyStroke.h: Generalized STROKE_IGNORE.
+
+2004-07-23 00:47  fidlej
+
+	* src/gengine/VideoAgent.cpp: unlock_func() call XSync too.
+
+2004-07-23 00:37  fidlej
+
+	* configure.in, src/gengine/VideoAgent.cpp,
+	  src/gengine/VideoAgent.h: Implemented setCaption for UTF-8
+	  strings.
+
+2004-07-19 23:21  fidlej
+
+	* src/gengine/Dialog.cpp: Readded warning about missing dialog
+	  sound.
+
+2004-07-19 23:19  fidlej
+
+	* src/level/Level.cpp: Added info message about saved game.
+
+2004-07-19 23:15  fidlej
+
+	* src/gengine/Path.cpp: Fixed creation of new files.
+
+2004-07-19 23:09  fidlej
+
+	* src/gengine/Path.cpp: Fixed persistent store of multiple options.
+
+2004-07-16 03:05  fidlej
+
+	* src/gengine/FsPath.cpp: Fixed empty paths.
+
+2004-07-16 02:30  fidlej
+
+	* configure.in: Added explanation to configure.in
+
+2004-07-16 02:27  fidlej
+
+	* Makefile.am, configure.in, src/gengine/FsPath.cpp,
+	  src/gengine/FsPath.h, src/gengine/FsPath_boost.cpp,
+	  src/gengine/Makefile.am, src/gengine/OptionAgent.cpp,
+	  src/gengine/Path.cpp, src/gengine/Path.h,
+	  src/gengine/PathException.h, src/level/Room.cpp: Boost library is
+	  not need for POSIX systems.
+
+2004-07-15 21:41  fidlej
+
+	* src/gengine/ResDialogPack.cpp: Fixed lang 'de_' confusion.
+
+2004-07-15 13:52  fidlej
+
+	* src/gengine/: OptionAgent.cpp, ResDialogPack.cpp,
+	  ResDialogPack.h: Locale territory codes are supported.
+
+2004-07-14 23:02  fidlej
+
+	* src/level/Room.cpp: Old dialogs are released.
+
+2004-07-14 21:24  fidlej
+
+	* README, configure.in: Described lang=cs in README.
+
+2004-07-14 20:58  mrpaja
+
+	* fillets.6: updated man page
+
+2004-07-14 01:17  fidlej
+
+	* src/gengine/Dialog.cpp: Missing 'en' sound effect are reported.
+
+2004-07-12 16:40  fidlej
+
+	* src/gengine/VideoAgent.cpp: Removed SDL_HWACCEL from video flags.
+
+2004-07-12 02:12  mrpaja
+
+	* fillets.6: added fillets man page
+
+2004-07-11 17:00  fidlej
+
+	* src/: effect/Font.cpp, effect/Font.h, game/Application.cpp:
+	  Removed TTF_WasInit to support SDL_ttf <= 2.0.6
+
+2004-07-10 23:43  fidlej
+
+	* src/level/: Level.cpp, Level.h, LevelScript.cpp,
+	  level-script.cpp, level-script.h: Implemented level_isNewRound().
+
+2004-07-10 20:19  fidlej
+
+	* src/gengine/Dialog.cpp: Turned off warning when dialog sound is
+	  not found.
+
+2004-07-08 09:39  fidlej
+
+	* src/: effect/Font.cpp, gengine/BaseAgent.cpp,
+	  level/StepDecor.cpp: Fixed memory leak in StepDecor.
+
+2004-07-08 01:58  fidlej
+
+	* AUTHORS: Updated authors info.
+
+2004-07-08 00:58  fidlej
+
+	* README: Updated authors info.
+
+2004-07-08 00:26  fidlej
+
+	* src/gengine/OptionAgent.cpp: Fixed peristent options.
+
+2004-07-08 00:26  fidlej
+
+	* README: Removed x.y. version numbers.
+
+2004-07-07 23:07  mrpaja
+
+	* README: README update
+
+2004-07-07 21:35  fidlej
+
+	* Makefile.am, configure.in: Preparing for 0.4.0.
+
+2004-07-07 20:36  mrpaja
+
+	* TODO: updated TODO
+
+2004-07-07 20:27  fidlej
+
+	* README: Updated README.
+
+2004-07-07 20:17  mrpaja
+
+	* README: controls update
+
+2004-07-07 19:50  fidlej
+
+	* src/: effect/Color.h, effect/Font.h, effect/Outline.cpp,
+	  effect/Outline.h, game/GameAgent.h, game/main.cpp,
+	  gengine/IDrawer.h, gengine/KeyStroke.h, gengine/MouseStroke.cpp,
+	  gengine/Name.h, gengine/ScriptAgent.h, gengine/VideoAgent.h,
+	  level/Controls.h, level/Decor.h, level/Field.h, level/Level.cpp,
+	  level/LevelInput.cpp, level/LevelInput.h, level/LevelScript.cpp,
+	  level/Makefile.am, level/MarkMask.h, level/ModelFactory.h,
+	  level/Room.cpp, level/Room.h, level/RopeDecor.cpp, level/Shape.h,
+	  level/StepCounter.h, level/StepDecor.cpp, level/StepDecor.h,
+	  level/View.cpp, plan/GameState.cpp, plan/GameState.h: Press F5 to
+	  show number of steps.
+
+2004-07-06 20:30  fidlej
+
+	* src/: game/Application.cpp, gengine/Dialog.cpp,
+	  gengine/Environ.cpp, gengine/SDLSoundAgent.cpp, level/Anim.cpp,
+	  level/Anim.h, level/Cube.cpp, level/Cube.h,
+	  level/LevelScript.cpp, level/View.cpp, level/game-script.cpp,
+	  level/game-script.h: Implemented view shift.
+
+2004-07-06 16:53  fidlej
+
+	* src/level/game-script.cpp: lua_checkboolean is not need.
+
+2004-07-06 13:01  fidlej
+
+	* src/level/RopeDecor.cpp: Changed rope color to steel color.
+
+2004-07-06 12:42  fidlej
+
+	* src/level/RopeDecor.h: Added missing file.
+
+2004-07-05 22:15  fidlej
+
+	* src/: level/Cube.h, level/Decor.h, level/LevelScript.cpp,
+	  level/Makefile.am, level/ModelList.cpp, level/Room.cpp,
+	  level/Room.h, level/RopeDecor.cpp, level/View.cpp, level/View.h,
+	  level/game-script.cpp, level/game-script.h, menu/Makefile.am,
+	  plan/Makefile.am: Implemented rope decoration.
+
+2004-07-05 20:04  fidlej
+
+	* src/: gengine/Makefile.am, menu/WorldMap.cpp,
+	  plan/StateManager.cpp, plan/StateManager.h: No level is selected
+	  after return to worldmap.
+
+2004-07-05 12:33  fidlej
+
+	* src/: effect/LayeredPicture.cpp, effect/Outline.cpp,
+	  level/Cube.h: Renamed few variables not to shadow global
+	  declaration on FreeBSD.
+
+2004-07-05 01:49  fidlej
+
+	* src/: gengine/Environ.cpp, gengine/VideoAgent.cpp,
+	  gengine/VideoAgent.h, level/Level.cpp, menu/WorldMap.cpp: New
+	  window is only opened when resolution changed.
+
+2004-07-04 22:15  fidlej
+
+	* src/gengine/ResSoundPack.cpp: Default is sound=1.
+
+2004-07-04 20:49  fidlej
+
+	* src/gengine/Makefile.am: Using @PACKAGE@ instead of fillets-ng.
+
+2004-07-04 20:20  fidlej
+
+	* src/: game/Application.cpp, game/Application.h,
+	  gengine/Makefile.am, gengine/OptionAgent.cpp: Changed datadir to
+	  $datadir/games/fillets-ng.
+
+2004-07-04 18:38  fidlej
+
+	* configure.in, src/gengine/Makefile.am: SYSTEM_DATA_DIR can be
+	  specified by --datadir.
+
+2004-07-04 14:58  fidlej
+
+	* src/level/LevelStatus.h: Fixed stoped music in worldmap.
+
+2004-07-04 13:44  fidlej
+
+	* src/: level/Level.cpp, level/Level.h, level/LevelInput.cpp,
+	  level/LevelStatus.cpp, level/LevelStatus.h, menu/Pedometer.cpp,
+	  menu/WorldMap.cpp: Improved switching from pedometer back to
+	  menu. Saving during replay is forbidden.
+
+2004-07-04 04:30  fidlej
+
+	* src/plan/DemoMode.cpp: Improved bg at briefcase demo.
+
+2004-07-04 04:18  fidlej
+
+	* src/level/: Level.cpp, Level.h, Room.cpp: Fixed updateScript
+	  during replay.
+
+2004-07-04 03:40  fidlej
+
+	* src/menu/: Pedometer.cpp, Pedometer.h: Implemented rotating
+	  numbers in pedometer.
+
+2004-07-04 03:16  fidlej
+
+	* src/: effect/Font.cpp, effect/LayeredPicture.cpp,
+	  effect/LayeredPicture.h, effect/Makefile.am, effect/Outline.cpp,
+	  effect/Picture.cpp, effect/Picture.h, effect/PixelTool.cpp,
+	  effect/PixelTool.h, effect/ViewEffect.cpp, effect/ViewEffect.h,
+	  effect/WavyPicture.cpp, game/GameAgent.cpp,
+	  gengine/MouseStroke.cpp, gengine/MouseStroke.h,
+	  gengine/TimerAgent.cpp, gengine/TimerAgent.h, gengine/V2.h,
+	  level/Level.cpp, level/Level.h, level/LevelStatus.cpp,
+	  level/LevelStatus.h, level/MarkMask.cpp, level/Rules.cpp,
+	  level/View.cpp, menu/LevelNode.h, menu/Makefile.am,
+	  menu/PedoInput.cpp, menu/PedoInput.h, menu/Pedometer.cpp,
+	  menu/Pedometer.h, menu/WorldInput.cpp, menu/WorldMap.cpp,
+	  menu/WorldWay.cpp, plan/StateManager.cpp, plan/StateManager.h:
+	  Implemented pedometer.
+
+2004-07-03 19:30  fidlej
+
+	* src/: gengine/ScriptState.h, level/Cube.cpp, level/Cube.h,
+	  level/Field.cpp, level/Level.cpp, level/LevelStatus.cpp,
+	  level/LevelStatus.h, level/Makefile.am, level/ModelFactory.cpp,
+	  level/ModelFactory.h: Moved saveSolution() to LeveStatus. Moved
+	  createBorder() to ModelFactory.
+
+2004-07-03 16:15  fidlej
+
+	* src/: gengine/OptionAgent.cpp, level/game-script.cpp: Fixed
+	  problem with decimal point and locales in Lua.
+
+2004-07-02 23:57  fidlej
+
+	* src/level/: Anim.h, Cube.cpp, Cube.h, Makefile.am, OnCondition.h,
+	  OnStack.h, OnStrongPad.h, OnWall.h, Rules.cpp, Rules.h: Fixed
+	  checkDeadMove for special shapes.
+
+2004-07-02 18:42  fidlej
+
+	* src/level/level-script.cpp: Fixed wavy amplitude.
+
+2004-07-02 17:59  fidlej
+
+	* src/: effect/.cvsignore, level/.cvsignore, menu/.cvsignore,
+	  plan/.cvsignore: Added .cvsignore.
+
+2004-07-02 17:56  fidlej
+
+	* src/: effect/Makefile.am, effect/Picture.cpp, effect/Picture.h,
+	  effect/ViewEffect.cpp, effect/ViewEffect.h,
+	  effect/WavyPicture.cpp, effect/WavyPicture.h, level/Level.cpp,
+	  level/Level.h, level/LevelScript.cpp, level/Room.cpp,
+	  level/Room.h, level/level-script.cpp, level/level-script.h,
+	  plan/Makefile.am, plan/Picture.cpp, plan/Picture.h: Implemented
+	  wavy background.
+
+2004-07-01 18:53  fidlej
+
+	* src/: gengine/Dialog.cpp, gengine/Dialog.h,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/DummySoundAgent.h, gengine/PlannedDialog.cpp,
+	  gengine/PlannedDialog.h, gengine/SDLSoundAgent.cpp,
+	  gengine/SDLSoundAgent.h, gengine/SoundAgent.h,
+	  level/LevelScript.cpp, level/LevelScript.h, level/Room.cpp,
+	  level/Room.h, level/game-script.cpp, plan/Planner.cpp,
+	  plan/dialog-script.cpp, plan/dialog-script.h: Dialogs can have
+	  different volume and number of loops.
+
+2004-06-29 22:42  fidlej
+
+	* src/: effect/Outline.cpp, effect/ViewEffect.cpp,
+	  effect/ViewEffect.h, gengine/InputAgent.cpp, level/Anim.h,
+	  level/Cube.cpp, level/Cube.h, level/Rules.cpp: Fixed conflict
+	  between disint x invisible effect.
+
+2004-06-28 01:49  fidlej
+
+	* src/main.aap: Added -lSDL_ttf to the main.app
+
+2004-06-27 22:50  fidlej
+
+	* src/effect/Makefile.am: Added missing Makefile.am
+
+2004-06-27 22:36  fidlej
+
+	* AUTHORS, configure.in, src/Makefile.am, src/main.aap,
+	  src/effect/Color.h, src/effect/Font.cpp, src/effect/Font.h,
+	  src/effect/Outline.cpp, src/effect/Outline.h,
+	  src/effect/ResColorPack.h, src/effect/SurfaceLock.cpp,
+	  src/effect/SurfaceLock.h, src/effect/TTFException.cpp,
+	  src/effect/TTFException.h, src/effect/ViewEffect.cpp,
+	  src/effect/ViewEffect.h, src/game/GameAgent.cpp,
+	  src/game/GameAgent.h, src/game/KeyConsole.cpp,
+	  src/game/KeyConsole.h, src/game/Makefile.am,
+	  src/gengine/IKeyConsole.h, src/gengine/InputAgent.cpp,
+	  src/gengine/InputAgent.h, src/gengine/KeyConsole.cpp,
+	  src/gengine/KeyConsole.h, src/gengine/Makefile.am,
+	  src/gengine/ResFontPack.cpp, src/gengine/ResFontPack.h,
+	  src/level/Makefile.am, src/level/SurfaceLock.cpp,
+	  src/level/SurfaceLock.h, src/level/ViewEffect.cpp,
+	  src/level/ViewEffect.h, src/menu/Makefile.am,
+	  src/menu/NodeDrawer.cpp, src/menu/NodeDrawer.h,
+	  src/plan/Makefile.am, src/plan/SubTitleAgent.cpp,
+	  src/plan/SubTitleAgent.h, src/plan/Title.cpp, src/plan/Title.h,
+	  src/plan/dialog-script.cpp: SDL_ttf is used for fonts. Font can
+	  have outline. UTF-8 is expected.
+
+2004-06-26 21:08  fidlej
+
+	* src/: gengine/KeyConsole.cpp, plan/GameState.cpp: Minor debug
+	  features.
+
+2004-06-26 16:22  fidlej
+
+	* src/: level/ViewEffect.cpp, level/ViewEffect.h,
+	  level/game-script.cpp, plan/GameState.cpp: Implemented 'reverse'
+	  view effect.
+
+2004-06-26 02:40  fidlej
+
+	* src/level/ModelFactory.cpp: Added possibility to add extra fish.
+
+2004-06-25 23:17  fidlej
+
+	* src/level/: ViewEffect.cpp, ViewEffect.h: Fixed view effects for
+	  16 bpp.
+
+2004-06-25 21:58  fidlej
+
+	* src/level/ViewEffect.cpp: Fixed typo.
+
+2004-06-25 21:54  fidlej
+
+	* src/: game/GameAgent.cpp, level/LevelScript.cpp,
+	  level/ViewEffect.cpp, level/game-script.cpp, level/game-script.h,
+	  plan/Planner.cpp, plan/dialog-script.cpp, plan/dialog-script.h:
+	  Exported model_killSound and model_change_setLocation.
+
+2004-06-25 20:39  mrpaja
+
+	* AUTHORS: added Frederic Panico
+
+2004-06-25 19:05  fidlej
+
+	* src/level/: LevelScript.cpp, LevelScript.h, level-script.cpp,
+	  level-script.h: Added missing files.
+
+2004-06-25 16:43  fidlej
+
+	* src/: gengine/Actor.cpp, gengine/Actor.h,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/Makefile.am, gengine/OptionAgent.cpp,
+	  gengine/PlannedDialog.cpp, gengine/PlannedDialog.h,
+	  gengine/SDLSoundAgent.cpp, level/Cube.cpp, level/Cube.h,
+	  level/Level.cpp, level/Level.h, level/LevelInput.cpp,
+	  level/Makefile.am, level/Room.cpp, level/Room.h, level/Rules.cpp,
+	  level/Unit.cpp, level/game-script.cpp, level/game-script.h,
+	  plan/CommandQueue.cpp, plan/CommandQueue.h, plan/DemoMode.cpp,
+	  plan/DemoMode.h, plan/Planner.cpp, plan/Planner.h,
+	  plan/SubTitleAgent.cpp, plan/SubTitleAgent.h,
+	  plan/dialog-script.cpp, plan/dialog-script.h: Implemented new
+	  flexible level planing.
+
+2004-06-24 17:47  fidlej
+
+	* src/: gengine/InputAgent.cpp, gengine/KeyStroke.h,
+	  level/ControlSym.h, level/Controls.cpp, level/Controls.h,
+	  level/Level.cpp, level/Level.h, level/LevelInput.cpp,
+	  level/Room.cpp, level/Room.h, level/Unit.cpp, level/Unit.h:
+	  Improved fish controls. First key press is now interpreted.
+
+2004-06-24 16:13  fidlej
+
+	* src/: gengine/InputAgent.cpp, gengine/InputAgent.h,
+	  gengine/InputHandler.h, gengine/KeyBinder.cpp,
+	  gengine/KeyBinder.h, gengine/KeyStroke.cpp, gengine/KeyStroke.h,
+	  gengine/Makefile.am, gengine/MouseStroke.cpp,
+	  gengine/MouseStroke.h, level/Level.cpp, level/Level.h,
+	  level/LevelInput.cpp, level/LevelInput.h, menu/WorldInput.cpp,
+	  menu/WorldInput.h, menu/WorldMap.cpp, menu/WorldMap.h,
+	  plan/DemoInput.cpp, plan/DemoInput.h, plan/DemoMode.cpp,
+	  plan/DemoMode.h, plan/GameState.cpp, plan/GameState.h,
+	  plan/KeyDesc.cpp, plan/KeyDesc.h, plan/Keymap.cpp, plan/Keymap.h,
+	  plan/Makefile.am: Improved input handling. InputHandler is
+	  installed for every GameState.
+
+2004-06-24 04:40  fidlej
+
+	* src/level/: Level.cpp, ViewEffect.cpp, ViewEffect.h,
+	  game-script.cpp, game-script.h: Implemented the Mirror view
+	  effect.
+
+2004-06-23 23:03  fidlej
+
+	* configure.in, src/Makefile.am, src/main.aap, src/game/Anim.cpp,
+	  src/game/Anim.h, src/game/Command.h, src/game/CommandQueue.cpp,
+	  src/game/CommandQueue.h, src/game/ControlSym.h,
+	  src/game/Controls.cpp, src/game/Controls.h, src/game/Cube.cpp,
+	  src/game/Cube.h, src/game/DemoMode.cpp, src/game/DemoMode.h,
+	  src/game/Field.cpp, src/game/Field.h, src/game/FishDialog.cpp,
+	  src/game/FishDialog.h, src/game/GameAgent.cpp,
+	  src/game/GameAgent.h, src/game/Goal.cpp, src/game/Goal.h,
+	  src/game/KeyControl.cpp, src/game/KeyControl.h,
+	  src/game/LayoutException.h, src/game/Level.cpp, src/game/Level.h,
+	  src/game/LevelDesc.cpp, src/game/LevelDesc.h,
+	  src/game/LevelNode.cpp, src/game/LevelNode.h,
+	  src/game/LoadException.h, src/game/LuaTable.cpp,
+	  src/game/LuaTable.h, src/game/Makefile.am, src/game/MarkMask.cpp,
+	  src/game/MarkMask.h, src/game/ModelFactory.cpp,
+	  src/game/ModelFactory.h, src/game/NodeDrawer.cpp,
+	  src/game/NodeDrawer.h, src/game/Picture.cpp, src/game/Picture.h,
+	  src/game/Planner.cpp, src/game/Planner.h, src/game/Room.cpp,
+	  src/game/Room.h, src/game/Rules.cpp, src/game/Rules.h,
+	  src/game/ScriptCmd.cpp, src/game/ScriptCmd.h, src/game/Shape.cpp,
+	  src/game/Shape.h, src/game/SubTitleAgent.cpp,
+	  src/game/SubTitleAgent.h, src/game/SurfaceLock.cpp,
+	  src/game/SurfaceLock.h, src/game/Title.cpp, src/game/Title.h,
+	  src/game/Unit.cpp, src/game/Unit.h, src/game/View.cpp,
+	  src/game/View.h, src/game/ViewEffect.cpp, src/game/ViewEffect.h,
+	  src/game/WorldMap.cpp, src/game/WorldMap.h,
+	  src/game/WorldWay.cpp, src/game/WorldWay.h,
+	  src/game/demo-script.cpp, src/game/demo-script.h,
+	  src/game/dialog-script.cpp, src/game/dialog-script.h,
+	  src/game/game-script.cpp, src/game/game-script.h,
+	  src/game/worldmap-script.cpp, src/game/worldmap-script.h,
+	  src/gengine/Environ.cpp, src/gengine/KeyStroke.cpp,
+	  src/gengine/KeyStroke.h, src/gengine/Makefile.am,
+	  src/gengine/OptionAgent.cpp, src/gengine/ScriptState.cpp,
+	  src/gengine/ScriptState.h, src/gengine/def-script.cpp,
+	  src/gengine/def-script.h, src/level/Anim.cpp, src/level/Anim.h,
+	  src/level/ControlSym.h, src/level/Controls.cpp,
+	  src/level/Controls.h, src/level/Cube.cpp, src/level/Cube.h,
+	  src/level/Field.cpp, src/level/Field.h, src/level/Goal.cpp,
+	  src/level/Goal.h, src/level/KeyControl.cpp,
+	  src/level/KeyControl.h, src/level/LayoutException.h,
+	  src/level/Level.cpp, src/level/Level.h, src/level/LevelInput.cpp,
+	  src/level/LevelInput.h, src/level/LevelStatus.h,
+	  src/level/LoadException.h, src/level/Makefile.am,
+	  src/level/MarkMask.cpp, src/level/MarkMask.h,
+	  src/level/ModelFactory.cpp, src/level/ModelFactory.h,
+	  src/level/ModelList.cpp, src/level/ModelList.h,
+	  src/level/PhaseLocker.cpp, src/level/PhaseLocker.h,
+	  src/level/Room.cpp, src/level/Room.h, src/level/Rules.cpp,
+	  src/level/Rules.h, src/level/Shape.cpp, src/level/Shape.h,
+	  src/level/SurfaceLock.cpp, src/level/SurfaceLock.h,
+	  src/level/Unit.cpp, src/level/Unit.h, src/level/View.cpp,
+	  src/level/View.h, src/level/ViewEffect.cpp,
+	  src/level/ViewEffect.h, src/level/game-script.cpp,
+	  src/level/game-script.h, src/menu/LevelDesc.cpp,
+	  src/menu/LevelDesc.h, src/menu/LevelNode.cpp,
+	  src/menu/LevelNode.h, src/menu/LuaTable.cpp, src/menu/LuaTable.h,
+	  src/menu/Makefile.am, src/menu/NodeDrawer.cpp,
+	  src/menu/NodeDrawer.h, src/menu/WorldInput.cpp,
+	  src/menu/WorldInput.h, src/menu/WorldMap.cpp,
+	  src/menu/WorldMap.h, src/menu/WorldWay.cpp, src/menu/WorldWay.h,
+	  src/menu/worldmap-script.cpp, src/menu/worldmap-script.h,
+	  src/plan/Command.h, src/plan/CommandQueue.cpp,
+	  src/plan/CommandQueue.h, src/plan/DemoInput.cpp,
+	  src/plan/DemoInput.h, src/plan/DemoMode.cpp, src/plan/DemoMode.h,
+	  src/plan/FishDialog.cpp, src/plan/FishDialog.h,
+	  src/plan/GameState.cpp, src/plan/GameState.h,
+	  src/plan/Keymap.cpp, src/plan/Keymap.h, src/plan/Makefile.am,
+	  src/plan/Picture.cpp, src/plan/Picture.h, src/plan/Planner.cpp,
+	  src/plan/Planner.h, src/plan/ScriptCmd.cpp, src/plan/ScriptCmd.h,
+	  src/plan/StateManager.cpp, src/plan/StateManager.h,
+	  src/plan/SubTitleAgent.cpp, src/plan/SubTitleAgent.h,
+	  src/plan/Title.cpp, src/plan/Title.h, src/plan/demo-script.cpp,
+	  src/plan/demo-script.h, src/plan/dialog-script.cpp,
+	  src/plan/dialog-script.h: Big refactoring. StateManager is used
+	  to manage GameStates.
+
+2004-05-12 04:01  fidlej
+
+	* src/: game/Application.cpp, game/Application.h, game/Level.cpp,
+	  gengine/OptionAgent.cpp, gengine/ResSoundPack.cpp,
+	  gengine/SDLSoundAgent.cpp: Fixed config storing. Improved sound
+	  on/off switching.
+
+2004-05-10 01:33  fidlej
+
+	* README: Updated README.
+
+2004-05-10 01:06  fidlej
+
+	* configure.in, src/gengine/DummySoundAgent.h: Removed unused
+	  parameter.
+
+2004-05-10 01:03  fidlej
+
+	* src/gengine/: OptionAgent.cpp, SDLSoundAgent.cpp: Fixed 'or' ->
+	  '||' bug.
+
+2004-05-10 00:27  fidlej
+
+	* TODO: Update TODO.
+
+2004-05-09 23:42  fidlej
+
+	* src/: game/Controls.cpp, game/Field.cpp, game/Level.cpp,
+	  game/Rules.cpp, game/Shape.cpp, gengine/Dialog.cpp,
+	  gengine/KeyConsole.cpp, gengine/KeyStroke.cpp,
+	  gengine/MessagerAgent.cpp, gengine/RectBinder.cpp,
+	  gengine/SDLSoundAgent.cpp, gengine/ScriptAgent.cpp,
+	  gengine/TimerAgent.cpp: Cleaned comments. Shorted dialog min
+	  time.
+
+2004-05-09 22:26  fidlej
+
+	* src/game/: Cube.cpp, Cube.h, Goal.cpp, Goal.h, Level.cpp,
+	  Room.cpp, Room.h: Save is not allowed on wrong way.  Object out
+	  of room have weight=NONE and so it does not sounds after impact.
+
+2004-05-09 21:42  fidlej
+
+	* src/game/: Controls.cpp, Controls.h, GameAgent.cpp, Level.cpp,
+	  Level.h, Room.cpp, Room.h, Rules.cpp, Unit.cpp, Unit.h,
+	  ViewEffect.cpp: Countdown before restart or finish.
+
+2004-05-09 17:09  fidlej
+
+	* src/: game/Level.cpp, game/Level.h, game/Room.cpp, game/Room.h,
+	  game/dialog-script.cpp, game/game-script.cpp, game/game-script.h,
+	  gengine/DummySoundAgent.h, gengine/SDLSoundAgent.cpp,
+	  gengine/SDLSoundAgent.h, gengine/SoundAgent.h: Added possibility
+	  to deprioritize sound.
+
+2004-05-09 15:46  fidlej
+
+	* src/: game/Application.cpp, game/Cube.cpp, game/GameAgent.cpp,
+	  game/Level.cpp, game/Level.h, game/LevelNode.cpp,
+	  game/LevelNode.h, game/WorldWay.cpp, game/WorldWay.h,
+	  game/game-script.cpp, game/game-script.h, gengine/BaseAgent.cpp,
+	  gengine/ResSoundPack.cpp: Added function script_game_getDept().
+
+2004-05-09 13:16  fidlej
+
+	* src/gengine/Path.cpp: Compilable for BOOST_VERSION < 103100.
+
+2004-05-09 12:18  fidlej
+
+	* src/: game/Application.cpp, game/GameAgent.cpp, game/Level.cpp,
+	  game/Level.h, game/Picture.cpp, game/Room.cpp, game/WorldMap.cpp,
+	  game/main.cpp, gengine/Dialog.cpp, gengine/KeyConsole.cpp,
+	  gengine/Makefile.am, gengine/Name.cpp, gengine/Name.h,
+	  gengine/ResFontPack.cpp, gengine/ResImageAgent.cpp,
+	  gengine/ResImageAgent.h, gengine/ResImagePack.h,
+	  gengine/ResSoundAgent.cpp, gengine/ResSoundAgent.h,
+	  gengine/ResSoundPack.h: Removed useless Res*Agents.
+
+2004-05-09 02:25  fidlej
+
+	* src/game/Planner.cpp: Implemented framework for a graphic demo,
+	  e.g. Briefcase message.
+
+2004-05-09 01:31  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/DemoMode.cpp,
+	  game/DemoMode.h, game/GameAgent.cpp, game/GameAgent.h,
+	  game/Level.cpp, game/Level.h, game/Makefile.am, game/Picture.cpp,
+	  game/Picture.h, game/Planner.h, game/Room.cpp, game/Room.h,
+	  game/SubTitleAgent.cpp, game/SubTitleAgent.h, game/Title.h,
+	  game/View.h, game/WorldMap.cpp, game/WorldMap.h,
+	  game/WorldWay.cpp, game/demo-script.cpp, game/demo-script.h,
+	  game/dialog-script.cpp, game/dialog-script.h,
+	  game/game-script.cpp, game/game-script.h,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/IDrawer.cpp, gengine/IDrawer.h, gengine/KeyConsole.cpp,
+	  gengine/KeyConsole.h: Implemented framework for a graphic demo,
+	  e.g. Briefcase message.
+
+2004-05-08 17:28  fidlej
+
+	* src/gengine/ResourcePack.h: Fixed nosound run.
+
+2004-05-08 16:04  fidlej
+
+	* src/game/WorldWay.cpp: Fixed stack overflow.
+
+2004-05-08 14:18  fidlej
+
+	* src/game/NodeDrawer.cpp: Slower blinking dots.
+
+2004-05-08 13:29  fidlej
+
+	* src/: game/NodeDrawer.cpp, game/NodeDrawer.h,
+	  gengine/VideoAgent.cpp: Blinking dots.
+
+2004-05-08 04:08  mrpaja
+
+	* AUTHORS: AUTHORS update
+
+2004-05-08 03:25  fidlej
+
+	* src/game/: LevelNode.cpp, NodeDrawer.cpp, WorldMap.cpp: Fixed
+	  set_open/solved bug.
+
+2004-05-08 02:26  fidlej
+
+	* src/: game/GameAgent.cpp, game/GameAgent.h, game/Level.cpp,
+	  game/Level.h, game/LevelDesc.cpp, game/LevelDesc.h,
+	  game/LevelNode.cpp, game/LevelNode.h, game/Makefile.am,
+	  game/ModelFactory.h, game/NodeDrawer.cpp, game/NodeDrawer.h,
+	  game/ViewEffect.h, game/WorldMap.cpp, game/WorldMap.h,
+	  game/WorldWay.cpp, game/game-script.cpp,
+	  game/worldmap-script.cpp, game/worldmap-script.h,
+	  gengine/BaseAgent.h, gengine/Dialog.cpp, gengine/Dialog.h,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/Makefile.am, gengine/ResDialogPack.cpp,
+	  gengine/ResDialogPack.h, gengine/ResFontPack.h,
+	  gengine/ScriptAgent.cpp, gengine/VideoAgent.cpp,
+	  gengine/def-script.h: Level names are shown in menu and in
+	  caption.
+
+2004-05-07 22:15  fidlej
+
+	* configure.in, src/Makefile.am, src/main.aap,
+	  src/SDL_gfx/Makefile.am, src/SDL_gfx/SDL_gfxPrimitives.c,
+	  src/SDL_gfx/SDL_gfxPrimitives.h,
+	  src/SDL_gfx/SDL_gfxPrimitives_font.h, src/game/Makefile.am,
+	  src/game/NodeDrawer.cpp: Used SDL_gfx for lines.
+
+2004-05-07 21:54  fidlej
+
+	* src/game/: GameAgent.cpp, GameAgent.h, Level.cpp, Level.h,
+	  LevelNode.cpp, LevelNode.h, LuaTable.cpp, LuaTable.h,
+	  Makefile.am, NodeDrawer.cpp, WorldMap.cpp, WorldMap.h,
+	  WorldWay.cpp, WorldWay.h: WorldMap is scriptable from lua. See
+	  script/worldmap.lua.
+
+2004-05-07 13:19  fidlej
+
+	* src/: game/Anim.cpp, game/Application.cpp, game/CommandQueue.cpp,
+	  game/Controls.cpp, game/FishDialog.cpp, game/GameAgent.cpp,
+	  game/Goal.cpp, game/Level.cpp, game/Room.cpp, game/Rules.cpp,
+	  game/SubTitleAgent.cpp, game/Unit.cpp, game/View.cpp,
+	  game/WorldMap.cpp, gengine/AgentPack.cpp, gengine/BaseAgent.cpp,
+	  gengine/Dialog.cpp, gengine/DialogAgent.cpp, gengine/Environ.cpp,
+	  gengine/KeyBinder.cpp, gengine/KeyConsole.cpp,
+	  gengine/OptionAgent.cpp, gengine/ScriptAgent.cpp,
+	  gengine/StringTool.cpp: Replaced 'false == ' with '!'.
+
+2004-05-07 03:44  fidlej
+
+	* src/game/GameAgent.cpp: Fixed compile time error.
+
+2004-05-07 03:32  fidlej
+
+	* src/: game/GameAgent.cpp, game/GameAgent.h, game/Level.cpp,
+	  game/Level.h, game/LevelNode.cpp, game/LevelNode.h,
+	  game/Makefile.am, game/NodeDrawer.cpp, game/NodeDrawer.h,
+	  game/Room.cpp, game/Room.h, game/WorldMap.cpp, game/WorldMap.h,
+	  game/game-script.cpp, game/game-script.h, gengine/KeyConsole.cpp:
+	  Beginning of menu with world map.
+
+2004-05-06 16:52  fidlej
+
+	* src/: game/Anim.cpp, game/Anim.h, game/Cube.cpp, game/Cube.h,
+	  game/Rules.cpp, game/Rules.h, game/Unit.cpp, game/Unit.h,
+	  game/ViewEffect.cpp, game/ViewEffect.h, gengine/Name.cpp,
+	  gengine/PlannedDialog.cpp, gengine/VideoAgent.cpp: Modified
+	  timing for disint. effect.
+
+2004-05-06 02:54  fidlej
+
+	* autogen.sh: Added autogen.sh
+
+2004-05-06 02:25  fidlej
+
+	* src/game/: GameAgent.cpp, Level.cpp, Level.h, game-script.cpp,
+	  game-script.h: Fixed demo planning and interrupts.
+
+2004-05-06 01:55  fidlej
+
+	* src/game/: Anim.h, Cube.cpp, Cube.h, Room.cpp, Rules.cpp,
+	  Rules.h, View.cpp, ViewEffect.h: Added nice disintegration
+	  animation for skeleton.
+
+2004-05-06 00:44  fidlej
+
+	* README, TODO, configure.in, main.aap, src/main.aap: Updated build
+	  scripts.
+
+2004-05-05 02:48  fidlej
+
+	* src/: game/Anim.cpp, game/Anim.h, game/Makefile.am,
+	  game/SurfaceLock.cpp, game/SurfaceLock.h, game/ViewEffect.cpp,
+	  game/ViewEffect.h, gengine/Random.cpp, gengine/Random.h:
+	  Disintegrate view effect is prepared for use.
+
+2004-05-04 23:12  fidlej
+
+	* src/game/: Room.cpp, Room.h: Fixed lockPhases for planning.
+
+2004-05-04 21:03  fidlej
+
+	* src/: game/Cube.cpp, game/GameAgent.cpp, gengine/Actor.cpp,
+	  gengine/Environ.cpp, gengine/Environ.h, gengine/ExInfo.h,
+	  gengine/Makefile.am, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, gengine/ResourcePack.h,
+	  gengine/ScriptAgent.cpp, gengine/ScriptAgent.h: Only persistent
+	  options are stored.
+
+2004-05-04 14:17  fidlej
+
+	* src/gengine/VideoAgent.cpp: Param 'caption' is displayed in
+	  caption title.
+
+2004-05-04 13:50  fidlej
+
+	* src/: game/Cube.cpp, game/GameAgent.cpp, game/GameAgent.h,
+	  game/Level.cpp, game/Level.h, game/Makefile.am,
+	  game/ModelFactory.cpp, game/ModelFactory.h, game/Room.cpp,
+	  game/Room.h, game/View.cpp, game/View.h, game/game-script.cpp,
+	  gengine/Dialog.cpp, gengine/DummySoundAgent.h,
+	  gengine/Makefile.am, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, gengine/ResDialogPack.h,
+	  gengine/ResFontPack.h, gengine/ResImageAgent.cpp,
+	  gengine/ResImageAgent.h, gengine/ResImagePack.h,
+	  gengine/ResSoundAgent.cpp, gengine/ResSoundAgent.h,
+	  gengine/ResSoundPack.cpp, gengine/ResSoundPack.h,
+	  gengine/SDLSoundAgent.cpp, gengine/SDLSoundAgent.h,
+	  gengine/ScriptState.cpp, gengine/SoundAgent.h: GameAgent is
+	  splited into Level and ModelFactory
+
+2004-05-03 16:48  fidlej
+
+	* src/gengine/: VideoAgent.cpp, VideoAgent.h: Icon is showed.
+
+2004-05-03 16:27  fidlej
+
+	* src/game/: Controls.cpp, Controls.h, GameAgent.cpp, Unit.cpp,
+	  Unit.h: Small fish always start as active.
+
+2004-05-03 15:30  fidlej
+
+	* src/game/Controls.cpp: Altered fish speedup.
+
+2004-05-02 19:16  fidlej
+
+	* src/game/GameAgent.cpp: Fixed locking of phases.
+
+2004-05-02 18:53  fidlej
+
+	* src/: game/Command.h, game/CommandQueue.cpp, game/CommandQueue.h,
+	  game/Controls.cpp, game/GameAgent.cpp, game/GameAgent.h,
+	  game/Makefile.am, game/Room.cpp, game/Room.h, game/ScriptCmd.cpp,
+	  game/ScriptCmd.h, game/game-script.cpp, game/game-script.h,
+	  game/main.cpp, gengine/ScriptState.cpp, gengine/ScriptState.h:
+	  New CommandQueue for action planning.
+
+2004-04-30 00:07  fidlej
+
+	* src/gengine/: Dialog.cpp, Dialog.h, PlannedDialog.cpp,
+	  PlannedDialog.h: Dialogs are lazy loaded.
+
+2004-04-28 01:17  fidlej
+
+	* src/game/: LoadException.h, Makefile.am: Added forgotten file.
+
+2004-04-27 22:36  fidlej
+
+	* src/: game/Controls.cpp, game/Controls.h, game/GameAgent.cpp,
+	  game/GameAgent.h, game/Room.cpp, game/Room.h, game/Unit.cpp,
+	  game/Unit.h, game/game-script.cpp, game/game-script.h,
+	  gengine/ResSoundAgent.cpp: Load and Save is working.
+
+2004-04-27 03:42  fidlej
+
+	* src/: game/ControlSym.h, game/Controls.cpp, game/Controls.h,
+	  game/Cube.cpp, game/Cube.h, game/Driver.h, game/GameAgent.cpp,
+	  game/GameAgent.h, game/KeyDriver.cpp, game/KeyDriver.h,
+	  game/Makefile.am, game/Room.cpp, game/Room.h, game/Rules.cpp,
+	  game/Rules.h, game/Unit.cpp, game/Unit.h, game/game-script.cpp,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/TimerAgent.h: New controls. Fishes can be controled by
+	  arrows and space.
+
+2004-04-26 16:47  fidlej
+
+	* src/: game/GameAgent.cpp, game/GameAgent.h, game/Room.cpp,
+	  game/Room.h, game/game-script.cpp, game/game-script.h,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/OptionAgent.cpp: Fixed bug with killed dialogs. Work on
+	  save/load has begun.
+
+2004-04-26 00:16  fidlej
+
+	* src/game/: GameAgent.cpp, Room.cpp, Room.h, Rules.cpp, main.cpp:
+	  Dialogs are killed when a fish leave.
+
+2004-04-23 16:43  fidlej
+
+	* src/gengine/Path.cpp: Stricter path checking.
+
+2004-04-23 12:56  fidlej
+
+	* Makefile.am: '#' is not portable in Makefile.am
+
+2004-04-22 20:18  fidlej
+
+	* AUTHORS, README, TODO, src/game/GameAgent.cpp,
+	  src/game/Title.cpp, src/game/main.cpp,
+	  src/gengine/DialogAgent.cpp, src/gengine/DialogAgent.h,
+	  src/gengine/OptionAgent.cpp, src/gengine/Path.cpp,
+	  src/gengine/Path.h: Updated authors info. Moved userdir to
+	  ~/.fillets-ng
+
+2004-04-22 08:07  fidlej
+
+	* src/: game/KeyDriver.cpp, gengine/Dialog.cpp,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h: Dialog 'pause' is
+	  used to delay dialogs.
+
+2004-04-21 15:14  fidlej
+
+	* src/: game/KeyDriver.cpp, game/game-script.cpp,
+	  gengine/ResourcePack.h, gengine/SDLSoundAgent.cpp: Fixed no_music
+	  bug.
+
+2004-04-21 14:08  fidlej
+
+	* src/game/: KeyDriver.cpp, KeyDriver.h: Fixed compile time bug.
+
+2004-04-21 14:06  fidlej
+
+	* src/: game/KeyDriver.cpp, gengine/OptionAgent.cpp: LC_MESSAGES is
+	  not on win32. LC_ALL will be used.
+
+2004-04-21 07:14  fidlej
+
+	* src/: game/Cube.cpp, game/GameAgent.cpp, game/SubTitleAgent.cpp,
+	  gengine/Dialog.cpp, gengine/DialogAgent.cpp,
+	  gengine/InputAgent.cpp, gengine/OptionAgent.cpp,
+	  gengine/OptionAgent.h, gengine/ResDialogPack.cpp: User lang is
+	  set according to locale.
+
+2004-04-21 02:25  fidlej
+
+	* README, TODO, configure.in, src/game/GameAgent.cpp,
+	  src/game/KeyDriver.cpp, src/game/KeyDriver.h, src/game/Room.cpp:
+	  Fishes are speedup on long trace.
+
+2004-04-20 23:57  fidlej
+
+	* src/: game/Field.cpp, game/GameAgent.cpp, game/GameAgent.h,
+	  game/Room.cpp, game/Room.h, game/game-script.cpp,
+	  game/game-script.h, gengine/Actor.h: Function model_equals is
+	  alternative for FArray.
+
+2004-04-20 23:18  fidlej
+
+	* src/game/: GameAgent.cpp, GameAgent.h, game-script.cpp,
+	  game-script.h: Implemented game_getRestartCounter()
+
+2004-04-20 20:11  fidlej
+
+	* src/: game/GameAgent.cpp, gengine/Dialog.cpp, gengine/Dialog.h,
+	  gengine/PlannedDialog.cpp, gengine/PlannedDialog.h: New controls
+	  = ijkl,wasd. Fishes are talking even when there is no adequate
+	  wav
+
+2004-04-20 16:29  fidlej
+
+	* src/game/: GameAgent.cpp, GameAgent.h: Restart button =
+	  BackSpace.
+
+2004-04-20 16:16  fidlej
+
+	* src/game/: Cube.cpp, GameAgent.cpp: Added sound of dead.
+
+2004-04-20 06:24  fidlej
+
+	* src/game/Cube.cpp: Removed xplo sound.
+
+2004-04-20 05:58  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/GameAgent.cpp,
+	  game/Room.cpp, game/Room.h, game/Rules.cpp, game/Rules.h,
+	  game/game-script.cpp, game/game-script.h, gengine/Random.cpp,
+	  gengine/ResourcePack.h: Fixed randint(0) bug. Added sound of
+	  impact.
+
+2004-04-20 04:34  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/GameAgent.cpp,
+	  game/GameAgent.h, game/Rules.cpp, game/game-script.cpp,
+	  game/game-script.h, gengine/Actor.cpp, gengine/Actor.h,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/Makefile.am, gengine/PlannedDialog.cpp,
+	  gengine/PlannedDialog.h, gengine/SDLSoundAgent.cpp,
+	  gengine/TimerAgent.cpp: Expanded planDialog() with busy
+	  parameter.
+
+2004-04-16 01:02  fidlej
+
+	* src/game/game: Removed tmp file.
+
+2004-04-16 00:32  fidlej
+
+	* src/: game/FishDialog.cpp, game/FishDialog.h, game/GameAgent.cpp,
+	  game/game-script.cpp, game/game-script.h, gengine/Dialog.cpp,
+	  gengine/Dialog.h, gengine/DialogAgent.cpp,
+	  gengine/PlannedDialog.cpp, gengine/TimerAgent.cpp,
+	  gengine/TimerAgent.h: Fixed dialogs planning. Added some
+	  functions for scripts.
+
+2004-04-15 02:35  fidlej
+
+	* src/gengine/minmax.h: Offered min() and max() inline functions.
+
+2004-04-15 02:35  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/GameAgent.cpp,
+	  game/Makefile.am, game/MarkMask.cpp, game/Shape.cpp,
+	  game/Shape.h, game/SubTitleAgent.cpp, game/game-script.cpp,
+	  game/game-script.h, gengine/KeyConsole.cpp, gengine/Makefile.am,
+	  gengine/ResourcePack.h, gengine/SDLSoundAgent.cpp,
+	  gengine/ScriptAgent.cpp, gengine/ScriptState.cpp,
+	  gengine/VideoAgent.cpp: Offered min() and max() inline functions.
+	  Added shape->getW() and getH() functions.
+
+2004-04-13 01:03  fidlej
+
+	* src/game/: Cube.cpp, Cube.h, Field.cpp, Field.h, GameAgent.cpp,
+	  Goal.cpp, Goal.h, Rules.cpp, game, game-script.cpp,
+	  game-script.h: Normal objects must not go out of screen.
+
+2004-04-13 00:06  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/GameAgent.cpp,
+	  game/Goal.cpp, game/Goal.h, game/KeyDriver.cpp, game/Makefile.am,
+	  game/MarkMask.cpp, game/MarkMask.h, game/Room.cpp, game/Room.h,
+	  game/Rules.cpp, game/Rules.h, game/View.h, game/game,
+	  game/game-script.cpp, game/game-script.h,
+	  gengine/ScriptState.cpp: Goals can be set.
+
+2004-04-12 19:18  fidlej
+
+	* src/game/: Cube.h, GameAgent.cpp, KeyDriver.cpp, View.cpp, game,
+	  game-script.cpp, game-script.h, main.cpp: Offered
+	  change_turnSide() to the script.
+
+2004-04-12 02:51  fidlej
+
+	* src/: game/Anim.cpp, game/Application.cpp, game/Application.h,
+	  game/GameAgent.cpp, game/GameAgent.h, game/SubTitleAgent.cpp,
+	  game/SubTitleAgent.h, game/Title.cpp, game/Title.h,
+	  game/View.cpp, game/View.h, game/game, game/game-script.cpp,
+	  game/game-script.h, gengine/BaseAgent.h, gengine/BaseMsg.h,
+	  gengine/INamed.h, gengine/InputAgent.cpp, gengine/Name.cpp,
+	  gengine/Name.h, gengine/Path.cpp, gengine/Path.h,
+	  gengine/ResDialogPack.h, gengine/ResFontPack.h,
+	  gengine/ResImagePack.h, gengine/ResourcePack.h,
+	  gengine/ScriptAgent.cpp, gengine/SoundAgent.cpp,
+	  gengine/VideoAgent.cpp: Fixed dstrect-bliting bug. Added
+	  file_exists() script function. Changed getName() to return const
+	  char.
+
+2004-04-11 05:42  fidlej
+
+	* src/: game/Application.cpp, game/FishDialog.cpp,
+	  game/FishDialog.h, game/GameAgent.cpp, game/Makefile.am,
+	  game/SubTitleAgent.cpp, game/SubTitleAgent.h, game/Title.cpp,
+	  game/Title.h, game/View.h, game/game, game/game-script.cpp,
+	  game/game-script.h, gengine/Dialog.cpp, gengine/Dialog.h,
+	  gengine/DialogAgent.cpp, gengine/Makefile.am, gengine/Name.cpp,
+	  gengine/Name.h, gengine/Path.cpp, gengine/PlannedDialog.cpp,
+	  gengine/ResDialogPack.cpp, gengine/ResFontPack.cpp,
+	  gengine/ResFontPack.h, gengine/ResImageAgent.h,
+	  gengine/ResImagePack.h, gengine/ResourcePack.h,
+	  gengine/VideoAgent.cpp: Dialogs are working.
+
+2004-04-10 21:03  fidlej
+
+	* TODO, src/game/GameAgent.cpp, src/game/Rules.cpp: Updated TODO.
+
+2004-04-10 20:21  fidlej
+
+	* src/game/Rules.cpp: Fixed dead checking.
+
+2004-04-10 19:47  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/Room.cpp, game/Rules.h,
+	  gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/PlannedDialog.cpp, gengine/PlannedDialog.h: Dead fishes
+	  does not talk.
+
+2004-04-10 19:01  fidlej
+
+	* src/gengine/OptionAgent.cpp: Fixed command line options parsing.
+
+2004-04-10 18:46  fidlej
+
+	* src/: game/Anim.cpp, game/Anim.h, game/Cube.cpp, game/Cube.h,
+	  game/GameAgent.cpp, game/GameAgent.h, game/KeyDriver.cpp,
+	  game/Makefile.am, game/MarkMask.cpp, game/MarkMask.h,
+	  game/Room.cpp, game/Rules.cpp, game/Rules.h, game/View.cpp,
+	  game/View.h, game/game-script.cpp, game/game-script.h,
+	  gengine/V2.h: Cube.cpp is split in Rules.
+
+2004-04-10 03:28  fidlej
+
+	* src/game/: Cube.cpp, Cube.h: Fixed checking of dead states.
+
+2004-04-10 02:15  fidlej
+
+	* src/: game/Anim.cpp, game/Anim.h, game/Application.cpp,
+	  game/Cube.cpp, game/GameAgent.cpp, game/View.cpp,
+	  game/game-script.cpp, game/game-script.h, gengine/Dialog.cpp,
+	  gengine/Dialog.h, gengine/DialogAgent.cpp, gengine/DialogAgent.h,
+	  gengine/DummySoundAgent.h, gengine/Makefile.am, gengine/Name.cpp,
+	  gengine/Name.h, gengine/PlannedDialog.cpp,
+	  gengine/PlannedDialog.h, gengine/ResDialogPack.cpp,
+	  gengine/ResDialogPack.h, gengine/ResSoundAgent.cpp,
+	  gengine/ResSoundAgent.h, gengine/ResourcePack.h,
+	  gengine/SDLSoundAgent.cpp, gengine/SDLSoundAgent.h,
+	  gengine/SoundAgent.h, gengine/VideoAgent.cpp: Fishes can talk.
+	  addSpecialAnim() is for talking heads.
+
+2004-04-09 14:32  fidlej
+
+	* src/game/Cube.cpp: Fixed cyclic moveDirBrute bug.
+
+2004-04-08 03:21  fidlej
+
+	* configure.in, src/game/Anim.cpp, src/game/Anim.h,
+	  src/game/Cube.cpp, src/game/Cube.h, src/game/Driver.h,
+	  src/game/GameAgent.cpp, src/game/KeyDriver.cpp,
+	  src/game/Makefile.am, src/game/Room.cpp, src/game/View.cpp,
+	  src/game/View.h, src/game/game-script.cpp,
+	  src/game/game-script.h, src/gengine/ResourcePack.h,
+	  src/gengine/TimerAgent.h: Fish body animation.
+
+2004-04-07 18:15  fidlej
+
+	* TODO, src/game/Field.cpp, src/game/GameAgent.cpp,
+	  src/game/game-script.cpp, src/game/game-script.h,
+	  src/game/main.cpp, src/gengine/OptionAgent.cpp,
+	  src/gengine/OptionAgent.h, src/gengine/ResourcePack.h: Compilable
+	  on Win32. Added script_model_getDir().
+
+2004-04-06 03:04  fidlej
+
+	* src/: game/GameAgent.cpp, game/Shape.cpp,
+	  gengine/ScriptState.cpp: '.' is used in levels for empty space.
+
+2004-04-05 03:27  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/KeyDriver.cpp,
+	  game/KeyDriver.h, game/Room.cpp, game/View.cpp,
+	  gengine/TimerAgent.h: More stepless fish animation.
+
+2004-04-04 05:53  fidlej
+
+	* src/game/Application.cpp: './game sound=0' turns sound off
+
+2004-04-04 05:46  fidlej
+
+	* README, src/gengine/OptionAgent.cpp: Changed
+	  '/home/ivo/.fillets-ng' to 'HOME/fillets-ng'. Periods in
+	  directories and at the beginning of name are not portable.
+
+2004-04-04 05:28  fidlej
+
+	* configure.ac, configure.in: configure.ac renamed to configure.in
+	  for FreeBSD.
+
+2004-04-04 05:27  fidlej
+
+	* src/: game/Cube.cpp, game/Cube.h, game/GameAgent.cpp,
+	  game/GameAgent.h, game/Room.cpp, game/game-script.cpp,
+	  game/game-script.h, gengine/BaseAgent.h, gengine/InputAgent.cpp,
+	  gengine/InputAgent.h, gengine/KeyConsole.cpp, gengine/Log.cpp,
+	  gengine/NoCopy.h, gengine/Path.cpp, gengine/RectBinder.h,
+	  gengine/ResSoundAgent.cpp, gengine/ResourcePack.h,
+	  gengine/ScriptAgent.cpp, gengine/ScriptAgent.h,
+	  gengine/ScriptState.cpp: Ready for FreeBSD.
+
+2004-04-04 03:19  fidlej
+
+	* Makefile.cvs: Libtoolize generate config.sub but libtool is not
+	  need.
+
+2004-04-04 02:57  fidlej
+
+	* configure.ac: More helpful messages.
+
+2004-04-04 02:39  fidlej
+
+	* configure.ac: Support for boost compiler abbreviation.
+
+2004-04-04 02:24  fidlej
+
+	* configure.ac: Removed -I/usr/include -I/usr/local/include
+
+2004-04-04 00:59  fidlej
+
+	* configure.ac, src/game/Makefile.am, src/gengine/Makefile.am:
+	  Tweaked boost in configure.ac
+
+2004-04-03 23:43  fidlej
+
+	* configure.ac: Next lua tweak in configure.ac
+
+2004-04-03 23:18  fidlej
+
+	* src/gengine/: ScriptState.cpp, ScriptState.h: Added ScriptState
+
+2004-04-03 23:16  fidlej
+
+	* Makefile.cvs: libtoolize should generate config.sub
+
+2004-04-03 23:01  fidlej
+
+	* Makefile.cvs: Tweaked cvs2cl in Makefile.cvs
+
+2004-04-03 22:47  fidlej
+
+	* configure.ac, src/game/Makefile.am, src/gengine/Makefile.am:
+	  Improved configure.ac for lua checking.
+
+2004-04-03 00:58  fidlej
+
+	* src/game/: Cube.cpp, Cube.h, GameAgent.cpp, Room.cpp, Room.h: All
+	  fishes are dead at the same moment.
+
+2004-04-02 20:50  fidlej
+
+	* src/gengine/ResourceAgent.h: Removed old ResourceAgent.h
+
+2004-04-02 20:49  fidlej
+
+	* configure.ac, src/game/View.h: Fixed public members in Views.
+
+2004-04-02 14:59  fidlej
+
+	* README: Updated README
+
+2004-04-02 02:41  fidlej
+
+	* README, TODO: Polished README and TODO.
+
+2004-04-02 00:56  fidlej
+
+	* src/gengine/: ResImagePack.cpp, ResImagePack.h, ResourcePack.h:
+	  Forgotten files.
+
+2004-04-02 00:55  fidlej
+
+	* src/: game/GameAgent.cpp, game/View.cpp, game/View.h,
+	  gengine/Makefile.am, gengine/ResImageAgent.cpp,
+	  gengine/ResImageAgent.h, gengine/ResSoundAgent.cpp,
+	  gengine/ResSoundAgent.h: ResourceAgent is split to ResourcePack
+	  and agents.
+
+2004-04-02 00:22  fidlej
+
+	* src/: game/Cube.cpp, game/GameAgent.cpp, game/Room.cpp,
+	  game/game-script.cpp, gengine/Log.cpp, gengine/Makefile.am,
+	  gengine/OptionAgent.cpp, gengine/Path.cpp, gengine/Path.h,
+	  gengine/ScriptAgent.cpp, gengine/ScriptException.h: User options
+	  are read before system options.
+
+2004-04-01 22:56  fidlej
+
+	* README, src/game/Application.cpp, src/game/Application.h,
+	  src/gengine/OptionAgent.cpp, src/gengine/OptionAgent.h,
+	  src/gengine/Path.cpp, src/gengine/Path.h: Creating not existing
+	  user paths.
+
+2004-04-01 21:11  fidlej
+
+	* .cvsignore, AUTHORS, Doxyfile, Makefile.am, Makefile.cvs, NEWS,
+	  README, TODO, configure.ac, main.aap, sdl.m4, src/.cvsignore,
+	  src/Makefile.am, src/main.aap, src/game/.cvsignore,
+	  src/game/Application.cpp, src/game/Application.h,
+	  src/game/Cube.cpp, src/game/Cube.h, src/game/Driver.h,
+	  src/game/Field.cpp, src/game/Field.h, src/game/GameAgent.cpp,
+	  src/game/GameAgent.h, src/game/KeyControl.cpp,
+	  src/game/KeyControl.h, src/game/KeyDriver.cpp,
+	  src/game/KeyDriver.h, src/game/LayoutException.h,
+	  src/game/Makefile.am, src/game/MarkMask.cpp, src/game/MarkMask.h,
+	  src/game/Picture.cpp, src/game/Picture.h, src/game/Room.cpp,
+	  src/game/Room.h, src/game/Shape.cpp, src/game/Shape.h,
+	  src/game/View.cpp, src/game/View.h, src/game/game-script.cpp,
+	  src/game/game-script.h, src/game/main.cpp,
+	  src/gengine/.cvsignore, src/gengine/AgentPack.cpp,
+	  src/gengine/AgentPack.h, src/gengine/BaseAgent.cpp,
+	  src/gengine/BaseAgent.h, src/gengine/BaseException.cpp,
+	  src/gengine/BaseException.h, src/gengine/BaseListener.cpp,
+	  src/gengine/BaseListener.h, src/gengine/BaseMsg.cpp,
+	  src/gengine/BaseMsg.h, src/gengine/DummySoundAgent.h,
+	  src/gengine/ExInfo.cpp, src/gengine/ExInfo.h,
+	  src/gengine/IDrawer.cpp, src/gengine/IDrawer.h,
+	  src/gengine/INamed.h, src/gengine/ImgException.cpp,
+	  src/gengine/ImgException.h, src/gengine/InputAgent.cpp,
+	  src/gengine/InputAgent.h, src/gengine/IntMsg.cpp,
+	  src/gengine/IntMsg.h, src/gengine/KeyBinder.cpp,
+	  src/gengine/KeyBinder.h, src/gengine/KeyConsole.cpp,
+	  src/gengine/KeyConsole.h, src/gengine/KeyStroke.cpp,
+	  src/gengine/KeyStroke.h, src/gengine/Log.cpp, src/gengine/Log.h,
+	  src/gengine/LogicException.h, src/gengine/Makefile.am,
+	  src/gengine/MessagerAgent.cpp, src/gengine/MessagerAgent.h,
+	  src/gengine/MixException.cpp, src/gengine/MixException.h,
+	  src/gengine/Name.cpp, src/gengine/Name.h,
+	  src/gengine/NameException.h, src/gengine/NoCopy.h,
+	  src/gengine/OptionAgent.cpp, src/gengine/OptionAgent.h,
+	  src/gengine/Path.cpp, src/gengine/Path.h, src/gengine/Random.cpp,
+	  src/gengine/Random.h, src/gengine/RectBinder.cpp,
+	  src/gengine/RectBinder.h, src/gengine/ResImageAgent.cpp,
+	  src/gengine/ResImageAgent.h, src/gengine/ResSoundAgent.cpp,
+	  src/gengine/ResSoundAgent.h, src/gengine/ResourceAgent.h,
+	  src/gengine/ResourceException.h, src/gengine/SDLException.cpp,
+	  src/gengine/SDLException.h, src/gengine/SDLSoundAgent.cpp,
+	  src/gengine/SDLSoundAgent.h, src/gengine/ScriptAgent.cpp,
+	  src/gengine/ScriptAgent.h, src/gengine/SimpleMsg.h,
+	  src/gengine/SoundAgent.cpp, src/gengine/SoundAgent.h,
+	  src/gengine/StringMsg.cpp, src/gengine/StringMsg.h,
+	  src/gengine/StringTool.cpp, src/gengine/StringTool.h,
+	  src/gengine/TimerAgent.cpp, src/gengine/TimerAgent.h,
+	  src/gengine/UnknownMsgException.h, src/gengine/V2.h,
+	  src/gengine/VideoAgent.cpp, src/gengine/VideoAgent.h: 2004-04-01
+	  18:39  fidlej 	* fillets-ng = Fish Fillets - Next
+	  Generation
+
+	  2004-04-01 18:35  fidlej	   * Updated documentation.
+
+	  2004-04-01 13:36  fidlej	   * Preparation for sf.net
+
+	  2004-04-01 02:54  fidlej	   * Optinal anim phase number.
+	  Simpler checkDead.
+
+	  2004-03-31 06:29  fidlej	   * Skeleton animation.
+
+	  2004-03-31 03:30  fidlej	   * Command line args are parsed.
+	  Usage: bash [name=value ...]
+
+	  2004-03-30 19:39  fidlej	   * Check dead states.
+
+	  2004-03-30 04:16  fidlej	   * Fixed mask/unmask problem.
+
+	  2004-03-30 03:34  fidlej	   * Setting direction before move.
+	  All moves are made at start of	   nextRound. Basic
+	  animation.
+
+	  2004-03-29 05:31  fidlej	   * Beginning of animation
+
+	  2004-03-29 04:50  fidlej	   * Added script to convert all
+	  .bmp to .png
+
+	  2004-03-29 04:49  fidlej	   * Level Pravidla.lua
+
+	  2004-03-29 00:45  fidlej	   * Support aplha in PNG.
+
+	  2004-03-28 23:34  fidlej	   * Typedefs are private now.
+
+	  2004-03-28 23:28  fidlej	   * Level example.
+
+	  2004-03-28 23:27  fidlej	   * New level format with
+	  pictures.
+
+	  2004-03-26 19:11  fidlej	   * Added forgotten files for
+	  resource agents.
+
+	  2004-03-26 01:25  fidlej	   * Proper console name.
+
+	  2004-03-25 01:07  fidlej	   * Removed old console.bmp
+
+	  2004-03-25 01:07  fidlej	   * New console font
+
+	  2004-03-24 22:36  fidlej	   * Moved loadImage to
+	  ResImageAgent. Added SDL_image library (allows
+	  transparent PNG).
+
+	  2004-03-24 22:11  fidlej	   * ResouceAgent template and
+	  ResSound and ResImage
+
+	  2004-03-24 19:39  fidlej	   * IDrawer accepts screen in
+	  constructor and removes from drawers in	    destructor.
+
+	  2004-03-23 16:36  fidlej	   * Added mini_app example
+
+	  2004-03-23 02:50  fidlej	   * Big-edian safe getPixel
+
+	  2004-03-23 01:38  fidlej	   * VideoAgent handle screen_*
+	  params change
+
+	  2004-03-22 11:05  fidlej	   * Smaller console font
+
+	  2004-03-22 10:52  fidlej	   * Proper shutdown after
+	  exception.
+
+	  2004-03-22 01:08  fidlej	   * Updated automake scripts
+
+	  2004-03-22 00:30  fidlej	   * Play sound at crash
+
+	  2004-03-22 00:10  fidlej	   * See script/level.lua for level
+	  placement
+
+	  2004-03-21 22:31  fidlej	   * Big and small fish with
+	  different controls
+
+	  2004-03-21 21:01  fidlej	   * Open Can engine
+
+	  2004-03-16 22:06  fidlej	   * Window moves with KP_4,...
+
+	  2004-03-16 16:51  fidlej	   * Options is saved on shutdown.
+
+	  2004-03-16 16:38  fidlej	   * User x System data path.
+	  Updated param watchers registery
+
+	  2004-03-16 03:12  fidlej	   * Normal screen width.
+
+	  2004-03-16 03:07  fidlej	   * New SFont library, SDL_gfx is
+	  out.
+
+	  2004-03-15 03:00  fidlej	   * OptionAgent ... game options,
+	  script/init.lua contain screen size
+
+	  2004-03-14 16:44  fidlej	   * rotozoomSurface discard
+	  colorKey (in 32bpp)
+
+	  2004-03-07 21:00  fidlej	   * Recipe for data install
+
+	  2004-03-07 20:16  fidlej	   * Try a-a-p.org
+
+	  2004-03-05 16:38  fidlej	   * Removed useless AC_DEFINE
+
+	  2004-03-05 15:45  fidlej	   * Game data are searched in .
+
+	  2004-03-04 06:13  fidlej	   * Enabled key repeat. Written
+	  README.
+
+	  2004-03-03 22:26  fidlej	   * Debug LUA script console.
+
+	  2004-03-02 23:36  fidlej	   * Modern lua_dofile with
+	  lua_pcall(luaL_loadFile()), dofile is 	  obsolete.
+
+	  2004-03-02 15:46  fidlej	   * lua scripts are moved to
+	  data/script/
+
+	  2004-03-02 15:44  fidlej	   * SDL_gfx = rotozoom, is now
+	  part of package
+
+	  2004-03-02 04:28  fidlej	   * Dangerous uninstall-data-local
+
+	  2004-03-02 04:19  fidlej	   * Install hooks for directories.
+
+	  2004-03-02 03:17  fidlej	   * ChangeLog is generated by
+	  cvs2cl
+
+	  2004-03-02 02:58  fidlej	   * Added automake install
+	  scripts.
+
+	  2004-03-02 02:58  fidlej	   * Initial revision
+
+2004-04-01 21:11  fidlej
+
+	* .cvsignore, AUTHORS, Doxyfile, Makefile.am, Makefile.cvs, NEWS,
+	  README, TODO, configure.ac, main.aap, sdl.m4, src/.cvsignore,
+	  src/Makefile.am, src/main.aap, src/game/.cvsignore,
+	  src/game/Application.cpp, src/game/Application.h,
+	  src/game/Cube.cpp, src/game/Cube.h, src/game/Driver.h,
+	  src/game/Field.cpp, src/game/Field.h, src/game/GameAgent.cpp,
+	  src/game/GameAgent.h, src/game/KeyControl.cpp,
+	  src/game/KeyControl.h, src/game/KeyDriver.cpp,
+	  src/game/KeyDriver.h, src/game/LayoutException.h,
+	  src/game/Makefile.am, src/game/MarkMask.cpp, src/game/MarkMask.h,
+	  src/game/Picture.cpp, src/game/Picture.h, src/game/Room.cpp,
+	  src/game/Room.h, src/game/Shape.cpp, src/game/Shape.h,
+	  src/game/View.cpp, src/game/View.h, src/game/game-script.cpp,
+	  src/game/game-script.h, src/game/main.cpp,
+	  src/gengine/.cvsignore, src/gengine/AgentPack.cpp,
+	  src/gengine/AgentPack.h, src/gengine/BaseAgent.cpp,
+	  src/gengine/BaseAgent.h, src/gengine/BaseException.cpp,
+	  src/gengine/BaseException.h, src/gengine/BaseListener.cpp,
+	  src/gengine/BaseListener.h, src/gengine/BaseMsg.cpp,
+	  src/gengine/BaseMsg.h, src/gengine/DummySoundAgent.h,
+	  src/gengine/ExInfo.cpp, src/gengine/ExInfo.h,
+	  src/gengine/IDrawer.cpp, src/gengine/IDrawer.h,
+	  src/gengine/INamed.h, src/gengine/ImgException.cpp,
+	  src/gengine/ImgException.h, src/gengine/InputAgent.cpp,
+	  src/gengine/InputAgent.h, src/gengine/IntMsg.cpp,
+	  src/gengine/IntMsg.h, src/gengine/KeyBinder.cpp,
+	  src/gengine/KeyBinder.h, src/gengine/KeyConsole.cpp,
+	  src/gengine/KeyConsole.h, src/gengine/KeyStroke.cpp,
+	  src/gengine/KeyStroke.h, src/gengine/Log.cpp, src/gengine/Log.h,
+	  src/gengine/LogicException.h, src/gengine/Makefile.am,
+	  src/gengine/MessagerAgent.cpp, src/gengine/MessagerAgent.h,
+	  src/gengine/MixException.cpp, src/gengine/MixException.h,
+	  src/gengine/Name.cpp, src/gengine/Name.h,
+	  src/gengine/NameException.h, src/gengine/NoCopy.h,
+	  src/gengine/OptionAgent.cpp, src/gengine/OptionAgent.h,
+	  src/gengine/Path.cpp, src/gengine/Path.h, src/gengine/Random.cpp,
+	  src/gengine/Random.h, src/gengine/RectBinder.cpp,
+	  src/gengine/RectBinder.h, src/gengine/ResImageAgent.cpp,
+	  src/gengine/ResImageAgent.h, src/gengine/ResSoundAgent.cpp,
+	  src/gengine/ResSoundAgent.h, src/gengine/ResourceAgent.h,
+	  src/gengine/ResourceException.h, src/gengine/SDLException.cpp,
+	  src/gengine/SDLException.h, src/gengine/SDLSoundAgent.cpp,
+	  src/gengine/SDLSoundAgent.h, src/gengine/ScriptAgent.cpp,
+	  src/gengine/ScriptAgent.h, src/gengine/SimpleMsg.h,
+	  src/gengine/SoundAgent.cpp, src/gengine/SoundAgent.h,
+	  src/gengine/StringMsg.cpp, src/gengine/StringMsg.h,
+	  src/gengine/StringTool.cpp, src/gengine/StringTool.h,
+	  src/gengine/TimerAgent.cpp, src/gengine/TimerAgent.h,
+	  src/gengine/UnknownMsgException.h, src/gengine/V2.h,
+	  src/gengine/VideoAgent.cpp, src/gengine/VideoAgent.h: Initial
+	  revision
+

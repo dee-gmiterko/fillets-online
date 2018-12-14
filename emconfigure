@@ -1,0 +1,1 @@
+/home/ienze/git/emsdk/emscripten/1.38.16/emconfigure ./configure --with-lua=lua-5.0.3 --with-sdl-prefix=/home/ienze/git/emsdk/emscripten/1.38.16/system --with-sdl-exec-prefix=/home/ienze/git/emsdk/emscripten/1.38.16/system --disable-sdltest 'CXXFLAGS=-std=c++11 -O3 --closure 1'
