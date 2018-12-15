@@ -187,8 +187,6 @@ data/script/fdto/dialogs_ru.lua
 data/script/fdto/dialogs_sv.lua
 data/script/fdto/init.lua
 data/script/fdto/models.lua
-data/sound/barrel/cs/bar-m-fdto.ogg
-data/sound/barrel/nl/bar-m-fdto.ogg
 data/sound/fdto/cs/agenti-m.ogg
 data/sound/fdto/cs/budova-m.ogg
 data/sound/fdto/cs/cely-m.ogg

@@ -582,6 +582,12 @@ Level::planShow(Command *new_command)
     m_show->planCommand(new_command);
 }
 //-----------------------------------------------------------------
+const std::string&
+Level::getLevelCodename() const
+{
+    return m_codename;
+}
+//-----------------------------------------------------------------
 std::string
 Level::getLevelName() const
 {

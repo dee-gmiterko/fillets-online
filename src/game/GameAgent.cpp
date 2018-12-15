@@ -29,23 +29,49 @@
 GameAgent::own_init()
 {
     m_manager = new StateManager();
-    std::string replayLevel = OptionAgent::agent()->getParam("replay_level");
-    if (replayLevel == "") {
+    std::string optPlayLevel = OptionAgent::agent()->getParam("play_level");
+    std::string optReplayLevel = OptionAgent::agent()->getParam("replay_level");
+    if (optPlayLevel != "") {
+      playLevel(optPlayLevel);
+    } else if (optReplayLevel != "") {
+      replaySolution(optReplayLevel);
+    } else {
         Path pathMap = Path::dataReadPath(OptionAgent::agent()->getParam(
                     "worldmap", "script/worldmap.lua"));
         WorldMap *worldmap = new WorldMap();
         worldmap->initMap(pathMap);
         m_manager->pushState(NULL, worldmap);
-    } else {
-        replaySolution(replayLevel);
     }
 
     keyBinding();
 }
 //-----------------------------------------------------------------
 /**
+ * Play given level instead of starting the game.
+ */
+    void
+GameAgent::playLevel(const std::string &codename)
+{
+    static LevelStatus *levelStatus = NULL;
+    static DescFinder *desc = NULL;
+    if (levelStatus == NULL) {
+        levelStatus = new LevelStatus();
+        desc = new WorldMap();
+    }
+
+    levelStatus->prepareRun(codename, "", 0, "");
+
+    Path datafile = Path::dataReadPath(
+        "script/" + codename + "/init.lua");
+    Level *level = new Level(codename, datafile, 0);
+    level->fillStatus(levelStatus);
+    level->fillDesc(desc);
+
+    m_manager->pushState(NULL, level);
+}
+//-----------------------------------------------------------------
+/**
  * Replays the given solution instead of starting the game.
- * It is used only for testing.
  */
     void
 GameAgent::replaySolution(const std::string &codename)
@@ -117,4 +143,3 @@ GameAgent::keyBinding()
     msg = new SimpleMsg(Name::APP_NAME, "dec_loglevel");
     keyBinder->addStroke(log_minus, msg);
 }
-

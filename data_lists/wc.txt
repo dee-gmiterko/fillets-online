@@ -1,8 +1,3 @@
-data/images/imprisoned/newcolorproblem-11-tmp.png
-data/images/imprisoned/newcolorproblem-12-tmp.png
-data/images/imprisoned/newcolorproblem-13-tmp.png
-data/images/imprisoned/newcolorproblem-16-tmp.png
-data/images/imprisoned/newcolorproblem-7-tmp.png
 data/images/wc/3-ocel.png
 data/images/wc/4-ocel.png
 data/images/wc/hajzlak.png

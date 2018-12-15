@@ -1,4 +1,3 @@
-data/images/hardware/puzzle-w.png
 data/images/puzzle/01-mona_00.png
 data/images/puzzle/01-mona_01.png
 data/images/puzzle/01-mona_02.png

@@ -17,11 +17,6 @@ data/images/elk/maly_snek_03.png
 data/images/elk/naboj.png
 data/images/elk/papoucha_00.png
 data/images/elk/papoucha_01.png
-data/images/gods/kuzelka.png
-data/images/imprisoned/shell_velka.png
-data/images/tetris/elko1l.png
-data/images/tetris/elko1o.png
-data/images/tetris/elko2o.png
 data/script/elk/code.lua
 data/script/elk/dialogs_bg.lua
 data/script/elk/dialogs_cs.lua
@@ -38,8 +33,6 @@ data/script/elk/dialogs_ru.lua
 data/script/elk/dialogs_sv.lua
 data/script/elk/init.lua
 data/script/elk/models.lua
-data/sound/columns/cs/sl-m-velkolepe.ogg
-data/sound/columns/nl/sl-m-velkolepe.ogg
 data/sound/elk/cs/deu-m-bojovat.ogg
 data/sound/elk/cs/deu-m-valka.ogg
 data/sound/elk/cs/deu-m-zvlastni.ogg
@@ -73,5 +66,3 @@ data/sound/elk/nl/deu-v-losa.ogg
 data/sound/elk/nl/deu-v-nepratelstvi.ogg
 data/sound/elk/nl/deu-v-radsi.ogg
 data/sound/elk/nl/deu-v-slysel.ogg
-data/sound/floppy/cs/disk-m-velka.ogg
-data/sound/floppy/nl/disk-m-velka.ogg

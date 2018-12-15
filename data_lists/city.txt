@@ -113,7 +113,3 @@ data/sound/city/nl/vit-v-noa.ogg
 data/sound/city/nl/vit-v-pockej.ogg
 data/sound/city/nl/vit-v-proc.ogg
 data/sound/city/nl/vit-v-vazne.ogg
-data/sound/crabshow/cs/sec-m-pocity.ogg
-data/sound/crabshow/nl/sec-m-pocity.ogg
-data/sound/hanoi/cs/v-jacity.ogg
-data/sound/hanoi/nl/v-jacity.ogg

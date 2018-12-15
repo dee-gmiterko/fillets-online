@@ -13,7 +13,6 @@ data/images/broom/uhli_a.png
 data/images/broom/uhli_b.png
 data/images/broom/uhli_c.png
 data/images/broom/uhli_d.png
-data/images/key/broom.png
 data/script/broom/code.lua
 data/script/broom/dialogs_bg.lua
 data/script/broom/dialogs_cs.lua

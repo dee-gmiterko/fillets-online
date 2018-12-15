@@ -135,8 +135,6 @@ data/images/barrel/shark_00.png
 data/images/barrel/shark_01.png
 data/images/barrel/shark_02.png
 data/images/barrel/shark_03.png
-data/images/key/barrellay.png
-data/images/key/barrelstand.png
 data/script/barrel/code.lua
 data/script/barrel/demo_dialogs_bg.lua
 data/script/barrel/demo_dialogs_cs.lua

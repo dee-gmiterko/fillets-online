@@ -1,12 +1,3 @@
-data/doc/html/img/manual/steel_object.png
-data/images/electromagnet/steel-1.png
-data/images/electromagnet/steelbig.png
-data/images/key/3steel.png
-data/images/key/leftsteel.png
-data/images/key/locksteel.png
-data/images/key/middlesteel.png
-data/images/key/rightsteel.png
-data/images/key/steelangle.png
 data/images/steel/steel-pozadi0.png
 data/images/steel/steel-pozadi1.png
 data/images/steel/steel-pozadi2.png

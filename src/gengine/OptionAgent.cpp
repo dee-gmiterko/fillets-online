@@ -54,7 +54,7 @@ OptionAgent::own_init()
 {
     m_environ = new Environ();
 
-    setParam("lang", "cs");
+    setParam("lang", "en");
 
     prepareVersion();
     prepareDataPaths();

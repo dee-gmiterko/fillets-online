@@ -30,6 +30,8 @@ class WorldMap : public GameState, public DescFinder, public Drawable {
 
         LayeredPicture *m_bg;
         Uint32 m_activeMask;
+        Uint32 m_maskIntro;
+        Uint32 m_maskExit;
         Uint32 m_maskCredits;
         Uint32 m_maskOptions;
     private:

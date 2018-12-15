@@ -89,6 +89,7 @@ class Level : public GameState, public CountAdvisor {
         void controlEvent(const KeyStroke &stroke);
         void controlMouse(const MouseStroke &button);
 
+        const std::string& getLevelCodename() const;
         std::string getLevelName() const;
         int getRestartCounter() const { return m_restartCounter; }
         int getDepth() const { return m_depth; }

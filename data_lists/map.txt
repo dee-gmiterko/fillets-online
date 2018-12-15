@@ -1,7 +1,3 @@
-data/images/captain/mapa_m.png
-data/images/captain/mapa_v.png
-data/images/kitchen/mapa_v.png
-data/images/library/mapa_v.png
 data/images/map/19-ocel.png
 data/images/map/3-ocel.png
 data/images/map/klobouk.png
@@ -35,13 +31,6 @@ data/images/map/oko_04.png
 data/images/map/pistole.png
 data/images/map/poster.png
 data/images/map/stolekm.png
-data/images/menu/map__de.png
-data/images/menu/map_lower__de.png
-data/images/menu/map_lower.png
-data/images/menu/map_lower__ru.png
-data/images/menu/map_mask.png
-data/images/menu/map.png
-data/images/menu/map__ru.png
 data/script/map/code.lua
 data/script/map/demo_dialogs_bg.lua
 data/script/map/demo_dialogs_cs.lua
@@ -69,13 +58,6 @@ data/script/map/dialogs_ru.lua
 data/script/map/dialogs_sv.lua
 data/script/map/init.lua
 data/script/map/models.lua
-data/script/worldmap.lua
-data/sound/cabin2/cs/ka2-v-mapa0.ogg
-data/sound/cabin2/cs/ka2-v-mapa1.ogg
-data/sound/cabin2/cs/ka2-v-mapa2.ogg
-data/sound/cabin2/nl/ka2-v-mapa0.ogg
-data/sound/cabin2/nl/ka2-v-mapa1.ogg
-data/sound/cabin2/nl/ka2-v-mapa2.ogg
 data/sound/map/cs/map-m-mapa.ogg
 data/sound/map/cs/map-m-neplacej.ogg
 data/sound/map/cs/map-m-pohnout.ogg

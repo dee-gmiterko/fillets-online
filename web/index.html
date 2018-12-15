@@ -74,7 +74,29 @@
           Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
         }
       };
+
+      function getUrlVars() {
+          var vars = {};
+          var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+              vars[key] = value;
+          });
+          return vars;
+      }
+      urlVars = getUrlVars();
+      if (urlVars.level) {
+        Module['arguments'] = ['play_level='+urlVars.level];
+      } else if (urlVars.replay) {
+        Module['arguments'] = ['replay_level='+urlVars.replay];
+      }
+      if (urlVars.level || urlVars.replay) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "data/"+(urlVars.level || urlVars.replay)+".js";
+        document.body.appendChild(script);
+      }
+
       Module.setStatus('Downloading...');
+
       window.onerror = function(event) {
         // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
         Module.setStatus('Exception thrown, see JavaScript console');
@@ -83,9 +105,16 @@
           if (text) Module.printErr('[post-exception status] ' + text);
         };
       };
+
+      window.onload = function() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "build.js";
+        document.body.appendChild(script);
+      }
     </script>
     <script type='text/javascript' src='data/shared.js'></script>
-    <script async type="text/javascript" src="build.js"></script>
+    <script type='text/javascript' src='data/fishes.js'></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </body>
 </html>

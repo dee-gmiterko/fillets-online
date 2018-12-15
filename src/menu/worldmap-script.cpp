@@ -95,3 +95,5 @@ script_node_bestSolution(lua_State *L) throw()
     END_NOEXCEPTION;
     return 0;
 }
+
+

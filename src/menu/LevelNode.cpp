@@ -234,19 +234,16 @@ void
 LevelNode::drawPath(const NodeDrawer *drawer) const
 {
     if (m_state > STATE_HIDDEN) {
-        // HACK
-        // t_children::const_iterator end = m_children.end();
-        // for (t_children::const_iterator i = m_children.begin();
-        //         i != end; ++i)
-        // {
-        //     if ((*i)->getState() > STATE_HIDDEN) {
-        //         drawer->drawEdge(this, *i);
-        //         (*i)->drawPath(drawer);
-        //     }
-        // }
-        if (m_children[0]->getState() > STATE_HIDDEN) {
-          m_children[0]->drawPath(drawer);
+        t_children::const_iterator end = m_children.end();
+        for (t_children::const_iterator i = m_children.begin();
+                i != end; ++i)
+        {
+            if ((*i)->getState() > STATE_HIDDEN) {
+                drawer->drawEdge(this, *i);
+                (*i)->drawPath(drawer);
+            }
         }
         drawer->drawNode(this);
     }
 }
+

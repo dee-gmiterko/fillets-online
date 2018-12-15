@@ -33,6 +33,8 @@
 #include "MovieState.h"
 #include "Log.h"
 
+#include "emscripten.h"
+
 //-----------------------------------------------------------------
 WorldMap::WorldMap()
     : m_lastMouseLoc(-1, -1)
@@ -71,13 +73,14 @@ WorldMap::~WorldMap()
     void
 WorldMap::prepareBg()
 {
-
     m_bg = new LayeredPicture(
             Path::dataReadPath("images/menu/map.png"),
             V2(0, 0),
             Path::dataReadPath("images/menu/map_lower.png"),
             Path::dataReadPath("images/menu/map_mask.png"));
 
+    m_maskIntro = m_bg->getMaskAt(V2(0, 0));
+    m_maskExit = m_bg->getMaskAt(V2(m_bg->getW() - 1, 0));
     m_maskCredits = m_bg->getMaskAt(V2(0, m_bg->getH() - 1));
     m_maskOptions = m_bg->getMaskAt(V2(m_bg->getW() - 1, m_bg->getH() - 1));
     m_activeMask = m_bg->getNoMask();
@@ -143,9 +146,8 @@ WorldMap::own_resumeState()
     }
     m_selected = nextLevel;
 
-    // HACK
-    // SoundAgent::agent()->playMusic(
-    //         Path::dataReadPath("music/menu.ogg"), NULL);
+    SoundAgent::agent()->playMusic(
+            Path::dataReadPath("music/menu.ogg"), NULL);
 }
 //-----------------------------------------------------------------
 /**
@@ -154,8 +156,7 @@ WorldMap::own_resumeState()
     void
 WorldMap::own_cleanState()
 {
-    // HACK
-    // SoundAgent::agent()->stopMusic();
+    SoundAgent::agent()->stopMusic();
 }
 //-----------------------------------------------------------------
 /**
@@ -171,7 +172,10 @@ WorldMap::watchCursor()
     }
 
     m_activeMask = m_bg->getMaskAtWorld(mouseLoc);
-    if (m_activeMask == m_maskCredits || m_activeMask == m_maskOptions)
+    if (m_activeMask == m_maskIntro
+            || m_activeMask == m_maskExit
+            || m_activeMask == m_maskCredits
+            || m_activeMask == m_maskOptions)
     {
         m_bg->setActiveMask(m_activeMask);
     }
@@ -204,10 +208,25 @@ WorldMap::runSelected()
                 m_selected->getBestAuthor());
         level->fillStatus(m_levelStatus);
 
-        pushState(level);
+        if (m_selected->getState() == LevelNode::STATE_SOLVED) {
+            Pedometer *pedometer = new Pedometer(m_levelStatus, level);
+            pushState(pedometer);
+        }
+        else {
+            // HACK change page instead of pushState(level);
+            EM_ASM_({
+              window.location = '?level=' + Pointer_stringify($0);
+            }, level->getLevelCodename().c_str());
+        }
     }
     else {
-        if (m_activeMask == m_maskCredits) {
+        if (m_activeMask == m_maskIntro) {
+            runIntro();
+        }
+        else if (m_activeMask == m_maskExit) {
+            quitState();
+        }
+        else if (m_activeMask == m_maskCredits) {
             runCredits();
         }
         else if (m_activeMask == m_maskOptions) {
