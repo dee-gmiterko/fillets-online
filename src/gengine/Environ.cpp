@@ -15,6 +15,7 @@
 #include "StringTool.h"
 
 #include <stdio.h>
+#include <emscripten.h>
 
 //-----------------------------------------------------------------
 /**
@@ -46,6 +47,12 @@ Environ::store(const Path &file)
         }
 
         fclose(config);
+
+        EM_ASM( // sync file system
+            FS.syncfs(function (err) {
+                assert(!err);
+            });
+        );
     }
     else {
         LOG_WARNING(ExInfo("cannot save config")
@@ -234,4 +241,3 @@ Environ::getHelpInfo() const
     }
     return help;
 }
-

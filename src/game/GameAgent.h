@@ -18,7 +18,6 @@ class GameAgent : public BaseAgent {
     private:
         StateManager *m_manager;
     private:
-        void playLevel(const std::string &codename);
         void replaySolution(const std::string &codename);
         void keyBinding();
     protected:

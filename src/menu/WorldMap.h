@@ -59,6 +59,7 @@ class WorldMap : public GameState, public DescFinder, public Drawable {
         virtual void drawOn(SDL_Surface *screen);
         void selectNextLevel();
         void runSelected();
+        void runLevel(const std::string &codename);
 
         void addDesc(const std::string &codename, LevelDesc *desc);
         virtual std::string findLevelName(const std::string &codename) const;

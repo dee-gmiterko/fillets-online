@@ -24,7 +24,6 @@ corals
 corridor
 crabshow
 creatures
-demo_briefcase
 duckie
 dump
 electromagnet

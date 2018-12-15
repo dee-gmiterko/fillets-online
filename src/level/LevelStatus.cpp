@@ -18,6 +18,7 @@ extern "C" {
 #include "lua.h"
 }
 #include <stdio.h>
+#include <emscripten.h>
 
 //-----------------------------------------------------------------
    inline LevelStatus *
@@ -121,6 +122,12 @@ LevelStatus::writeSolvedMoves(const std::string &moves)
             fputs(moves.c_str(), saveFile);
             fputs("'\n", saveFile);
             fclose(saveFile);
+
+            EM_ASM( // sync file system
+                FS.syncfs(function (err) {
+                    assert(!err);
+                });
+            );
         }
         else {
             LOG_WARNING(ExInfo("cannot save solution")

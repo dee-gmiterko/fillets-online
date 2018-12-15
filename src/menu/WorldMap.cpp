@@ -33,7 +33,7 @@
 #include "MovieState.h"
 #include "Log.h"
 
-#include "emscripten.h"
+#include <emscripten.h>
 
 //-----------------------------------------------------------------
 WorldMap::WorldMap()
@@ -232,6 +232,27 @@ WorldMap::runSelected()
         else if (m_activeMask == m_maskOptions) {
             runOptions();
         }
+    }
+}
+//-----------------------------------------------------------------
+/**
+ * Run level by codename.
+ */
+    void
+WorldMap::runLevel(const std::string &codename)
+{
+    m_selected = m_startNode->findNamed(codename);
+    Level *level = m_selected->createLevel();
+    if (level) {
+        level->fillDesc(this);
+
+        m_levelStatus->prepareRun(m_selected->getCodename(),
+                m_selected->getPoster(),
+                m_selected->getBestMoves(),
+                m_selected->getBestAuthor());
+        level->fillStatus(m_levelStatus);
+
+        pushState(level);
     }
 }
 //-----------------------------------------------------------------

@@ -37,6 +37,7 @@
 
 #include <stdio.h>
 #include <assert.h>
+#include <emscripten.h>
 
 //-----------------------------------------------------------------
 /**
@@ -315,6 +316,13 @@ Level::saveGame(const std::string &models)
             fputs("\nsaved_models = ", saveFile);
             fputs(models.c_str(), saveFile);
             fclose(saveFile);
+
+            EM_ASM( // sync file system
+                FS.syncfs(function (err) {
+                    assert(!err);
+                });
+            );
+
             displaySaveStatus();
         }
         else {
