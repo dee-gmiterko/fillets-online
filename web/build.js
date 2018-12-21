@@ -944,7 +944,29 @@ function allocateUTF8OnStack(str) {
 }
 
 function demangle(func) {
-  warnOnce('warning: build with  -s DEMANGLE_SUPPORT=1  to link in libcxxabi demangling');
+  var __cxa_demangle_func = Module['___cxa_demangle'] || Module['__cxa_demangle'];
+  assert(__cxa_demangle_func);
+  try {
+    var s = func;
+    if (s.startsWith('__Z'))
+      s = s.substr(1);
+    var len = lengthBytesUTF8(s)+1;
+    var buf = _malloc(len);
+    stringToUTF8(s, buf, len);
+    var status = _malloc(4);
+    var ret = __cxa_demangle_func(buf, 0, 0, status);
+    if (HEAP32[((status)>>2)] === 0 && ret) {
+      return Pointer_stringify(ret);
+    }
+    // otherwise, libcxxabi failed
+  } catch(e) {
+    // ignore problems here
+  } finally {
+    if (buf) _free(buf);
+    if (status) _free(status);
+    if (ret) _free(ret);
+  }
+  // failure when using libcxxabi, don't demangle
   return func;
 }
 
@@ -1732,7 +1754,9 @@ integrateWasmJS();
 // === Body ===
 
 var ASM_CONSTS = [function($0) { window.location = '?level=' + Pointer_stringify($0); },
- function() { FS.syncfs(function (err) { assert(!err); }); }];
+ function($0) { window.location = '?replay=' + Pointer_stringify($0); },
+ function() { FS.syncfs(function (err) { assert(!err); }); },
+ function() { console.log(stackTrace()); }];
 
 function _emscripten_asm_const_i(code) {
   return ASM_CONSTS[code]();
@@ -1747,7 +1771,7 @@ function _emscripten_asm_const_ii(code, a0) {
 
 STATIC_BASE = GLOBAL_BASE;
 
-STATICTOP = STATIC_BASE + 47296;
+STATICTOP = STATIC_BASE + 48880;
 /* global initializers */  __ATINIT__.push({ func: function() { __GLOBAL__sub_I_Dialog_cpp() } }, { func: function() { __GLOBAL__sub_I_ResImagePack_cpp() } }, { func: function() { ___emscripten_environ_constructor() } });
 
 
@@ -1756,7 +1780,7 @@ STATICTOP = STATIC_BASE + 47296;
 
 
 
-var STATIC_BUMP = 47296;
+var STATIC_BUMP = 48880;
 Module["STATIC_BASE"] = STATIC_BASE;
 Module["STATIC_BUMP"] = STATIC_BUMP;
 
@@ -8143,19 +8167,6 @@ function copyTempDouble(ptr) {
   }
   }
 
-  function ___syscall330(which, varargs) {SYSCALLS.varargs = varargs;
-  try {
-   // dup3
-      var old = SYSCALLS.getStreamFromFD(), suggestFD = SYSCALLS.get(), flags = SYSCALLS.get();
-      assert(!flags);
-      if (old.fd === suggestFD) return -ERRNO_CODES.EINVAL;
-      return SYSCALLS.doDup(old.path, old.flags, suggestFD);
-    } catch (e) {
-    if (typeof FS === 'undefined' || !(e instanceof FS.ErrnoError)) abort(e);
-    return -e.errno;
-  }
-  }
-
   function ___syscall39(which, varargs) {SYSCALLS.varargs = varargs;
   try {
    // mkdir
@@ -8239,18 +8250,6 @@ function copyTempDouble(ptr) {
       var stream = SYSCALLS.getStreamFromFD();
       FS.close(stream);
       return 0;
-    } catch (e) {
-    if (typeof FS === 'undefined' || !(e instanceof FS.ErrnoError)) abort(e);
-    return -e.errno;
-  }
-  }
-
-  function ___syscall63(which, varargs) {SYSCALLS.varargs = varargs;
-  try {
-   // dup2
-      var old = SYSCALLS.getStreamFromFD(), suggestFD = SYSCALLS.get();
-      if (old.fd === suggestFD) return suggestFD;
-      return SYSCALLS.doDup(old.path, old.flags, suggestFD);
     } catch (e) {
     if (typeof FS === 'undefined' || !(e instanceof FS.ErrnoError)) abort(e);
     return -e.errno;
@@ -8833,6 +8832,10 @@ function intArrayToString(array) {
 
 
 
+function nullFunc_dii(x) { err("Invalid function pointer called with signature 'dii'. Perhaps this is an invalid value (e.g. caused by calling a virtual method on a NULL pointer)? Or calling a function with an incorrect type, which will fail? (it is worth building your source files with -Werror (warnings are errors), as warnings can indicate undefined behavior which can cause this)");  err("Build with ASSERTIONS=2 for more info.");abort(x) }
+
+function nullFunc_diid(x) { err("Invalid function pointer called with signature 'diid'. Perhaps this is an invalid value (e.g. caused by calling a virtual method on a NULL pointer)? Or calling a function with an incorrect type, which will fail? (it is worth building your source files with -Werror (warnings are errors), as warnings can indicate undefined behavior which can cause this)");  err("Build with ASSERTIONS=2 for more info.");abort(x) }
+
 function nullFunc_diii(x) { err("Invalid function pointer called with signature 'diii'. Perhaps this is an invalid value (e.g. caused by calling a virtual method on a NULL pointer)? Or calling a function with an incorrect type, which will fail? (it is worth building your source files with -Werror (warnings are errors), as warnings can indicate undefined behavior which can cause this)");  err("Build with ASSERTIONS=2 for more info.");abort(x) }
 
 function nullFunc_fiii(x) { err("Invalid function pointer called with signature 'fiii'. Perhaps this is an invalid value (e.g. caused by calling a virtual method on a NULL pointer)? Or calling a function with an incorrect type, which will fail? (it is worth building your source files with -Werror (warnings are errors), as warnings can indicate undefined behavior which can cause this)");  err("Build with ASSERTIONS=2 for more info.");abort(x) }
@@ -8893,9 +8896,31 @@ function nullFunc_viiiiiiiiiiiiiii(x) { err("Invalid function pointer called wit
 
 function nullFunc_viijii(x) { err("Invalid function pointer called with signature 'viijii'. Perhaps this is an invalid value (e.g. caused by calling a virtual method on a NULL pointer)? Or calling a function with an incorrect type, which will fail? (it is worth building your source files with -Werror (warnings are errors), as warnings can indicate undefined behavior which can cause this)");  err("Build with ASSERTIONS=2 for more info.");abort(x) }
 
-Module['wasmTableSize'] = 56320;
+Module['wasmTableSize'] = 60416;
 
-Module['wasmMaxTableSize'] = 56320;
+Module['wasmMaxTableSize'] = 60416;
+
+function invoke_dii(index,a1,a2) {
+  var sp = stackSave();
+  try {
+    return Module["dynCall_dii"](index,a1,a2);
+  } catch(e) {
+    stackRestore(sp);
+    if (typeof e !== 'number' && e !== 'longjmp') throw e;
+    Module["setThrew"](1, 0);
+  }
+}
+
+function invoke_diid(index,a1,a2,a3) {
+  var sp = stackSave();
+  try {
+    return Module["dynCall_diid"](index,a1,a2,a3);
+  } catch(e) {
+    stackRestore(sp);
+    if (typeof e !== 'number' && e !== 'longjmp') throw e;
+    Module["setThrew"](1, 0);
+  }
+}
 
 function invoke_diii(index,a1,a2,a3) {
   var sp = stackSave();
@@ -9229,7 +9254,7 @@ function invoke_viijii(index,a1,a2,a3,a4,a5,a6) {
 
 Module.asmGlobalArg = {};
 
-Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_diii": nullFunc_diii, "nullFunc_fiii": nullFunc_fiii, "nullFunc_i": nullFunc_i, "nullFunc_ii": nullFunc_ii, "nullFunc_iii": nullFunc_iii, "nullFunc_iiii": nullFunc_iiii, "nullFunc_iiiii": nullFunc_iiiii, "nullFunc_iiiiid": nullFunc_iiiiid, "nullFunc_iiiiii": nullFunc_iiiiii, "nullFunc_iiiiiid": nullFunc_iiiiiid, "nullFunc_iiiiiii": nullFunc_iiiiiii, "nullFunc_iiiiiiii": nullFunc_iiiiiiii, "nullFunc_iiiiiiiii": nullFunc_iiiiiiiii, "nullFunc_iiiiiiiiiii": nullFunc_iiiiiiiiiii, "nullFunc_iiiiiiiiiiii": nullFunc_iiiiiiiiiiii, "nullFunc_iiiiiiiiiiiii": nullFunc_iiiiiiiiiiiii, "nullFunc_iiiiij": nullFunc_iiiiij, "nullFunc_jiiii": nullFunc_jiiii, "nullFunc_v": nullFunc_v, "nullFunc_vi": nullFunc_vi, "nullFunc_vii": nullFunc_vii, "nullFunc_viii": nullFunc_viii, "nullFunc_viiii": nullFunc_viiii, "nullFunc_viiiii": nullFunc_viiiii, "nullFunc_viiiiii": nullFunc_viiiiii, "nullFunc_viiiiiii": nullFunc_viiiiiii, "nullFunc_viiiiiiii": nullFunc_viiiiiiii, "nullFunc_viiiiiiiiii": nullFunc_viiiiiiiiii, "nullFunc_viiiiiiiiiiiiiii": nullFunc_viiiiiiiiiiiiiii, "nullFunc_viijii": nullFunc_viijii, "invoke_diii": invoke_diii, "invoke_fiii": invoke_fiii, "invoke_i": invoke_i, "invoke_ii": invoke_ii, "invoke_iii": invoke_iii, "invoke_iiii": invoke_iiii, "invoke_iiiii": invoke_iiiii, "invoke_iiiiid": invoke_iiiiid, "invoke_iiiiii": invoke_iiiiii, "invoke_iiiiiid": invoke_iiiiiid, "invoke_iiiiiii": invoke_iiiiiii, "invoke_iiiiiiii": invoke_iiiiiiii, "invoke_iiiiiiiii": invoke_iiiiiiiii, "invoke_iiiiiiiiiii": invoke_iiiiiiiiiii, "invoke_iiiiiiiiiiii": invoke_iiiiiiiiiiii, "invoke_iiiiiiiiiiiii": invoke_iiiiiiiiiiiii, "invoke_iiiiij": invoke_iiiiij, "invoke_jiiii": invoke_jiiii, "invoke_v": invoke_v, "invoke_vi": invoke_vi, "invoke_vii": invoke_vii, "invoke_viii": invoke_viii, "invoke_viiii": invoke_viiii, "invoke_viiiii": invoke_viiiii, "invoke_viiiiii": invoke_viiiiii, "invoke_viiiiiii": invoke_viiiiiii, "invoke_viiiiiiii": invoke_viiiiiiii, "invoke_viiiiiiiiii": invoke_viiiiiiiiii, "invoke_viiiiiiiiiiiiiii": invoke_viiiiiiiiiiiiiii, "invoke_viijii": invoke_viijii, "_IMG_Load": _IMG_Load, "_IMG_Load_RW": _IMG_Load_RW, "_Mix_AllocateChannels": _Mix_AllocateChannels, "_Mix_CloseAudio": _Mix_CloseAudio, "_Mix_FreeChunk": _Mix_FreeChunk, "_Mix_FreeMusic": _Mix_FreeMusic, "_Mix_HaltMusic": _Mix_HaltMusic, "_Mix_HookMusicFinished": _Mix_HookMusicFinished, "_Mix_LoadMUS": _Mix_LoadMUS, "_Mix_LoadMUS_RW": _Mix_LoadMUS_RW, "_Mix_LoadWAV": _Mix_LoadWAV, "_Mix_LoadWAV_RW": _Mix_LoadWAV_RW, "_Mix_OpenAudio": _Mix_OpenAudio, "_Mix_PlayChannel": _Mix_PlayChannel, "_Mix_PlayChannelTimed": _Mix_PlayChannelTimed, "_Mix_PlayMusic": _Mix_PlayMusic, "_Mix_PlayingMusic": _Mix_PlayingMusic, "_Mix_Volume": _Mix_Volume, "_Mix_VolumeMusic": _Mix_VolumeMusic, "_SDL_AudioQuit": _SDL_AudioQuit, "_SDL_CloseAudio": _SDL_CloseAudio, "_SDL_ConvertSurface": _SDL_ConvertSurface, "_SDL_CreateRGBSurface": _SDL_CreateRGBSurface, "_SDL_DisplayFormatAlpha": _SDL_DisplayFormatAlpha, "_SDL_EnableUNICODE": _SDL_EnableUNICODE, "_SDL_FillRect": _SDL_FillRect, "_SDL_Flip": _SDL_Flip, "_SDL_FreeRW": _SDL_FreeRW, "_SDL_FreeSurface": _SDL_FreeSurface, "_SDL_GetError": _SDL_GetError, "_SDL_GetKeyName": _SDL_GetKeyName, "_SDL_GetModState": _SDL_GetModState, "_SDL_GetMouseState": _SDL_GetMouseState, "_SDL_GetRGBA": _SDL_GetRGBA, "_SDL_GetTicks": _SDL_GetTicks, "_SDL_Init": _SDL_Init, "_SDL_InitSubSystem": _SDL_InitSubSystem, "_SDL_LockSurface": _SDL_LockSurface, "_SDL_MapRGB": _SDL_MapRGB, "_SDL_MapRGBA": _SDL_MapRGBA, "_SDL_PauseAudio": _SDL_PauseAudio, "_SDL_PollEvent": _SDL_PollEvent, "_SDL_Quit": _SDL_Quit, "_SDL_QuitSubSystem": _SDL_QuitSubSystem, "_SDL_RWFromFile": _SDL_RWFromFile, "_SDL_SetAlpha": _SDL_SetAlpha, "_SDL_SetColorKey": _SDL_SetColorKey, "_SDL_SetVideoMode": _SDL_SetVideoMode, "_SDL_UnlockSurface": _SDL_UnlockSurface, "_SDL_UpperBlit": _SDL_UpperBlit, "_SDL_WM_SetCaption": _SDL_WM_SetCaption, "_SDL_WM_SetIcon": _SDL_WM_SetIcon, "_SDL_WarpMouse": _SDL_WarpMouse, "_TTF_CloseFont": _TTF_CloseFont, "_TTF_FontHeight": _TTF_FontHeight, "_TTF_Init": _TTF_Init, "_TTF_OpenFont": _TTF_OpenFont, "_TTF_Quit": _TTF_Quit, "_TTF_RenderText_Shaded": _TTF_RenderText_Shaded, "_TTF_RenderText_Solid": _TTF_RenderText_Solid, "_TTF_SizeText": _TTF_SizeText, "_TTF_SizeUTF8": _TTF_SizeUTF8, "___assert_fail": ___assert_fail, "___buildEnvironment": ___buildEnvironment, "___cxa_allocate_exception": ___cxa_allocate_exception, "___cxa_begin_catch": ___cxa_begin_catch, "___cxa_call_unexpected": ___cxa_call_unexpected, "___cxa_end_catch": ___cxa_end_catch, "___cxa_find_matching_catch": ___cxa_find_matching_catch, "___cxa_find_matching_catch_2": ___cxa_find_matching_catch_2, "___cxa_find_matching_catch_3": ___cxa_find_matching_catch_3, "___cxa_find_matching_catch_4": ___cxa_find_matching_catch_4, "___cxa_find_matching_catch_5": ___cxa_find_matching_catch_5, "___cxa_find_matching_catch_6": ___cxa_find_matching_catch_6, "___cxa_free_exception": ___cxa_free_exception, "___cxa_pure_virtual": ___cxa_pure_virtual, "___cxa_rethrow": ___cxa_rethrow, "___cxa_throw": ___cxa_throw, "___cxa_uncaught_exception": ___cxa_uncaught_exception, "___gxx_personality_v0": ___gxx_personality_v0, "___lock": ___lock, "___map_file": ___map_file, "___resumeException": ___resumeException, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall145": ___syscall145, "___syscall146": ___syscall146, "___syscall195": ___syscall195, "___syscall221": ___syscall221, "___syscall330": ___syscall330, "___syscall39": ___syscall39, "___syscall5": ___syscall5, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "___syscall63": ___syscall63, "___syscall91": ___syscall91, "___unlock": ___unlock, "__addDays": __addDays, "__arraySum": __arraySum, "__exit": __exit, "__isLeapYear": __isLeapYear, "_abort": _abort, "_atexit": _atexit, "_emscripten_asm_const_i": _emscripten_asm_const_i, "_emscripten_asm_const_ii": _emscripten_asm_const_ii, "_emscripten_get_now": _emscripten_get_now, "_emscripten_memcpy_big": _emscripten_memcpy_big, "_emscripten_set_main_loop": _emscripten_set_main_loop, "_emscripten_set_main_loop_timing": _emscripten_set_main_loop_timing, "_exit": _exit, "_getenv": _getenv, "_llvm_eh_typeid_for": _llvm_eh_typeid_for, "_llvm_log10_f32": _llvm_log10_f32, "_llvm_log10_f64": _llvm_log10_f64, "_llvm_stackrestore": _llvm_stackrestore, "_llvm_stacksave": _llvm_stacksave, "_llvm_trap": _llvm_trap, "_longjmp": _longjmp, "_pthread_cond_wait": _pthread_cond_wait, "_pthread_getspecific": _pthread_getspecific, "_pthread_key_create": _pthread_key_create, "_pthread_once": _pthread_once, "_pthread_setspecific": _pthread_setspecific, "_strftime": _strftime, "_strftime_l": _strftime_l, "_time": _time, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
+Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_dii": nullFunc_dii, "nullFunc_diid": nullFunc_diid, "nullFunc_diii": nullFunc_diii, "nullFunc_fiii": nullFunc_fiii, "nullFunc_i": nullFunc_i, "nullFunc_ii": nullFunc_ii, "nullFunc_iii": nullFunc_iii, "nullFunc_iiii": nullFunc_iiii, "nullFunc_iiiii": nullFunc_iiiii, "nullFunc_iiiiid": nullFunc_iiiiid, "nullFunc_iiiiii": nullFunc_iiiiii, "nullFunc_iiiiiid": nullFunc_iiiiiid, "nullFunc_iiiiiii": nullFunc_iiiiiii, "nullFunc_iiiiiiii": nullFunc_iiiiiiii, "nullFunc_iiiiiiiii": nullFunc_iiiiiiiii, "nullFunc_iiiiiiiiiii": nullFunc_iiiiiiiiiii, "nullFunc_iiiiiiiiiiii": nullFunc_iiiiiiiiiiii, "nullFunc_iiiiiiiiiiiii": nullFunc_iiiiiiiiiiiii, "nullFunc_iiiiij": nullFunc_iiiiij, "nullFunc_jiiii": nullFunc_jiiii, "nullFunc_v": nullFunc_v, "nullFunc_vi": nullFunc_vi, "nullFunc_vii": nullFunc_vii, "nullFunc_viii": nullFunc_viii, "nullFunc_viiii": nullFunc_viiii, "nullFunc_viiiii": nullFunc_viiiii, "nullFunc_viiiiii": nullFunc_viiiiii, "nullFunc_viiiiiii": nullFunc_viiiiiii, "nullFunc_viiiiiiii": nullFunc_viiiiiiii, "nullFunc_viiiiiiiiii": nullFunc_viiiiiiiiii, "nullFunc_viiiiiiiiiiiiiii": nullFunc_viiiiiiiiiiiiiii, "nullFunc_viijii": nullFunc_viijii, "invoke_dii": invoke_dii, "invoke_diid": invoke_diid, "invoke_diii": invoke_diii, "invoke_fiii": invoke_fiii, "invoke_i": invoke_i, "invoke_ii": invoke_ii, "invoke_iii": invoke_iii, "invoke_iiii": invoke_iiii, "invoke_iiiii": invoke_iiiii, "invoke_iiiiid": invoke_iiiiid, "invoke_iiiiii": invoke_iiiiii, "invoke_iiiiiid": invoke_iiiiiid, "invoke_iiiiiii": invoke_iiiiiii, "invoke_iiiiiiii": invoke_iiiiiiii, "invoke_iiiiiiiii": invoke_iiiiiiiii, "invoke_iiiiiiiiiii": invoke_iiiiiiiiiii, "invoke_iiiiiiiiiiii": invoke_iiiiiiiiiiii, "invoke_iiiiiiiiiiiii": invoke_iiiiiiiiiiiii, "invoke_iiiiij": invoke_iiiiij, "invoke_jiiii": invoke_jiiii, "invoke_v": invoke_v, "invoke_vi": invoke_vi, "invoke_vii": invoke_vii, "invoke_viii": invoke_viii, "invoke_viiii": invoke_viiii, "invoke_viiiii": invoke_viiiii, "invoke_viiiiii": invoke_viiiiii, "invoke_viiiiiii": invoke_viiiiiii, "invoke_viiiiiiii": invoke_viiiiiiii, "invoke_viiiiiiiiii": invoke_viiiiiiiiii, "invoke_viiiiiiiiiiiiiii": invoke_viiiiiiiiiiiiiii, "invoke_viijii": invoke_viijii, "_IMG_Load": _IMG_Load, "_IMG_Load_RW": _IMG_Load_RW, "_Mix_AllocateChannels": _Mix_AllocateChannels, "_Mix_CloseAudio": _Mix_CloseAudio, "_Mix_FreeChunk": _Mix_FreeChunk, "_Mix_FreeMusic": _Mix_FreeMusic, "_Mix_HaltMusic": _Mix_HaltMusic, "_Mix_HookMusicFinished": _Mix_HookMusicFinished, "_Mix_LoadMUS": _Mix_LoadMUS, "_Mix_LoadMUS_RW": _Mix_LoadMUS_RW, "_Mix_LoadWAV": _Mix_LoadWAV, "_Mix_LoadWAV_RW": _Mix_LoadWAV_RW, "_Mix_OpenAudio": _Mix_OpenAudio, "_Mix_PlayChannel": _Mix_PlayChannel, "_Mix_PlayChannelTimed": _Mix_PlayChannelTimed, "_Mix_PlayMusic": _Mix_PlayMusic, "_Mix_PlayingMusic": _Mix_PlayingMusic, "_Mix_Volume": _Mix_Volume, "_Mix_VolumeMusic": _Mix_VolumeMusic, "_SDL_AudioQuit": _SDL_AudioQuit, "_SDL_CloseAudio": _SDL_CloseAudio, "_SDL_ConvertSurface": _SDL_ConvertSurface, "_SDL_CreateRGBSurface": _SDL_CreateRGBSurface, "_SDL_DisplayFormatAlpha": _SDL_DisplayFormatAlpha, "_SDL_EnableUNICODE": _SDL_EnableUNICODE, "_SDL_FillRect": _SDL_FillRect, "_SDL_Flip": _SDL_Flip, "_SDL_FreeRW": _SDL_FreeRW, "_SDL_FreeSurface": _SDL_FreeSurface, "_SDL_GetError": _SDL_GetError, "_SDL_GetKeyName": _SDL_GetKeyName, "_SDL_GetModState": _SDL_GetModState, "_SDL_GetMouseState": _SDL_GetMouseState, "_SDL_GetRGBA": _SDL_GetRGBA, "_SDL_GetTicks": _SDL_GetTicks, "_SDL_Init": _SDL_Init, "_SDL_InitSubSystem": _SDL_InitSubSystem, "_SDL_LockSurface": _SDL_LockSurface, "_SDL_MapRGB": _SDL_MapRGB, "_SDL_MapRGBA": _SDL_MapRGBA, "_SDL_PauseAudio": _SDL_PauseAudio, "_SDL_PollEvent": _SDL_PollEvent, "_SDL_Quit": _SDL_Quit, "_SDL_QuitSubSystem": _SDL_QuitSubSystem, "_SDL_RWFromFile": _SDL_RWFromFile, "_SDL_SetAlpha": _SDL_SetAlpha, "_SDL_SetColorKey": _SDL_SetColorKey, "_SDL_SetVideoMode": _SDL_SetVideoMode, "_SDL_UnlockSurface": _SDL_UnlockSurface, "_SDL_UpperBlit": _SDL_UpperBlit, "_SDL_WM_SetCaption": _SDL_WM_SetCaption, "_SDL_WM_SetIcon": _SDL_WM_SetIcon, "_SDL_WarpMouse": _SDL_WarpMouse, "_TTF_CloseFont": _TTF_CloseFont, "_TTF_FontHeight": _TTF_FontHeight, "_TTF_Init": _TTF_Init, "_TTF_OpenFont": _TTF_OpenFont, "_TTF_Quit": _TTF_Quit, "_TTF_RenderText_Shaded": _TTF_RenderText_Shaded, "_TTF_RenderText_Solid": _TTF_RenderText_Solid, "_TTF_SizeText": _TTF_SizeText, "_TTF_SizeUTF8": _TTF_SizeUTF8, "___assert_fail": ___assert_fail, "___buildEnvironment": ___buildEnvironment, "___cxa_allocate_exception": ___cxa_allocate_exception, "___cxa_begin_catch": ___cxa_begin_catch, "___cxa_call_unexpected": ___cxa_call_unexpected, "___cxa_end_catch": ___cxa_end_catch, "___cxa_find_matching_catch": ___cxa_find_matching_catch, "___cxa_find_matching_catch_2": ___cxa_find_matching_catch_2, "___cxa_find_matching_catch_3": ___cxa_find_matching_catch_3, "___cxa_find_matching_catch_4": ___cxa_find_matching_catch_4, "___cxa_find_matching_catch_5": ___cxa_find_matching_catch_5, "___cxa_find_matching_catch_6": ___cxa_find_matching_catch_6, "___cxa_free_exception": ___cxa_free_exception, "___cxa_pure_virtual": ___cxa_pure_virtual, "___cxa_rethrow": ___cxa_rethrow, "___cxa_throw": ___cxa_throw, "___cxa_uncaught_exception": ___cxa_uncaught_exception, "___gxx_personality_v0": ___gxx_personality_v0, "___lock": ___lock, "___map_file": ___map_file, "___resumeException": ___resumeException, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall145": ___syscall145, "___syscall146": ___syscall146, "___syscall195": ___syscall195, "___syscall221": ___syscall221, "___syscall39": ___syscall39, "___syscall5": ___syscall5, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "___syscall91": ___syscall91, "___unlock": ___unlock, "__addDays": __addDays, "__arraySum": __arraySum, "__exit": __exit, "__isLeapYear": __isLeapYear, "_abort": _abort, "_atexit": _atexit, "_emscripten_asm_const_i": _emscripten_asm_const_i, "_emscripten_asm_const_ii": _emscripten_asm_const_ii, "_emscripten_get_now": _emscripten_get_now, "_emscripten_memcpy_big": _emscripten_memcpy_big, "_emscripten_set_main_loop": _emscripten_set_main_loop, "_emscripten_set_main_loop_timing": _emscripten_set_main_loop_timing, "_exit": _exit, "_getenv": _getenv, "_llvm_eh_typeid_for": _llvm_eh_typeid_for, "_llvm_log10_f32": _llvm_log10_f32, "_llvm_log10_f64": _llvm_log10_f64, "_llvm_stackrestore": _llvm_stackrestore, "_llvm_stacksave": _llvm_stacksave, "_llvm_trap": _llvm_trap, "_longjmp": _longjmp, "_pthread_cond_wait": _pthread_cond_wait, "_pthread_getspecific": _pthread_getspecific, "_pthread_key_create": _pthread_key_create, "_pthread_once": _pthread_once, "_pthread_setspecific": _pthread_setspecific, "_strftime": _strftime, "_strftime_l": _strftime_l, "_time": _time, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
 // EMSCRIPTEN_START_ASM
 var asm =Module["asm"]// EMSCRIPTEN_END_ASM
 (Module.asmGlobalArg, Module.asmLibraryArg, buffer);
@@ -9256,6 +9281,12 @@ var real____cxa_can_catch = asm["___cxa_can_catch"]; asm["___cxa_can_catch"] = f
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
   return real____cxa_can_catch.apply(null, arguments);
+};
+
+var real____cxa_demangle = asm["___cxa_demangle"]; asm["___cxa_demangle"] = function() {
+  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+  return real____cxa_demangle.apply(null, arguments);
 };
 
 var real____cxa_is_pointer_type = asm["___cxa_is_pointer_type"]; asm["___cxa_is_pointer_type"] = function() {
@@ -9436,6 +9467,10 @@ var ___cxa_can_catch = Module["___cxa_can_catch"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
   return Module["asm"]["___cxa_can_catch"].apply(null, arguments) };
+var ___cxa_demangle = Module["___cxa_demangle"] = function() {
+  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+  return Module["asm"]["___cxa_demangle"].apply(null, arguments) };
 var ___cxa_is_pointer_type = Module["___cxa_is_pointer_type"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
@@ -9560,6 +9595,14 @@ var stackSave = Module["stackSave"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
   return Module["asm"]["stackSave"].apply(null, arguments) };
+var dynCall_dii = Module["dynCall_dii"] = function() {
+  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+  return Module["asm"]["dynCall_dii"].apply(null, arguments) };
+var dynCall_diid = Module["dynCall_diid"] = function() {
+  assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+  assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+  return Module["asm"]["dynCall_diid"].apply(null, arguments) };
 var dynCall_diii = Module["dynCall_diii"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');

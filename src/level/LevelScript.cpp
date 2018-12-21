@@ -185,4 +185,3 @@ LevelScript::registerLevelFuncs()
     m_script->registerFunc("level_planShow", script_level_planShow);
     m_script->registerFunc("level_isShowing", script_level_isShowing);
 }
-

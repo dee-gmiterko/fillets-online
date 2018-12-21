@@ -21,6 +21,8 @@ extern "C" {
 
 #include "def-script.h"
 
+#include <emscripten.h>
+
 //-----------------------------------------------------------------
 ScriptState::ScriptState()
 {
@@ -45,7 +47,7 @@ void
 ScriptState::prepareErrorHandler()
 {
     lua_pushliteral(m_state, "_TRACEBACK");
-    lua_pushcfunction(m_state, script_debugStack);
+  lua_pushcfunction(m_state, script_debugStack);
     lua_settable(m_state, LUA_GLOBALSINDEX);
 }
 //-----------------------------------------------------------------
@@ -69,9 +71,6 @@ ScriptState::insertErrorHandler(int index)
  *
  * @throws ScriptException when script is bad
  */
-
-static int db_errorfb (lua_State *L);
-
     void
 ScriptState::callStack(int error, int params, int returns)
 {

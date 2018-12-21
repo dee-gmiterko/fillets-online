@@ -1,6 +1,6 @@
-cd lib/lua
+cd lib/lua-5.0.3
 /home/ienze/git/emsdk/emscripten/1.38.16/emmake make clean
-/home/ienze/git/emsdk/emscripten/1.38.16/emmake make linux
+/home/ienze/git/emsdk/emscripten/1.38.16/emmake make all
 cd ../..
 /home/ienze/git/emsdk/emscripten/1.38.16/emmake make clean
 /home/ienze/git/emsdk/emscripten/1.38.16/emmake make

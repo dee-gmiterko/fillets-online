@@ -257,6 +257,29 @@ WorldMap::runLevel(const std::string &codename)
 }
 //-----------------------------------------------------------------
 /**
+ * Replay solution of level by codename.
+ */
+    void
+WorldMap::replaySolution(const std::string &codename)
+{
+    m_selected = m_startNode->findNamed(codename);
+    Level *level = m_selected->createLevel();
+    if (level) {
+        level->fillDesc(this);
+
+        m_levelStatus->prepareRun(m_selected->getCodename(),
+                m_selected->getPoster(),
+                m_selected->getBestMoves(),
+                m_selected->getBestAuthor());
+        std::string moves = m_levelStatus->readSolvedMoves();
+        level->fillStatus(m_levelStatus);
+
+        pushState(level);
+        level->loadReplay(moves);
+    }
+}
+//-----------------------------------------------------------------
+/**
  * Return selected level or NULL.
  */
 Level *

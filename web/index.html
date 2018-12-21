@@ -30,7 +30,6 @@
 
       var Module = {
         preInit: [function() {
-          console.log("mounting permanent IDB file sytem")
           FS.mkdir('/user');
           FS.mount(IDBFS, {  }, '/user');
           FS.syncfs(true, function (err) {

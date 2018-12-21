@@ -22,6 +22,8 @@
 #include "StringMsg.h"
 #include "UnknownMsgException.h"
 
+#include <emscripten.h>
+
 //-----------------------------------------------------------------
 Pedometer::Pedometer(LevelStatus *status, Level *new_level)
 {
@@ -154,25 +156,19 @@ Pedometer::runSelected()
     void
 Pedometer::runLevel()
 {
-    Level *levelState = m_level;
-    m_level = NULL;
-    GameState *poster = m_status->createPoster();
-    if (poster) {
-        poster->setNextState(levelState);
-        changeState(poster);
-    }
-    else {
-        changeState(levelState);
-    }
+  // HACK change page instead of pushState(level);
+  EM_ASM_({
+    window.location = '?level=' + Pointer_stringify($0);
+  }, m_level->getLevelCodename().c_str());
 }
 //-----------------------------------------------------------------
     void
 Pedometer::runReplay()
 {
-    Level *levelState = m_level;
-    m_level = NULL;
-    changeState(levelState);
-    levelState->loadReplay(m_solution);
+  // HACK change page instead of pushState(level);
+  EM_ASM_({
+    window.location = '?replay=' + Pointer_stringify($0);
+  }, m_level->getLevelCodename().c_str());
 }
 //-----------------------------------------------------------------
     void

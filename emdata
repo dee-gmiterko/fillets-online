@@ -1,6 +1,6 @@
 mkdir web/data -p
 if [ -n "$1" ]; then
-  python3 /home/ienze/git/emsdk/emscripten/1.38.16/tools/file_packager.py web/data/$1.data --js-output=web/data/$1.js --no-heap-copy --use-preload-plugins --use-preload-cache --preload `cat data_lists/$1.txt | tr '\n' ' '`
+  python3 /home/ienze/git/emsdk/emscripten/1.38.16/tools/file_packager.py web/data/$1.data --js-output=web/data/$1.js --no-heap-copy --use-preload-plugins --use-preload-cache --preload `cat data_lists/$1.txt | tr '\n' ' '` 2> /dev/null
 else
-  while read level; do python3 /home/ienze/git/emsdk/emscripten/1.38.16/tools/file_packager.py web/data/$level.data --js-output=web/data/$level.js --no-heap-copy --use-preload-plugins --use-preload-cache --preload `cat data_lists/$level.txt | tr '\n' ' '`; done < data_lists/_packages.txt
+  while read level; do python3 /home/ienze/git/emsdk/emscripten/1.38.16/tools/file_packager.py web/data/$level.data --js-output=web/data/$level.js --no-heap-copy --use-preload-plugins --use-preload-cache --preload `cat data_lists/$level.txt | tr '\n' ' '`  2> /dev/null; done < data_lists/_packages.txt
 fi

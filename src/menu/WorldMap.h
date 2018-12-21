@@ -60,6 +60,7 @@ class WorldMap : public GameState, public DescFinder, public Drawable {
         void selectNextLevel();
         void runSelected();
         void runLevel(const std::string &codename);
+        void replaySolution(const std::string &codename);
 
         void addDesc(const std::string &codename, LevelDesc *desc);
         virtual std::string findLevelName(const std::string &codename) const;

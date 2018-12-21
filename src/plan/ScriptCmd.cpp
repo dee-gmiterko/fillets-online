@@ -39,6 +39,6 @@ ScriptCmd::~ScriptCmd()
 bool
 ScriptCmd::finish(int count)
 {
-    return m_script->callCommand(m_funcRef, count);
+    int b = m_script->callCommand(m_funcRef, count);
+    return b;
 }
-
