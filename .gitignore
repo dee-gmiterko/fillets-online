@@ -18,4 +18,8 @@
 /src/plan/Makefile
 /src/state/Makefile
 /src/widget/Makefile
-/web
+/web/*
+/user_preload
+
+!/web/index.html
+!/web/style.css
