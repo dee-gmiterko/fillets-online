@@ -18,8 +18,8 @@
 /src/plan/Makefile
 /src/state/Makefile
 /src/widget/Makefile
+/src/game/fillets
+/lib/lua-5.0.3/bin
 /web/*
-/user_preload
-
 !/web/index.html
 !/web/style.css

@@ -3,27 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>InterLoS 2018 - Fish Fillets</title>
+    <title>Fish Fillets Online</title>
   </head>
   <body>
     <canvas id="canvas"></canvas>
+
+    <footer>
+      <a href="http://fillets.sourceforge.net/">Original game</a> |
+      Online version by <a href="http://ienze.me/">Ienze</a> |
+      <a href="https://github.com/Linzee/fillets-online/issues">Report problem</a>
+    </footer>
 
     <div id="overlay">
       <div class="spinner" id='spinner'></div>
       <p class="emscripten" id="status">Downloading...</p>
       <progress value="0" max="100" id="progress" hidden=1></progress>
-    </div>
-
-    <div id='controls'>
-      <ul>
-        <li><button onclick="Module.requestFullscreen(false, false)">Fullscreen</button></li>
+      <ul class="guide">
         <li>Reštart <span>Backspace</span></li>
         <li>Pohyb <span>←</span><span>↑</span><span>→</span><span>↓</span></li>
         <li>Zmena ryby <span>&nbsp;&nbsp;&nbsp;Space&nbsp;&nbsp;&nbsp;</span></li>
       </ul>
     </div>
 
+    <div id='controls'>
+      <button onclick="Module.requestFullscreen(false, false)">Fullscreen</button>
+    </div>
+
     <script type='text/javascript'>
+      var guideElement = document.querySelector('#overlay .guide');
       var statusElement = document.getElementById('status');
       var progressElement = document.getElementById('progress');
       var spinnerElement = document.getElementById('spinner');
@@ -65,13 +72,14 @@
             text = m[1];
             progressElement.value = parseInt(m[2])*100;
             progressElement.max = parseInt(m[4])*100;
-            progressElement.hidden = false;
+            statusElement.hidden = false;
             spinnerElement.hidden = false;
           } else {
             progressElement.value = null;
             progressElement.max = null;
             progressElement.hidden = true;
             if (!text) spinnerElement.style.display = 'none';
+            if (!text) guideElement.hidden = true;
           }
           statusElement.innerHTML = text;
         },

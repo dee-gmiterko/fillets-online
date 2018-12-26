@@ -30,4 +30,3 @@ class PlannedDialog : public NoCopy {
 };
 
 #endif
-
