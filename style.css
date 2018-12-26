@@ -5,13 +5,12 @@ body, html {
   height: 100%;
 }
 body {
-  font-family: Lato sans-serif;
+  font-family: "Lato" sans-serif;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  background: #f4eee2;
-  background-image: url("http://interlos.fi.muni.cz/images/background.png");
+  background: #f5f5f5;
 }
 
 #overlay {
@@ -80,6 +79,24 @@ canvas {
   max-width: 300px;
 }
 
+#overlay .guide span {
+  background: rgba(216,181,94,0.25);
+  border-radius: 8px;
+  color: rgb(45,22,15);
+  padding: 0.4em;
+  display: inline-block;
+  margin: 0.1em;
+}
+
+#overlay .guide {
+  list-style: none;
+  text-align: center;
+}
+
+#overlay .guide li {
+  margin-bottom: 0.3em;
+}
+
 #controls {
   position: fixed;
   top: 1em;
@@ -96,19 +113,10 @@ canvas {
   padding: 0.5em;
 }
 
-#controls span {
-  background: rgba(216,181,94,0.25);
-  border-radius: 8px;
-  color: rgb(45,22,15);
-  padding: 0.4em;
-  display: inline-block;
-  margin: 0.1em;
+footer {
+  opacity: 0.5;
 }
 
-#controls ul {
-  list-style: none;
-}
-
-#controls ul li {
-  margin-bottom: 0.3em;
+footer a {
+  text-decoration: none;
 }
